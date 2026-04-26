@@ -346,6 +346,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
     </div>
     <div>
       <div class="contact-form" id="contactForm">
+        <div style="display:none"><input type="text" name="_honey" id="_honey" tabindex="-1" autocomplete="off"></div>
         <div class="form-row">
           <div class="form-group"><label class="form-label" data-i18n="f.name">Your name</label><input type="text" class="form-input" id="fname" placeholder="John Smith"></div>
           <div class="form-group"><label class="form-label" data-i18n="f.contact">Phone or Telegram</label><input type="text" class="form-input" id="fcontact" placeholder="+1 or @username"></div>
@@ -668,6 +669,7 @@ document.getElementById('submitBtn').addEventListener('click', async function() 
     msg:     document.getElementById('fmsg').value.trim()
   };
   if (!d.name || !d.contact) { showToast('⚠️ ' + t['err.fill']); return; }
+  if (document.getElementById('_honey').value) return; // bot detected
   this.textContent = '⏳'; this.disabled = true;
   await Promise.all([sendTelegram(d), sendEmail(d)]);
   document.getElementById('contactForm').style.display = 'none';
