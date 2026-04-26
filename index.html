@@ -32,8 +32,8 @@
   .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem;width:fit-content}
   .hero-tag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-  .hero h1{font-family:var(--font-display);font-size:clamp(3.2rem,7.5vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-.04em;margin-bottom:2rem;max-width:900px}
-  .hero h1 em{font-style:italic;font-weight:600;color:var(--accent)}
+  .hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,6vw,5.5rem);font-weight:800;line-height:.95;letter-spacing:-.04em;margin-bottom:2rem;max-width:900px}
+  .hero h1 em{font-style:normal;font-weight:800;color:var(--accent)}
   .hero-sub{font-size:1.1rem;color:var(--gray-light);max-width:500px;font-weight:300;margin-bottom:3rem;line-height:1.7}
   .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
   .btn-primary{background:var(--accent);color:var(--black);font-family:var(--font-body);font-size:.95rem;font-weight:600;padding:.9rem 2.2rem;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
@@ -45,7 +45,7 @@
   .stats-bar{border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:2.5rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
   .stat{text-align:center}
   .stat-num{font-family:var(--font-display);font-size:2.8rem;font-weight:800;letter-spacing:-.04em;color:var(--accent);line-height:1;margin-bottom:.35rem}
-  .stat-label{font-size:.8rem;color:var(--gray-light);font-weight:300}
+  .stat-label{font-size:.8rem;color:var(--gray-light);font-weight:300;text-align:center}
   section{padding:6rem 4rem}
   .section-tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:1rem}
   .section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:1.5rem;max-width:680px}
@@ -61,10 +61,15 @@
   .service-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.02em}
   .service-desc{color:var(--gray-light);font-size:.85rem;line-height:1.65;font-weight:300}
   #process{background:var(--black)}
-  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:4rem}
-  .process-step{position:relative}
-  .process-step:not(:last-child)::after{content:'→';position:absolute;top:1.2rem;right:-1rem;color:var(--accent);font-size:1.1rem}
-  .step-num{font-family:var(--font-display);font-size:3.2rem;font-weight:800;color:rgba(200,255,0,.1);line-height:1;margin-bottom:1.3rem;letter-spacing:-.04em}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:4rem;align-items:start}
+  .process-step{position:relative;display:flex;flex-direction:column}
+  .process-step:not(:last-child)::after{content:'→';position:absolute;top:1.5rem;right:-1.2rem;color:var(--accent);font-size:1.1rem;opacity:0;transition:opacity .3s,transform .3s}
+  .process-step:hover:not(:last-child)::after{opacity:1;transform:translateX(4px)}
+  .step-num{font-family:var(--font-display);font-size:3rem;font-weight:800;color:rgba(200,255,0,.4);line-height:1;margin-bottom:1rem;letter-spacing:-.04em;transition:color .3s,transform .3s;width:100%}
+  .process-step:hover{background:rgba(200,255,0,.03);border-radius:12px}
+  .process-step:hover .step-num{color:rgba(200,255,0,.8)}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
   .step-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:.5rem}
   .step-desc{color:var(--gray-light);font-size:.83rem;line-height:1.6;font-weight:300}
   .automation-section{background:var(--black)}
@@ -89,8 +94,10 @@
   #contact{background:var(--black)}
   .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
   .contact-info{margin-top:2rem;display:flex;flex-direction:column;gap:.9rem}
-  .contact-item{display:flex;align-items:center;gap:1rem;color:var(--gray-light);font-size:.88rem}
-  .contact-item-icon{width:34px;height:34px;background:rgba(255,255,255,.05);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+  .contact-item{display:flex;align-items:center;gap:1rem;font-size:.88rem}
+  .contact-item a,.contact-item span{color:var(--white);text-decoration:none;transition:color .2s}
+  .contact-item a:hover{color:var(--accent)}
+  .contact-item-icon{width:34px;height:34px;background:rgba(255,255,255,.05);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--accent);flex-shrink:0;letter-spacing:.02em}
   .contact-form{display:flex;flex-direction:column;gap:1.1rem}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
   .form-group{display:flex;flex-direction:column;gap:.45rem}
@@ -147,16 +154,16 @@
     </ul>
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
-        <span id="currentFlag">🇬🇧</span>
+        <span id="currentFlag" style="display:none">🇬🇧</span>
         <span id="currentLangLabel">EN</span>
         <span style="font-size:.65rem;opacity:.5">▼</span>
       </button>
       <div class="lang-dropdown" id="langDropdown">
-        <div class="lang-option active" data-lang="en">🇬🇧 &nbsp;English</div>
-        <div class="lang-option" data-lang="de">🇩🇪 &nbsp;Deutsch</div>
-        <div class="lang-option" data-lang="uk">🇺🇦 &nbsp;Українська</div>
-        <div class="lang-option" data-lang="fr">🇫🇷 &nbsp;Français</div>
-        <div class="lang-option" data-lang="es">🇪🇸 &nbsp;Español</div>
+        <div class="lang-option active" data-lang="en" data-flag="🇬🇧" data-label="EN">🇬🇧 &nbsp;English</div>
+        <div class="lang-option" data-lang="de" data-flag="🇩🇪" data-label="DE">🇩🇪 &nbsp;Deutsch</div>
+        <div class="lang-option" data-lang="uk" data-flag="🇺🇦" data-label="UA">🇺🇦 &nbsp;Українська</div>
+        <div class="lang-option" data-lang="fr" data-flag="🇫🇷" data-label="FR">🇫🇷 &nbsp;Français</div>
+        <div class="lang-option" data-lang="es" data-flag="🇪🇸" data-label="ES">🇪🇸 &nbsp;Español</div>
       </div>
     </div>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get Started</a>
@@ -206,10 +213,10 @@
   <div class="section-tag" data-i18n="process.tag">How we work</div>
   <h2 class="section-title" data-i18n="process.title">From idea to launch<br>in 48 hours</h2>
   <div class="process-grid">
-    <div class="process-step"><div class="step-num">01</div><div class="step-title" data-i18n="p1.t">Consultation</div><p class="step-desc" data-i18n="p1.d">A call or chat. We learn what you need and find the best automation solution.</p></div>
-    <div class="process-step"><div class="step-num">02</div><div class="step-title" data-i18n="p2.t">Prototype</div><p class="step-desc" data-i18n="p2.d">We show a mockup of the website or bot. Adjustments made before development begins.</p></div>
-    <div class="process-step"><div class="step-num">03</div><div class="step-title" data-i18n="p3.t">Development</div><p class="step-desc" data-i18n="p3.d">Fast, quality delivery. We keep you updated at every step.</p></div>
-    <div class="process-step"><div class="step-num">04</div><div class="step-title" data-i18n="p4.t">Launch</div><p class="step-desc" data-i18n="p4.d">We connect, configure, and go live. Training and ongoing support included.</p></div>
+    <div class="process-step reveal"><div class="step-num">1</div><div class="step-title" data-i18n="p1.t">Consultation</div><p class="step-desc" data-i18n="p1.d">A call or chat. We learn what you need and find the best automation solution.</p></div>
+    <div class="process-step reveal"><div class="step-num">2</div><div class="step-title" data-i18n="p2.t">Prototype</div><p class="step-desc" data-i18n="p2.d">We show a mockup of the website or bot. Adjustments made before development begins.</p></div>
+    <div class="process-step reveal"><div class="step-num">3</div><div class="step-title" data-i18n="p3.t">Development</div><p class="step-desc" data-i18n="p3.d">Fast, quality delivery. We keep you updated at every step.</p></div>
+    <div class="process-step reveal"><div class="step-num">4</div><div class="step-title" data-i18n="p4.t">Launch</div><p class="step-desc" data-i18n="p4.d">We connect, configure, and go live. Training and ongoing support included.</p></div>
   </div>
 </section>
 
@@ -261,9 +268,9 @@
       <h2 class="section-title" data-i18n="contact.title">Ready to start?<br>Let's talk</h2>
       <p style="color:var(--gray-light);font-weight:300;font-size:.92rem;line-height:1.7;margin-top:1rem;" data-i18n="contact.desc">Tell us about your business and we'll find the best solution. First consultation is free.</p>
       <div class="contact-info">
-        <div class="contact-item"><div class="contact-item-icon">✉️</div><span>voltexagencyy@gmail.com</span></div>
-        <div class="contact-item"><div class="contact-item-icon">💬</div><a href="https://t.me/voltexagency" style="color:var(--gray-light);text-decoration:none;" target="_blank">Telegram: @voltexagency</a></div>
-        <div class="contact-item"><div class="contact-item-icon">🌍</div><span data-i18n="contact.loc">Ukraine — working worldwide online</span></div>
+        <div class="contact-item"><div class="contact-item-icon">@</div><a href="mailto:voltexagencyy@gmail.com">voltexagencyy@gmail.com</a></div>
+        <div class="contact-item"><div class="contact-item-icon">TG</div><a href="https://t.me/voltexagency" target="_blank">@voltexagency</a></div>
+        <div class="contact-item"><div class="contact-item-icon">UA</div><span data-i18n="contact.loc">Ukraine — working worldwide online</span></div>
       </div>
     </div>
     <div>
@@ -329,8 +336,8 @@ function applyLang(l) {
     else if (el.tagName==='OPTION') el.textContent = t[k];
     else el.innerHTML = t[k];
   });
-  document.getElementById('currentFlag').textContent = LANG_META[l].flag;
-  document.getElementById('currentLangLabel').textContent = LANG_META[l].label;
+  document.getElementById('currentFlag').style.display = 'none';
+  document.getElementById('currentLangLabel').textContent = document.querySelector(`.lang-option[data-lang="${l}"]`).dataset.label || l.toUpperCase();
   document.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang===l));
   document.documentElement.lang = l;
 }
@@ -391,7 +398,16 @@ document.getElementById('submitBtn').addEventListener('click', async function() 
   document.getElementById('successMsg').classList.add('show');
   showToast(t['toast.ok']);
 });
+
+// SCROLL REVEAL
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 150);
+    }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
- 
