@@ -54,12 +54,12 @@ async function handleSubmit(request, env) {
       `🌐 *Language:* ${lang || 'en'}`
     ].filter(Boolean).join('\n');
 
-    if (env.TELEGRAM_TOKEN && env.TELEGRAM_CHAT_ID) {
-      await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/sendMessage`, {
+    if (env.TG_TOKEN && env.TG_CHAT_ID) {
+      await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: env.TELEGRAM_CHAT_ID,
+          chat_id: env.TG_CHAT_ID,
           text,
           parse_mode: 'Markdown'
         })
