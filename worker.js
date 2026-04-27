@@ -1,13 +1,17 @@
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
+    try {
+      const url = new URL(request.url);
 
-    if (request.method === 'POST' && url.pathname === '/.netlify/functions/submit') {
-      return handleSubmit(request, env);
+      if (request.method === 'POST' && url.pathname === '/.netlify/functions/submit') {
+        return handleSubmit(request, env);
+      }
+
+      const response = await env.ASSETS.fetch(request);
+      return addSecurityHeaders(response);
+    } catch (err) {
+      return new Response('Internal Server Error', { status: 500 });
     }
-
-    const response = await env.ASSETS.fetch(request);
-    return addSecurityHeaders(response);
   }
 };
 
@@ -30,7 +34,6 @@ function addSecurityHeaders(response) {
   );
   return new Response(response.body, {
     status: response.status,
-    statusText: response.statusText,
     headers
   });
 }
