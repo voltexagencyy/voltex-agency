@@ -627,11 +627,10 @@ document.querySelectorAll('.lang-option').forEach(o => {
   o.addEventListener('click', () => { applyLang(o.dataset.lang); langDropdown.classList.remove('open'); });
 });
 
-// CREDENTIALS
+// CREDENTIALS — token hidden on server via Netlify Function
 const CFG = {
   formspree: 'https://formspree.io/f/mdayjqey',
-  tgToken:   '8655479116:AAHjH5ZtOio3GttKY9FFLtv4oSf6vwWOYrw',
-  tgChatId:  '8514692262'
+  endpoint:  '/.netlify/functions/submit'
 };
 
 function showToast(msg) {
@@ -641,13 +640,7 @@ function showToast(msg) {
 }
 
 async function sendTelegram(d) {
-  const text = `🔔 *New Lead — Voltex Agency*\n\n👤 *Name:* ${d.name}\n📞 *Contact:* ${d.contact}\n📧 *Email:* ${d.email||'—'}\n🏢 *Business:* ${d.biz||'—'}\n💬 *Message:* ${d.msg||'—'}\n🌐 *Lang:* ${lang.toUpperCase()}`;
-  try {
-    await fetch(`https://api.telegram.org/bot${CFG.tgToken}/sendMessage`, {
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({chat_id:CFG.tgChatId, text, parse_mode:'Markdown'})
-    });
-  } catch(e) { console.warn('TG:', e); }
+  // Token is on server — handled by Netlify Function
 }
 
 async function sendEmail(d) {
@@ -669,9 +662,19 @@ document.getElementById('submitBtn').addEventListener('click', async function() 
     msg:     document.getElementById('fmsg').value.trim()
   };
   if (!d.name || !d.contact) { showToast('⚠️ ' + t['err.fill']); return; }
-  if (document.getElementById('_honey').value) return; // bot detected
+  if (document.getElementById('_honey').value) return;
   this.textContent = '⏳'; this.disabled = true;
-  await Promise.all([sendTelegram(d), sendEmail(d)]);
+
+  // Send to Netlify Function (handles Telegram securely on server)
+  try {
+    await fetch(CFG.endpoint, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({...d, lang})
+    });
+  } catch(e) { console.warn('Function error:', e); }
+
+  await sendEmail(d);
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('successMsg').classList.add('show');
   showToast(t['toast.ok']);
