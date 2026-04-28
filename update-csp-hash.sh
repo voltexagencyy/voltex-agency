@@ -7,7 +7,7 @@ HEADERS="$ROOT/_headers"
 
 # Extract the inline <script> block, strip CR (LF-normalise to match browser
 # hash behaviour per the HTML parsing spec), then SHA-256 + base64-encode.
-HASH=$(awk '/<script>/{found=1; next} /<\/script>/{found=0} found{print}' "$INDEX" \
+HASH=$(awk '/<script>/{found=1; printf "\n"; next} /<\/script>/{found=0} found{print}' "$INDEX" \
   | tr -d '\r' \
   | openssl dgst -sha256 -binary \
   | openssl base64 -A)
