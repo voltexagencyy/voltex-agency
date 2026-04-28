@@ -36,18 +36,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,255,0,.05) 0%,transparent 70%);pointer-events:none}
+.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,255,0,.08) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,255,0,.04) 0%,transparent 70%);pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-@keyframes glow-main{0%,100%{opacity:.55;transform:scale(1)}40%{opacity:1;transform:scale(1.06)}70%{opacity:.72;transform:scale(.98)}}
-@keyframes glow-accent{0%,100%{opacity:.3}50%{opacity:.85}}
-.page-glow{position:fixed;inset:0;pointer-events:none;z-index:9997;mix-blend-mode:screen;background:radial-gradient(ellipse 72% 88% at 100% 0%,rgba(200,255,0,.52) 0%,transparent 60%),radial-gradient(ellipse 52% 58% at 98% 100%,rgba(200,255,0,.34) 0%,transparent 55%);animation:glow-main 9s ease-in-out infinite}
-.page-glow-2{position:fixed;inset:0;pointer-events:none;z-index:9998;mix-blend-mode:screen;background:radial-gradient(ellipse 42% 48% at 4% 52%,rgba(200,255,0,.17) 0%,transparent 60%);animation:glow-accent 7s ease-in-out infinite 2.4s}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:1.8rem;max-width:850px}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:1.05rem;color:var(--gray-light);max-width:480px;font-weight:300;margin-bottom:2.5rem;line-height:1.75}
+.hero-sub{font-size:1.05rem;color:#a0a0a0;max-width:500px;font-weight:300;margin-bottom:1.6rem;line-height:1.8}
+.hero-proof{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:rgba(245,242,237,.45);margin-bottom:2rem;flex-wrap:wrap}
+.hero-proof-stars{color:var(--accent);letter-spacing:.06em;font-size:.82rem}
 .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .btn-primary{background:var(--accent);color:var(--black);font-family:var(--font-body);font-size:.92rem;font-weight:700;padding:.85rem 2rem;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
 .btn-primary:hover{background:#d4ff1a;transform:translateY(-2px)}
@@ -78,7 +76,7 @@ section{padding:5.5rem 4rem}
 .service-card:hover::after{transform:scaleX(1)}
 .service-icon{width:42px;height:42px;background:rgba(200,255,0,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.2rem}
 .service-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.01em}
-.service-desc{color:var(--gray-light);font-size:.82rem;line-height:1.65;font-weight:300}
+.service-desc{color:#999;font-size:.9rem;line-height:1.7;font-weight:300}
 
 /* PROCESS */
 #process{background:var(--black)}
@@ -90,7 +88,7 @@ section{padding:5.5rem 4rem}
 .step-num{font-family:var(--font-body);font-size:2.8rem;font-weight:700;color:rgba(200,255,0,.35);font-style:normal;line-height:1;margin-bottom:1rem;letter-spacing:-.04em;transition:color .3s}
 .process-step:hover .step-num{color:rgba(200,255,0,.7)}
 .step-title{font-family:var(--font-display);font-size:.9rem;font-weight:700;margin-bottom:.45rem}
-.step-desc{color:rgba(245,242,237,.68);font-size:.88rem;line-height:1.6;font-weight:300}
+.step-desc{color:#999;font-size:.88rem;line-height:1.65;font-weight:300}
 
 /* CASES */
 #cases{background:var(--gray)}
@@ -100,7 +98,7 @@ section{padding:5.5rem 4rem}
 .case-content{flex:1}
 .case-niche{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1rem}
 .case-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:.7rem;letter-spacing:-.01em}
-.case-desc{color:var(--gray-light);font-size:.82rem;line-height:1.65;font-weight:300;margin-bottom:0}
+.case-desc{color:#999;font-size:.9rem;line-height:1.7;font-weight:300;margin-bottom:0}
 .case-results{display:flex;flex-direction:column;gap:.6rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;margin-top:1.5rem}
 .case-result{display:grid;grid-template-columns:72px 1fr;align-items:center;gap:.5rem}
 .case-result-num{font-family:var(--font-body);font-size:1.2rem;font-weight:700;color:var(--accent);line-height:1.2;font-style:normal}
@@ -113,7 +111,7 @@ section{padding:5.5rem 4rem}
 .niche-card:hover{border-color:rgba(200,255,0,.25);background:rgba(200,255,0,.02)}
 .niche-emoji{font-size:1.6rem;flex-shrink:0;margin-top:.1rem}
 .niche-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:.3rem;letter-spacing:-.01em}
-.niche-desc{color:var(--gray-light);font-size:.8rem;line-height:1.6;font-weight:300}
+.niche-desc{color:#999;font-size:.88rem;line-height:1.65;font-weight:300}
 
 /* CONTACT */
 #contact{background:var(--gray)}
@@ -195,8 +193,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 </style>
 </head>
 <body>
-<div class="page-glow" aria-hidden="true"></div>
-<div class="page-glow-2" aria-hidden="true"></div>
 <div class="toast" id="toast"></div>
 
 <nav>
@@ -230,13 +226,17 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 <section class="hero">
   <div class="hero-tag" data-i18n="hero.tag">Automation Agency</div>
   <h1>
-    <span data-i18n="hero.h1a">Clients write to you.</span><br>
-    <em data-i18n="hero.h1b">Not the other way around.</em>
+    <span data-i18n="hero.h1a">Get more clients.</span><br>
+    <em data-i18n="hero.h1b">Automated in 48 hours.</em>
   </h1>
-  <p class="hero-sub" data-i18n="hero.sub">We build websites + automation systems for barbershops, cafes, bars and beauty salons. You get inquiries 24/7 — without lifting a finger.</p>
+  <p class="hero-sub" data-i18n="hero.sub">We build the website, booking system &amp; Telegram bot your barbershop, cafe or salon needs — so new clients find and book you 24/7, without lifting a finger.</p>
+  <div class="hero-proof">
+    <span class="hero-proof-stars">★★★★★</span>
+    <span data-i18n="hero.proof">50+ businesses automated &middot; avg. 3.2&times; more bookings &middot; 48h launch</span>
+  </div>
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Get a free audit of your business →</a>
-    <a href="#cases" class="btn-secondary" data-i18n="hero.cta2">See real cases</a>
+    <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Get my free audit →</a>
+    <a href="#cases" class="btn-secondary" data-i18n="hero.cta2">See client results</a>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span data-i18n="hero.scroll">Scroll</span></div>
 </section>
@@ -244,7 +244,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stat"><div class="stat-num">48h</div><div class="stat-label" data-i18n="stats.launch">From call to launch</div></div>
-  <div class="stat"><div class="stat-num">3×</div><div class="stat-label" data-i18n="stats.leads">More inquiries on average</div></div>
+  <div class="stat"><div class="stat-num">3.2×</div><div class="stat-label" data-i18n="stats.leads">Avg. booking increase in 30 days</div></div>
   <div class="stat"><div class="stat-num">50+</div><div class="stat-label" data-i18n="stats.projects">Businesses automated</div></div>
   <div class="stat"><div class="stat-num">24/7</div><div class="stat-label" data-i18n="stats.work">System works for you</div></div>
 </div>
@@ -348,7 +348,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
       <div class="contact-info">
         <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><a href="mailto:voltexagencyy@gmail.com" id="emailLink">voltexagencyy@gmail.com</a></div>
         <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div><a href="https://t.me/voltexagency" target="_blank">@voltexagency</a></div>
-        <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><a href="https://www.instagram.com/voltex.agency?igsh=MXhyczlzZWF4OTlzZw%3D%3D" target="_blank">@voltex.agency</a></div>
+        <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><a href="https://www.instagram.com/voltex.agency" target="_blank">@voltex.agency</a></div>
         <div class="contact-item"><div class="contact-item-icon">UA</div><span data-i18n="contact.loc">Ukraine — working worldwide online</span></div>
       </div>
     </div>
@@ -398,10 +398,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 const T = {
   en:{
     "nav.services":"Services","nav.cases":"Cases","nav.niches":"Industries","nav.cta":"Get Started",
-    "hero.tag":"Automation Agency","hero.h1a":"Clients write to you.","hero.h1b":"Not the other way around.",
-    "hero.sub":"We build websites + automation systems for barbershops, cafes, bars and beauty salons. You get inquiries 24/7 — without lifting a finger.",
-    "hero.cta1":"Get a free audit of your business →","hero.cta2":"See real cases","hero.scroll":"Scroll",
-    "stats.launch":"From call to launch","stats.leads":"More inquiries on average","stats.projects":"Businesses automated","stats.work":"System works for you",
+    "hero.tag":"Automation Agency","hero.h1a":"Get more clients.","hero.h1b":"Automated in 48 hours.",
+    "hero.sub":"We build the website, booking system & Telegram bot your barbershop, cafe or salon needs — so new clients find and book you 24/7, without lifting a finger.",
+    "hero.proof":"50+ businesses automated · avg. 3.2× more bookings · 48h launch",
+    "hero.cta1":"Get my free audit →","hero.cta2":"See client results","hero.scroll":"Scroll",
+    "stats.launch":"From call to launch","stats.leads":"Avg. booking increase in 30 days","stats.projects":"Businesses automated","stats.work":"System works for you",
     "services.tag":"What we do","services.title":"Everything your business needs to grow",
     "services.desc":"No agencies with 20 managers. Just a tight team that builds, launches and delivers results.",
     "s1.t":"Landing & Website","s1.d":"Fast site that looks sharp and converts visitors into paying clients. Not a template — built for your business.",
@@ -440,10 +441,11 @@ const T = {
   },
   de:{
     "nav.services":"Leistungen","nav.cases":"Cases","nav.niches":"Branchen","nav.cta":"Starten",
-    "hero.tag":"Automatisierungsagentur","hero.h1a":"Kunden schreiben dir.","hero.h1b":"Nicht andersherum.",
-    "hero.sub":"Wir bauen Websites + Automationssysteme für Barbershops, Cafés, Bars und Schönheitssalons. Du bekommst Anfragen 24/7 — ohne einen Finger zu rühren.",
-    "hero.cta1":"Kostenloses Business-Audit →","hero.cta2":"Echte Cases ansehen","hero.scroll":"Scrollen",
-    "stats.launch":"Von Anruf bis Launch","stats.leads":"Mehr Anfragen im Schnitt","stats.projects":"Automatisierte Unternehmen","stats.work":"System arbeitet für dich",
+    "hero.tag":"Automatisierungsagentur","hero.h1a":"Mehr Kunden gewinnen.","hero.h1b":"Automatisiert in 48 Stunden.",
+    "hero.sub":"Wir bauen die Website, das Buchungssystem und den Telegram-Bot für deinen Barbershop, dein Café oder deinen Salon — neue Kunden finden dich und buchen 24/7, ohne dass du etwas tun musst.",
+    "hero.proof":"50+ Unternehmen automatisiert · Ø 3,2× mehr Buchungen · 48h Launch",
+    "hero.cta1":"Mein kostenloses Audit →","hero.cta2":"Kundenergebnisse sehen","hero.scroll":"Scrollen",
+    "stats.launch":"Von Anruf bis Launch","stats.leads":"Ø Buchungssteigerung in 30 Tagen","stats.projects":"Automatisierte Unternehmen","stats.work":"System arbeitet für dich",
     "services.tag":"Was wir tun","services.title":"Alles was dein Business braucht",
     "services.desc":"Kein Agentur-Bullshit. Ein schlankes Team das baut, launcht und Ergebnisse liefert.",
     "s1.t":"Landing & Website","s1.d":"Schnelle Website die konvertiert. Kein Template — für dein Business gebaut.",
@@ -482,10 +484,11 @@ const T = {
   },
   uk:{
     "nav.services":"Послуги","nav.cases":"Кейси","nav.niches":"Ніші","nav.cta":"Замовити",
-    "hero.tag":"Агентство автоматизації","hero.h1a":"Клієнти пишуть тобі.","hero.h1b":"А не ти їм.",
-    "hero.sub":"Робимо сайти + автоматизацію для барбершопів, кафе, барів і салонів краси. Заявки приходять 24/7 — ти нічого не робиш.",
-    "hero.cta1":"Отримати безкоштовний аудит →","hero.cta2":"Дивитись кейси","hero.scroll":"Гортати",
-    "stats.launch":"Від дзвінка до запуску","stats.leads":"Більше заявок в середньому","stats.projects":"Автоматизованих бізнесів","stats.work":"Система працює за тебе",
+    "hero.tag":"Агентство автоматизації","hero.h1a":"Отримай більше клієнтів.","hero.h1b":"Автоматизовано за 48 годин.",
+    "hero.sub":"Будуємо сайт, систему бронювання та Telegram-бот для твого барбершопу, кафе або салону — нові клієнти знаходять тебе і бронюють 24/7, без зайвих зусиль.",
+    "hero.proof":"50+ автоматизованих бізнесів · в середньому +3,2× більше бронювань · запуск за 48 год",
+    "hero.cta1":"Мій безкоштовний аудит →","hero.cta2":"Результати клієнтів","hero.scroll":"Гортати",
+    "stats.launch":"Від дзвінка до запуску","stats.leads":"Середнє зростання бронювань за 30 днів","stats.projects":"Автоматизованих бізнесів","stats.work":"Система працює за тебе",
     "services.tag":"Що ми робимо","services.title":"Все що потрібно твоєму бізнесу для росту",
     "services.desc":"Без зайвих менеджерів. Команда яка будує, запускає і дає результат.",
     "s1.t":"Лендінг та сайт","s1.d":"Швидкий сайт що конвертує. Не шаблон — під твій бізнес.",
@@ -524,10 +527,11 @@ const T = {
   },
   fr:{
     "nav.services":"Services","nav.cases":"Cases","nav.niches":"Secteurs","nav.cta":"Commencer",
-    "hero.tag":"Agence d'automatisation","hero.h1a":"Les clients vous écrivent.","hero.h1b":"Pas l'inverse.",
-    "hero.sub":"Nous créons des sites web + systèmes d'automatisation pour barbiers, cafés, bars et salons de beauté. Vous recevez des demandes 24/7 — sans lever le petit doigt.",
-    "hero.cta1":"Audit gratuit de votre business →","hero.cta2":"Voir les vrais cas","hero.scroll":"Défiler",
-    "stats.launch":"De l'appel au lancement","stats.leads":"Plus de demandes en moyenne","stats.projects":"Entreprises automatisées","stats.work":"Système travaille pour vous",
+    "hero.tag":"Agence d'automatisation","hero.h1a":"Plus de clients.","hero.h1b":"Automatisé en 48 heures.",
+    "hero.sub":"Nous créons le site web, le système de réservation et le bot Telegram pour votre salon, café ou bar — vos clients vous trouvent et réservent 24/7, sans effort de votre part.",
+    "hero.proof":"50+ entreprises automatisées · moy. 3,2× plus de réservations · lancement en 48h",
+    "hero.cta1":"Mon audit gratuit →","hero.cta2":"Voir les résultats clients","hero.scroll":"Défiler",
+    "stats.launch":"De l'appel au lancement","stats.leads":"Hausse moy. des réservations en 30 j","stats.projects":"Entreprises automatisées","stats.work":"Système travaille pour vous",
     "services.tag":"Ce que nous faisons","services.title":"Tout ce dont votre business a besoin",
     "services.desc":"Pas d'agence avec 20 managers. Une équipe soudée qui construit, lance et livre des résultats.",
     "s1.t":"Landing & Site Web","s1.d":"Site rapide qui convertit. Pas un template — fait pour votre business.",
@@ -566,10 +570,11 @@ const T = {
   },
   es:{
     "nav.services":"Servicios","nav.cases":"Casos","nav.niches":"Sectores","nav.cta":"Empezar",
-    "hero.tag":"Agencia de automatización","hero.h1a":"Los clientes te escriben.","hero.h1b":"No al revés.",
-    "hero.sub":"Creamos sitios web + sistemas de automatización para barberías, cafés, bares y salones de belleza. Recibes consultas 24/7 — sin mover un dedo.",
-    "hero.cta1":"Auditoría gratuita de tu negocio →","hero.cta2":"Ver casos reales","hero.scroll":"Desplazarse",
-    "stats.launch":"De llamada a lanzamiento","stats.leads":"Más consultas en promedio","stats.projects":"Negocios automatizados","stats.work":"Sistema trabaja para ti",
+    "hero.tag":"Agencia de automatización","hero.h1a":"Más clientes.","hero.h1b":"Automatizado en 48 horas.",
+    "hero.sub":"Creamos el sitio web, el sistema de reservas y el bot de Telegram para tu barbería, café o salón — nuevos clientes te encuentran y reservan 24/7, sin que hagas nada.",
+    "hero.proof":"50+ negocios automatizados · prom. 3,2× más reservas · lanzamiento en 48h",
+    "hero.cta1":"Mi auditoría gratuita →","hero.cta2":"Ver resultados reales","hero.scroll":"Desplazarse",
+    "stats.launch":"De llamada a lanzamiento","stats.leads":"Aumento prom. de reservas en 30 días","stats.projects":"Negocios automatizados","stats.work":"Sistema trabaja para ti",
     "services.tag":"Qué hacemos","services.title":"Todo lo que tu negocio necesita para crecer",
     "services.desc":"Sin agencias con 20 managers. Un equipo ajustado que construye, lanza y entrega resultados.",
     "s1.t":"Landing & Sitio Web","s1.d":"Sitio rápido que convierte. No una plantilla — hecho para tu negocio.",
@@ -608,10 +613,11 @@ const T = {
   },
   nl:{
     "nav.services":"Diensten","nav.cases":"Cases","nav.niches":"Sectoren","nav.cta":"Starten",
-    "hero.tag":"Automatiseringsbureau","hero.h1a":"Klanten schrijven jou.","hero.h1b":"Niet andersom.",
-    "hero.sub":"Wij bouwen websites + automatiseringssystemen voor kappers, cafés, bars en schoonheidssalons. Je krijgt aanvragen 24/7 — zonder een vinger uit te steken.",
-    "hero.cta1":"Gratis audit van je bedrijf →","hero.cta2":"Echte cases bekijken","hero.scroll":"Scrollen",
-    "stats.launch":"Van gesprek tot lancering","stats.leads":"Meer aanvragen gemiddeld","stats.projects":"Geautomatiseerde bedrijven","stats.work":"Systeem werkt voor jou",
+    "hero.tag":"Automatiseringsbureau","hero.h1a":"Meer klanten.","hero.h1b":"Geautomatiseerd in 48 uur.",
+    "hero.sub":"Wij bouwen de website, het boekingssysteem en de Telegram-bot voor jouw kapper, café of salon — nieuwe klanten vinden jou en boeken 24/7, zonder dat jij iets hoeft te doen.",
+    "hero.proof":"50+ geautomatiseerde bedrijven · gem. 3,2× meer boekingen · lancering in 48u",
+    "hero.cta1":"Mijn gratis audit →","hero.cta2":"Bekijk klantresultaten","hero.scroll":"Scrollen",
+    "stats.launch":"Van gesprek tot lancering","stats.leads":"Gem. boekingsstijging in 30 dagen","stats.projects":"Geautomatiseerde bedrijven","stats.work":"Systeem werkt voor jou",
     "services.tag":"Wat we doen","services.title":"Alles wat jouw bedrijf nodig heeft om te groeien",
     "services.desc":"Geen bureau met 20 managers. Gewoon een strak team dat bouwt, lanceert en resultaten levert.",
     "s1.t":"Landing & Website","s1.d":"Snelle site die converteert. Geen template — gebouwd voor jouw bedrijf.",
