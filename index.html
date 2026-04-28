@@ -36,11 +36,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,255,0,.08) 0%,transparent 70%);pointer-events:none}
+.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,255,0,.09) 0%,transparent 70%);pointer-events:none;animation:glow-lr 10s ease-in-out infinite}
 .hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,255,0,.04) 0%,transparent 70%);pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+@keyframes glow-lr{0%,100%{transform:translateX(-200px)}50%{transform:translateX(60px)}}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:1.8rem;max-width:850px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-sub{font-size:1.05rem;color:var(--gray-light);max-width:480px;font-weight:300;margin-bottom:2.5rem;line-height:1.75}
@@ -212,6 +213,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
         <div class="lang-option" data-lang="uk" data-label="UA">🇺🇦 &nbsp;Українська</div>
         <div class="lang-option" data-lang="fr" data-label="FR">🇫🇷 &nbsp;Français</div>
         <div class="lang-option" data-lang="es" data-label="ES">🇪🇸 &nbsp;Español</div>
+        <div class="lang-option" data-lang="nl" data-label="NL">🇳🇱 &nbsp;Nederlands</div>
       </div>
     </div>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get Started</a>
@@ -341,6 +343,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
       <div class="contact-info">
         <div class="contact-item"><div class="contact-item-icon">@</div><a href="mailto:voltexagencyy@gmail.com" id="emailLink">voltexagencyy@gmail.com</a></div>
         <div class="contact-item"><div class="contact-item-icon">TG</div><a href="https://t.me/voltexagency" target="_blank">@voltexagency</a></div>
+        <div class="contact-item"><div class="contact-item-icon">IG</div><a href="https://www.instagram.com/voltex.agency?igsh=MXhyczlzZWF4OTlzZw%3D%3D" target="_blank">@voltex.agency</a></div>
         <div class="contact-item"><div class="contact-item-icon">UA</div><span data-i18n="contact.loc">Ukraine — working worldwide online</span></div>
       </div>
     </div>
@@ -597,6 +600,48 @@ const T = {
     "biz.1":"Barbería / Peluquería","biz.2":"Café / Bar / Restaurante","biz.3":"Salón de belleza / Spa","biz.4":"Fitness / Gimnasio","biz.5":"Taller de automóviles","biz.6":"Otro",
     "ok.title":"¡Recibido! Nos ponemos en contacto.","ok.sub":"Revisa Telegram o email — respondemos en 1h.",
     "toast.ok":"✓ ¡Enviado! Nos ponemos en contacto.","err.fill":"Por favor rellena tu nombre y contacto."
+  },
+  nl:{
+    "nav.services":"Diensten","nav.cases":"Cases","nav.niches":"Sectoren","nav.cta":"Starten",
+    "hero.tag":"Automatiseringsbureau","hero.h1a":"Klanten schrijven jou.","hero.h1b":"Niet andersom.",
+    "hero.sub":"Wij bouwen websites + automatiseringssystemen voor kappers, cafés, bars en schoonheidssalons. Je krijgt aanvragen 24/7 — zonder een vinger uit te steken.",
+    "hero.cta1":"Gratis audit van je bedrijf →","hero.cta2":"Echte cases bekijken","hero.scroll":"Scrollen",
+    "stats.launch":"Van gesprek tot lancering","stats.leads":"Meer aanvragen gemiddeld","stats.projects":"Geautomatiseerde bedrijven","stats.work":"Systeem werkt voor jou",
+    "services.tag":"Wat we doen","services.title":"Alles wat jouw bedrijf nodig heeft om te groeien",
+    "services.desc":"Geen bureau met 20 managers. Gewoon een strak team dat bouwt, lanceert en resultaten levert.",
+    "s1.t":"Landing & Website","s1.d":"Snelle site die converteert. Geen template — gebouwd voor jouw bedrijf.",
+    "s2.t":"Online boekingsformulieren","s2.d":"Klanten boeken online een tafel, knipbeurt of sessie. Je wordt direct gewaarschuwd.",
+    "s3.t":"Telegram Bot","s3.d":"Elke aanvraag komt in jouw Telegram. Naam, contact, wat ze willen — alles in één bericht.",
+    "s4.t":"Klantendatabase","s4.d":"Alle aanvragen automatisch opgeslagen in Google Sheets. Je weet altijd wie schreef en wat ze nodig hadden.",
+    "s5.t":"Integraties","s5.d":"Instagram, Google Maps, betaalsystemen — alles verbonden met jouw automatiseringspijplijn.",
+    "s6.t":"Redesign & Upgrade","s6.d":"Oude website? Wij geven hem nieuw leven — nieuw design, boekingssysteem, mobiele versie.",
+    "process.tag":"Hoe het werkt","process.title":"Jij praat — wij bouwen. 48 uur tot lancering.",
+    "p1.t":"Gratis gesprek","p1.d":"20–30 min. Jij vertelt over je bedrijf — wij zeggen je precies wat meer klanten brengt.",
+    "p2.t":"Wij tonen het plan","p2.d":"Geen blinde ontwikkeling. Je ziet een mockup voordat we één regel code schrijven. Wijzigingen zijn gratis.",
+    "p3.t":"Wij bouwen snel","p3.d":"Site + automatisering + Telegram bot — klaar in 48 uur. We houden je de hele tijd op de hoogte.",
+    "p4.t":"Jij krijgt klanten","p4.d":"Systeem gaat live. Eerste aanvraag komt binnen. We blijven in support zodat niets kapot gaat — nooit.",
+    "cases.tag":"Echte cases","cases.title":"Wat we bouwden en wat het opleverde",
+    "c1.niche":"KAPPERSZAAK","c1.title":"Online boeking verving de admin","c1.desc":"Eén persoon bracht de hele dag door met DMs en telefoontjes beantwoorden. We bouwden een boekingssite en Telegram bot — nu verwerkt het systeem elke aanvraag automatisch, 24/7.",
+    "c1.r1":"meer boekingen per maand","c1.r2":"gemiste aanvragen","c1.r3":"van briefing tot lancering",
+    "c2.niche":"BAR & RESTAURANT","c2.title":"Tafelboeking zonder telefoontjes","c2.desc":"Het restaurant verloor klanten omdat niemand de telefoon opnam. We bouwden een reserveringssysteem verbonden met Telegram — nu wordt elke tafel online geboekt.",
+    "c2.r1":"reserveringen per week","c2.r2":"minder handmatig werk","c2.r3":"totale lanceertijd",
+    "c3.niche":"SCHOONHEIDSSALON","c3.title":"Instagram volgers werden echte klanten","c3.desc":"8k Instagram volgers, bijna nul online boekingen. We bouwden een boekingssite gekoppeld aan hun bio — klanten begonnen direct te boeken.",
+    "c3.r1":"online boekingen in maand 1","c3.r2":"conversie vanuit Instagram","c3.r3":"tot eerste betaalde boeking",
+    "niches.tag":"Met wie we werken","niches.title":"We kennen jouw bedrijf — niet alleen tech",
+    "n1.t":"Kappers & Haarsalons","n1.d":"Online boeking per kapper, tijdslots, herinneringen. Klanten boeken — jij knipt.",
+    "n2.t":"Cafés, Bars & Restaurants","n2.d":"Tafelreserveringen, digitaal menu, evenementboeking. Bestellingen gaan direct naar de manager.",
+    "n3.t":"Schoonheidssalons & Spa's","n3.d":"Boekingspagina, kappersprofielen, prijslijst, herinneringen. Jouw klanten komen terug.",
+    "n4.t":"Fitness & Sportscholen","n4.d":"Lesrooster, sessieboeking, lidmaatschappen. Leden schrijven zich zelf in.",
+    "n5.t":"Autogarages","n5.d":"Online reparatieverzoeken, offertes, statusupdates. Klanten weten altijd wat er met hun auto gebeurt.",
+    "n6.t":"Elk lokaal bedrijf","n6.d":"Als je klanten hebt en er meer online wilt — vinden we het systeem dat voor jou werkt.",
+    "contact.tag":"Laten we praten","contact.title":"Schrijf ons — gratis audit van je bedrijf",
+    "contact.desc":"Vertel ons wat je doet en waar je klanten verliest. We laten je precies zien hoe je het kunt oplossen — gratis, zonder verplichtingen.",
+    "contact.loc":"Oekraïne — wereldwijd online actief",
+    "f.name":"Jouw naam","f.contact":"Telefoon of Telegram","f.email":"E-mail","f.biz":"Type bedrijf","f.biz.ph":"Selecteer type",
+    "f.msg":"Waar verlies je klanten?","f.submit":"Gratis audit →","f.note":"⚡ We reageren binnen 1 uur. Geen spam.",
+    "biz.1":"Kapperszaak / Haarsalon","biz.2":"Café / Bar / Restaurant","biz.3":"Schoonheidssalon / Spa","biz.4":"Fitness / Sportschool","biz.5":"Autogarage","biz.6":"Anders",
+    "ok.title":"Ontvangen! We nemen snel contact op.","ok.sub":"Check Telegram of e-mail — we reageren binnen 1 uur.",
+    "toast.ok":"✓ Verzonden! We nemen contact op.","err.fill":"Vul alstublieft uw naam en contact in."
   }
 };
 
