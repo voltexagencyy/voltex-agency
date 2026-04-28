@@ -41,8 +41,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-@keyframes glow-breathe{0%,100%{opacity:.5}50%{opacity:.95}}
-.page-glow{position:fixed;inset:0;pointer-events:none;z-index:9998;mix-blend-mode:screen;background:radial-gradient(ellipse 65% 75% at 100% 5%,rgba(200,255,0,.14) 0%,transparent 70%),radial-gradient(ellipse 45% 50% at 95% 95%,rgba(200,255,0,.08) 0%,transparent 65%);animation:glow-breathe 9s ease-in-out infinite}
+@keyframes glow-main{0%,100%{opacity:.55;transform:scale(1)}40%{opacity:1;transform:scale(1.06)}70%{opacity:.72;transform:scale(.98)}}
+@keyframes glow-accent{0%,100%{opacity:.3}50%{opacity:.85}}
+.page-glow{position:fixed;inset:0;pointer-events:none;z-index:9997;mix-blend-mode:screen;background:radial-gradient(ellipse 72% 88% at 100% 0%,rgba(200,255,0,.52) 0%,transparent 60%),radial-gradient(ellipse 52% 58% at 98% 100%,rgba(200,255,0,.34) 0%,transparent 55%);animation:glow-main 9s ease-in-out infinite}
+.page-glow-2{position:fixed;inset:0;pointer-events:none;z-index:9998;mix-blend-mode:screen;background:radial-gradient(ellipse 42% 48% at 4% 52%,rgba(200,255,0,.17) 0%,transparent 60%);animation:glow-accent 7s ease-in-out infinite 2.4s}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:1.8rem;max-width:850px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-sub{font-size:1.05rem;color:var(--gray-light);max-width:480px;font-weight:300;margin-bottom:2.5rem;line-height:1.75}
@@ -194,6 +196,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 </head>
 <body>
 <div class="page-glow" aria-hidden="true"></div>
+<div class="page-glow-2" aria-hidden="true"></div>
 <div class="toast" id="toast"></div>
 
 <nav>
