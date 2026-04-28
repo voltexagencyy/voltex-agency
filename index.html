@@ -13,13 +13,13 @@ html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.05)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:1.1rem 4rem;background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.05)}
 .logo{font-family:var(--font-display);font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:var(--white);text-decoration:none;flex-shrink:0}
 .logo span{color:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:1.5rem}
-.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links{flex:1;display:flex;justify-content:center;gap:2rem;list-style:none}
 .nav-links a{color:var(--gray-light);text-decoration:none;font-size:.85rem;transition:color .2s}
 .nav-links a:hover{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:1.2rem;flex-shrink:0}
 .nav-cta{background:var(--accent);color:var(--black);padding:.5rem 1.2rem;border-radius:100px;font-weight:700;font-size:.82rem;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap}
 .nav-cta:hover{background:#d4ff1a;transform:translateY(-1px)}
 .nav-cta-mob{display:none}
@@ -35,12 +35,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lang-option.active{color:var(--accent)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(200,255,0,.08) 0%,transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,255,0,.04) 0%,transparent 70%);pointer-events:none}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem;padding:8rem 4rem 5rem;position:relative;overflow:hidden}
+.hero-content{display:flex;flex-direction:column;max-width:580px}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+@keyframes mesh-drift{from{background-position:0 0}to{background-position:48px 48px}}
+@keyframes orb-pulse{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(1)}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.18)}}
+/* HERO MESH VISUAL */
+.hero-visual{position:relative;height:100%;min-height:520px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.6) 18%,black 35%);-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.6) 18%,black 35%)}
+.hero-visual::before{content:'';position:absolute;inset:-50px;background-image:linear-gradient(rgba(200,255,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.07) 1px,transparent 1px);background-size:48px 48px;animation:mesh-drift 22s linear infinite}
+.hero-visual::after{content:'';position:absolute;inset:-50px;background-image:radial-gradient(circle,rgba(200,255,0,.3) 1.5px,transparent 1.5px);background-size:48px 48px;animation:mesh-drift 22s linear infinite}
+.hv-orb{position:absolute;width:520px;height:520px;background:radial-gradient(circle,rgba(200,255,0,.08) 0%,transparent 62%);top:50%;left:50%;transform:translate(-50%,-50%);animation:orb-pulse 6s ease-in-out infinite;pointer-events:none}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:1.8rem;max-width:850px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-sub{font-size:1.05rem;color:#a0a0a0;max-width:500px;font-weight:300;margin-bottom:1.6rem;line-height:1.8}
@@ -163,8 +169,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .nav-right{gap:.6rem}
   .lang-btn{padding:.3rem .65rem;font-size:.72rem}
   .lang-dropdown{min-width:140px}
-  .hero{padding:5.5rem 1.2rem 3rem;min-height:auto}
-  .hero::before,.hero::after{display:none}
+  .hero{padding:5.5rem 1.2rem 3rem;min-height:auto;grid-template-columns:1fr;gap:0}
+  .hero-visual{display:none}
   .hero-scroll{display:none}
   .hero h1{font-size:clamp(2.2rem,9vw,3.2rem);margin-bottom:1.2rem}
   .hero-sub{font-size:.95rem;margin-bottom:2rem;max-width:100%}
@@ -197,12 +203,12 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 
 <nav>
   <a href="#" class="logo">Voltex<span>.agency</span></a>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav.services">Services</a></li>
+    <li><a href="#cases" data-i18n="nav.cases">Cases</a></li>
+    <li><a href="#niches" data-i18n="nav.niches">Industries</a></li>
+  </ul>
   <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="#services" data-i18n="nav.services">Services</a></li>
-      <li><a href="#cases" data-i18n="nav.cases">Cases</a></li>
-      <li><a href="#niches" data-i18n="nav.niches">Industries</a></li>
-    </ul>
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
         <span id="currentLangLabel">EN</span>
@@ -224,19 +230,24 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-tag" data-i18n="hero.tag">Automation Agency</div>
-  <h1>
-    <span data-i18n="hero.h1a">Get more clients.</span><br>
-    <em data-i18n="hero.h1b">Automated in 48 hours.</em>
-  </h1>
-  <p class="hero-sub" data-i18n="hero.sub">We build the website, booking system &amp; Telegram bot your barbershop, cafe or salon needs — so new clients find and book you 24/7, without lifting a finger.</p>
-  <div class="hero-proof">
-    <span class="hero-proof-stars">★★★★★</span>
-    <span data-i18n="hero.proof">50+ businesses automated &middot; avg. 3.2&times; more bookings &middot; 48h launch</span>
+  <div class="hero-content">
+    <div class="hero-tag" data-i18n="hero.tag">Automation Agency</div>
+    <h1>
+      <span data-i18n="hero.h1a">Get more clients.</span><br>
+      <em data-i18n="hero.h1b">Automated in 48 hours.</em>
+    </h1>
+    <p class="hero-sub" data-i18n="hero.sub">We build the website, booking system &amp; Telegram bot your barbershop, cafe or salon needs — so new clients find and book you 24/7, without lifting a finger.</p>
+    <div class="hero-proof">
+      <span class="hero-proof-stars">★★★★★</span>
+      <span data-i18n="hero.proof">50+ businesses automated &middot; avg. 3.2&times; more bookings &middot; 48h launch</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Get my free audit →</a>
+      <a href="#cases" class="btn-secondary" data-i18n="hero.cta2">See client results</a>
+    </div>
   </div>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Get my free audit →</a>
-    <a href="#cases" class="btn-secondary" data-i18n="hero.cta2">See client results</a>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hv-orb"></div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span data-i18n="hero.scroll">Scroll</span></div>
 </section>
