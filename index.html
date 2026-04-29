@@ -35,18 +35,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lang-option.active{color:var(--accent)}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem;padding:8rem 4rem 5rem;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.022) 1px,transparent 1px);background-size:64px 64px}
 .hero-content{display:flex;flex-direction:column;max-width:580px}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 @keyframes mesh-drift{from{background-position:0 0}to{background-position:48px 48px}}
-@keyframes orb-pulse{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(1)}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.18)}}
+@keyframes wave-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 /* HERO MESH VISUAL */
-.hero-visual{position:relative;height:100%;min-height:520px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.6) 18%,black 35%);-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.6) 18%,black 35%)}
-.hero-visual::before{content:'';position:absolute;inset:-50px;background-image:linear-gradient(rgba(200,255,0,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.07) 1px,transparent 1px);background-size:48px 48px;animation:mesh-drift 22s linear infinite}
-.hero-visual::after{content:'';position:absolute;inset:-50px;background-image:radial-gradient(circle,rgba(200,255,0,.3) 1.5px,transparent 1.5px);background-size:48px 48px;animation:mesh-drift 22s linear infinite}
-.hv-orb{position:absolute;width:520px;height:520px;background:radial-gradient(circle,rgba(200,255,0,.08) 0%,transparent 62%);top:50%;left:50%;transform:translate(-50%,-50%);animation:orb-pulse 6s ease-in-out infinite;pointer-events:none}
+.hero-visual{position:relative;height:100%;min-height:520px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.5) 15%,black 32%);-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.5) 15%,black 32%)}
+.hero-visual::before{content:'';position:absolute;inset:-50px;background-image:linear-gradient(rgba(200,255,0,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.08) 1px,transparent 1px);background-size:48px 48px;animation:mesh-drift 22s linear infinite}
+.hv-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.hv-w1{animation:wave-float 9s ease-in-out infinite}
+.hv-w2{animation:wave-float 11s ease-in-out infinite 1.5s}
+.hv-w3{animation:wave-float 8s ease-in-out infinite 3s}
+.hv-w4{animation:wave-float 13s ease-in-out infinite .7s}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:1.8rem;max-width:850px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-sub{font-size:1.05rem;color:#a0a0a0;max-width:500px;font-weight:300;margin-bottom:1.6rem;line-height:1.8}
@@ -247,7 +250,66 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
     </div>
   </div>
   <div class="hero-visual" aria-hidden="true">
-    <div class="hv-orb"></div>
+    <svg class="hv-svg" viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="hv-glow" x="-40%" y="-150%" width="180%" height="400%">
+          <feGaussianBlur stdDeviation="5" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="hv-ng" x="-150%" y="-150%" width="400%" height="400%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <radialGradient id="hv-amb" cx="62%" cy="50%" r="55%">
+          <stop offset="0%"   stop-color="#c8ff00" stop-opacity="0.13"/>
+          <stop offset="55%"  stop-color="#c8ff00" stop-opacity="0.04"/>
+          <stop offset="100%" stop-color="#c8ff00" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="hv-wm" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-opacity="0"/>
+          <stop offset="22%"  stop-opacity="1"/>
+          <stop offset="100%" stop-opacity="0.75"/>
+        </linearGradient>
+        <mask id="hv-wmt"><rect width="600" height="720" fill="url(#hv-wm)"/></mask>
+      </defs>
+      <!-- Ambient glow -->
+      <rect width="600" height="720" fill="url(#hv-amb)"/>
+      <!-- Animated wave lines -->
+      <g mask="url(#hv-wmt)">
+        <path class="hv-w1" d="M 0 185 C 80 150 165 220 300 185 S 500 150 640 185" fill="none" stroke="#c8ff00" stroke-width="1"   stroke-opacity="0.32" filter="url(#hv-glow)"/>
+        <path class="hv-w2" d="M 0 305 C 100 262 225 348 365 305 S 545 262 640 298" fill="none" stroke="#c8ff00" stroke-width="1.5" stroke-opacity="0.48" filter="url(#hv-glow)"/>
+        <path class="hv-w3" d="M 0 425 C 80 390 165 460 300 425 S 500 390 640 425" fill="none" stroke="#c8ff00" stroke-width="0.8" stroke-opacity="0.22" filter="url(#hv-glow)"/>
+        <path class="hv-w4" d="M 0 548 C 100 515 225 581 365 548 S 545 515 640 548" fill="none" stroke="#c8ff00" stroke-width="0.6" stroke-opacity="0.14" filter="url(#hv-glow)"/>
+      </g>
+      <!-- Dim background nodes -->
+      <circle cx="336"  cy="48"  r="1"   fill="#c8ff00" fill-opacity="0.22"/>
+      <circle cx="528"  cy="96"  r="1"   fill="#c8ff00" fill-opacity="0.18"/>
+      <circle cx="96"   cy="192" r="1"   fill="#c8ff00" fill-opacity="0.18"/>
+      <circle cx="288"  cy="240" r="1"   fill="#c8ff00" fill-opacity="0.2"/>
+      <circle cx="432"  cy="144" r="1.5" fill="#c8ff00" fill-opacity="0.28"/>
+      <circle cx="576"  cy="240" r="1"   fill="#c8ff00" fill-opacity="0.18"/>
+      <circle cx="96"   cy="384" r="1"   fill="#c8ff00" fill-opacity="0.15"/>
+      <circle cx="480"  cy="336" r="1.5" fill="#c8ff00" fill-opacity="0.25"/>
+      <circle cx="576"  cy="432" r="1"   fill="#c8ff00" fill-opacity="0.15"/>
+      <!-- Bright wave-intersection nodes -->
+      <circle cx="192"  cy="96"  r="1.5" fill="#c8ff00" fill-opacity="0.4"  filter="url(#hv-ng)"/>
+      <circle cx="480"  cy="144" r="2"   fill="#c8ff00" fill-opacity="0.5"  filter="url(#hv-ng)"/>
+      <circle cx="192"  cy="192" r="2.5" fill="#c8ff00" fill-opacity="0.65" filter="url(#hv-ng)"/>
+      <circle cx="300"  cy="185" r="3.5" fill="#c8ff00" fill-opacity="0.88" filter="url(#hv-ng)"/>
+      <circle cx="480"  cy="192" r="2"   fill="#c8ff00" fill-opacity="0.5"  filter="url(#hv-ng)"/>
+      <circle cx="144"  cy="305" r="2"   fill="#c8ff00" fill-opacity="0.42" filter="url(#hv-ng)"/>
+      <circle cx="365"  cy="305" r="4"   fill="#c8ff00" fill-opacity="0.9"  filter="url(#hv-ng)"/>
+      <circle cx="528"  cy="290" r="1.5" fill="#c8ff00" fill-opacity="0.32"/>
+      <circle cx="240"  cy="425" r="2"   fill="#c8ff00" fill-opacity="0.42" filter="url(#hv-ng)"/>
+      <circle cx="432"  cy="432" r="2.5" fill="#c8ff00" fill-opacity="0.52" filter="url(#hv-ng)"/>
+      <!-- Mesh connection lines -->
+      <line x1="192" y1="192" x2="300" y2="185" stroke="#c8ff00" stroke-width="0.6" stroke-opacity="0.25"/>
+      <line x1="300" y1="185" x2="480" y2="192" stroke="#c8ff00" stroke-width="0.6" stroke-opacity="0.2"/>
+      <line x1="192" y1="192" x2="144" y2="305" stroke="#c8ff00" stroke-width="0.5" stroke-opacity="0.18"/>
+      <line x1="365" y1="305" x2="480" y2="192" stroke="#c8ff00" stroke-width="0.5" stroke-opacity="0.18"/>
+      <line x1="144" y1="305" x2="365" y2="305" stroke="#c8ff00" stroke-width="0.5" stroke-opacity="0.2"/>
+      <line x1="365" y1="305" x2="432" y2="432" stroke="#c8ff00" stroke-width="0.4" stroke-opacity="0.15"/>
+    </svg>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span data-i18n="hero.scroll">Scroll</span></div>
 </section>
