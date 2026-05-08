@@ -6,7 +6,7 @@
 <title>Voltex Agency — Stop losing restaurant clients. Automate in 48h.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;overflow-wrap:break-word;min-width:0}
 :root{--black:#0a0a0a;--white:#f5f2ed;--accent:#c8ff00;--red:#ff4444;--gray:#141414;--gray-mid:#222;--gray-light:#777;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
@@ -32,8 +32,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta-mob{display:none}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.02) 1px,transparent 1px);background-size:64px 64px}
-.hero-content{display:flex;flex-direction:column;max-width:580px}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr;align-items:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.02) 1px,transparent 1px);background-size:64px 64px}
+.hero-content{display:flex;flex-direction:column;max-width:580px;position:relative;z-index:1}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;border-radius:50%}
 .hero-tag.accent{background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.25);color:var(--accent)}
@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .scroll-line{width:36px;height:1px;background:var(--gray-light)}
 
 /* HERO VISUAL (Three.js) */
-.hero-visual{position:relative;height:100%;min-height:520px;overflow:hidden}
+.hero-visual{position:absolute;inset:0;height:auto;min-height:0;overflow:hidden;z-index:0;pointer-events:none}
 .hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 60% 50%,rgba(200,255,0,.07) 0%,transparent 70%);pointer-events:none;z-index:0}
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block}
 
@@ -188,7 +188,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .hero-actions{flex-direction:column;align-items:stretch}
   .btn-primary,.btn-secondary{text-align:center;justify-content:center;padding:.85rem 1.5rem;font-size:.9rem}
   .stats-bar{grid-template-columns:repeat(2,1fr);padding:1.8rem 1.2rem;gap:1.2rem}
-  .stat-num{font-size:2.2rem}
+  .stat-num{font-size:2.2rem;white-space:normal}
+  .stat-label{max-width:none}
+  .loss-num{font-size:2.6rem}
+  .hero-visual{display:none}
   section{padding:3.5rem 1.2rem}
   .problem-inner{grid-template-columns:1fr;gap:2.5rem}
   .pain-grid{grid-template-columns:1fr}
