@@ -3,57 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voltex Agency — We bring clients to your business 24/7</title>
+<title>Voltex Agency — Stop losing restaurant clients. Automate in 48h.</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-[class*="stat-num"],[class*="step-num"],[class*="case-result-num"]{font-style:normal!important;font-variant-numeric:tabular-nums}
-:root{--black:#0a0a0a;--white:#f5f2ed;--accent:#c8ff00;--gray:#141414;--gray-mid:#222;--gray-light:#777;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}
+:root{--black:#0a0a0a;--white:#f5f2ed;--accent:#c8ff00;--red:#ff4444;--gray:#141414;--gray-mid:#222;--gray-light:#777;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:1.1rem 4rem;background:rgba(10,10,10,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.05)}
-.logo{font-family:var(--font-display);font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:var(--white);text-decoration:none;flex-shrink:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:1.1rem 4rem;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+.logo{font-family:var(--font-display);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:var(--white);text-decoration:none;flex-shrink:0}
 .logo span{color:var(--accent)}
 .nav-links{flex:1;display:flex;justify-content:center;gap:2rem;list-style:none}
 .nav-links a{color:var(--gray-light);text-decoration:none;font-size:.85rem;transition:color .2s}
 .nav-links a:hover{color:var(--white)}
 .nav-right{display:flex;align-items:center;gap:1.2rem;flex-shrink:0}
+.lang-switcher{position:relative}
+.lang-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.35rem .8rem;border-radius:100px;font-family:var(--font-body);font-size:.78rem;cursor:pointer;display:flex;align-items:center;gap:.35rem;transition:background .2s;white-space:nowrap}
+.lang-btn:hover{background:rgba(255,255,255,.1)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;min-width:155px;display:none;flex-direction:column;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.lang-dropdown.open{display:flex}
+.lang-option{padding:.65rem 1rem;font-size:.82rem;cursor:pointer;display:flex;align-items:center;gap:.55rem;color:var(--gray-light);transition:background .15s,color .15s}
+.lang-option:hover{background:rgba(255,255,255,.05);color:var(--white)}
+.lang-option.active{color:var(--accent)}
 .nav-cta{background:var(--accent);color:var(--black);padding:.5rem 1.2rem;border-radius:100px;font-weight:700;font-size:.82rem;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap}
 .nav-cta:hover{background:#d4ff1a;transform:translateY(-1px)}
 .nav-cta-mob{display:none}
 
-/* LANG */
-.lang-switcher{position:relative}
-.lang-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--white);padding:.35rem .8rem;border-radius:100px;font-family:var(--font-body);font-size:.78rem;cursor:pointer;display:flex;align-items:center;gap:.35rem;transition:background .2s;white-space:nowrap}
-.lang-btn:hover{background:rgba(255,255,255,0.1)}
-.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);border-radius:12px;overflow:hidden;min-width:155px;display:none;flex-direction:column;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.6)}
-.lang-dropdown.open{display:flex}
-.lang-option{padding:.65rem 1rem;font-size:.82rem;cursor:pointer;display:flex;align-items:center;gap:.55rem;color:var(--gray-light);transition:background .15s,color .15s}
-.lang-option:hover{background:rgba(255,255,255,0.05);color:var(--white)}
-.lang-option.active{color:var(--accent)}
-
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.022) 1px,transparent 1px);background-size:64px 64px}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:2rem;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.02) 1px,transparent 1px);background-size:64px 64px}
 .hero-content{display:flex;flex-direction:column;max-width:580px}
-.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.2);color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
-.hero-tag::before{content:'';width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
+.hero-tag::before{content:'';width:5px;height:5px;border-radius:50%}
+.hero-tag.accent{background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.25);color:var(--accent)}
+.hero-tag.accent::before{background:var(--accent);animation:pulse 2s infinite}
+.hero-tag.red{background:rgba(255,68,68,.1);border:1px solid rgba(255,68,68,.3);color:var(--red)}
+.hero-tag.red::before{background:var(--red);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-@keyframes mesh-drift{from{background-position:0 0}to{background-position:48px 48px}}
-@keyframes wave-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-/* HERO MESH VISUAL */
-.hero-visual{position:relative;height:100%;min-height:520px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.5) 15%,black 32%);-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.5) 15%,black 32%)}
-.hero-visual::before{content:'';position:absolute;inset:-50px;background-image:linear-gradient(rgba(200,255,0,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.08) 1px,transparent 1px);background-size:48px 48px;animation:mesh-drift 22s linear infinite}
-.hv-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.hv-w1{animation:wave-float 9s ease-in-out infinite}
-.hv-w2{animation:wave-float 11s ease-in-out infinite 1.5s}
-.hv-w3{animation:wave-float 8s ease-in-out infinite 3s}
-.hv-w4{animation:wave-float 13s ease-in-out infinite .7s}
-.hero h1{font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:1.8rem;max-width:850px}
+.hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,5.5vw,5rem);font-weight:800;line-height:.96;letter-spacing:-.04em;margin-bottom:1.6rem;max-width:780px}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:1.05rem;color:#a0a0a0;max-width:500px;font-weight:300;margin-bottom:1.6rem;line-height:1.8}
-.hero-proof{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:rgba(245,242,237,.45);margin-bottom:2rem;flex-wrap:wrap}
+.hero-sub{font-size:1.05rem;color:#a0a0a0;max-width:500px;font-weight:300;margin-bottom:1.5rem;line-height:1.8}
+.hero-proof{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:rgba(245,242,237,.42);margin-bottom:2rem;flex-wrap:wrap}
 .hero-proof-stars{color:var(--accent);letter-spacing:.06em;font-size:.82rem}
 .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .btn-primary{background:var(--accent);color:var(--black);font-family:var(--font-body);font-size:.92rem;font-weight:700;padding:.85rem 2rem;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
@@ -63,21 +54,63 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-scroll{position:absolute;bottom:2rem;left:4rem;display:flex;align-items:center;gap:.7rem;color:var(--gray-light);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
 .scroll-line{width:36px;height:1px;background:var(--gray-light)}
 
+/* HERO VISUAL (Three.js) */
+.hero-visual{position:relative;height:100%;min-height:520px;overflow:hidden}
+.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 60% 50%,rgba(200,255,0,.07) 0%,transparent 70%);pointer-events:none;z-index:0}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block}
+
 /* STATS */
 .stats-bar{border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:2.2rem 4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
 .stat{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.3rem}
-.stat-num{font-family:var(--font-body);font-size:2.4rem;font-weight:700;font-style:normal;letter-spacing:-.02em;color:var(--accent);line-height:1;white-space:nowrap;font-style:normal}
+.stat-num{font-family:var(--font-body);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--accent);line-height:1;white-space:nowrap}
+.stat-num.zero{color:var(--red)}
 .stat-label{font-size:.75rem;color:var(--gray-light);font-weight:300;line-height:1.3;text-align:center;max-width:120px}
 
 /* SECTIONS */
 section{padding:5.5rem 4rem}
-.section-tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem}
-.section-title{font-family:var(--font-display);font-size:clamp(1.9rem,3.8vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:1.3rem;max-width:650px}
+.section-tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:.9rem}
+.section-tag.accent{color:var(--accent)}
+.section-tag.red{color:var(--red)}
+.section-title{font-family:var(--font-display);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:1.3rem;max-width:700px}
+.section-sub{color:#999;max-width:520px;font-weight:300;font-size:.95rem;line-height:1.75}
+
+/* PROBLEM */
+#problem{background:var(--gray)}
+.problem-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
+.pain-card{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);border-left:3px solid var(--red);border-radius:12px;padding:1.4rem 1.6rem}
+.pain-icon{font-size:1.3rem;margin-bottom:.7rem}
+.pain-title{font-family:var(--font-display);font-size:.9rem;font-weight:700;margin-bottom:.4rem;color:var(--white)}
+.pain-desc{font-size:.83rem;color:#999;line-height:1.65;font-weight:300}
+.loss-card{background:rgba(255,68,68,.05);border:1px solid rgba(255,68,68,.18);border-radius:18px;padding:2.5rem;text-align:center;margin-top:2rem}
+.loss-num{font-family:var(--font-display);font-size:3.8rem;font-weight:800;color:var(--red);letter-spacing:-.04em;line-height:1;margin-bottom:.6rem}
+.loss-title{font-size:.95rem;color:var(--white);font-weight:500;margin-bottom:.8rem}
+.loss-desc{font-size:.78rem;color:#888;line-height:1.65;max-width:320px;margin:0 auto}
+
+/* CASES */
+#cases{background:var(--black)}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.case-card{background:var(--gray);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s;cursor:default;display:flex;flex-direction:column;justify-content:space-between}
+.case-card:hover{border-color:rgba(200,255,0,.3);transform:translateY(-4px)}
+.case-niche{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem}
+.case-title{font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:.7rem;letter-spacing:-.01em;line-height:1.25}
+.case-desc{color:#999;font-size:.88rem;line-height:1.7;font-weight:300;margin-bottom:0;flex:1}
+.case-results{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;margin-top:1.5rem;text-align:center}
+.case-result-num{font-family:var(--font-body);font-size:1.3rem;font-weight:700;color:var(--accent);line-height:1.15}
+.case-result-text{color:var(--gray-light);font-size:.72rem;font-weight:300;line-height:1.3;margin-top:.2rem}
+
+/* CTA2 */
+#cta2{background:var(--gray)}
+.cta2-inner{max-width:700px;margin:0 auto;text-align:center}
+.cta2-inner .section-title{max-width:none;margin-bottom:1.2rem}
+.cta2-sub{color:#999;font-size:.98rem;line-height:1.8;font-weight:300;margin-bottom:2.2rem}
+.cta2-guarantee{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(245,242,237,.45);margin-top:1.2rem}
+.cta2-guarantee::before{content:'✓';color:var(--accent);font-weight:700;font-size:.85rem}
 
 /* SERVICES */
-#services{background:var(--gray)}
+#services{background:var(--black)}
 .services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap}
-.services-desc{color:var(--gray-light);max-width:340px;font-weight:300;font-size:.9rem;line-height:1.7}
+.services-desc{color:#999;max-width:360px;font-weight:300;font-size:.9rem;line-height:1.7}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden}
 .service-card{background:var(--gray);padding:2rem;transition:background .3s;position:relative;overflow:hidden;cursor:default}
 .service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
@@ -85,59 +118,34 @@ section{padding:5.5rem 4rem}
 .service-card:hover::after{transform:scaleX(1)}
 .service-icon{width:42px;height:42px;background:rgba(200,255,0,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.2rem}
 .service-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.01em}
-.service-desc{color:#999;font-size:.9rem;line-height:1.7;font-weight:300}
+.service-desc{color:#999;font-size:.88rem;line-height:1.7;font-weight:300}
 
 /* PROCESS */
-#process{background:var(--black)}
+#process{background:var(--gray)}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;align-items:start}
 .process-step{position:relative;display:flex;flex-direction:column;padding:.5rem;border-radius:12px;transition:background .3s}
 .process-step:hover{background:rgba(200,255,0,.03)}
 .process-step:not(:last-child)::after{content:'→';position:absolute;top:1.2rem;right:-1rem;color:var(--accent);font-size:1rem;opacity:0;transition:opacity .3s,transform .3s}
 .process-step:hover:not(:last-child)::after{opacity:1;transform:translateX(4px)}
-.step-num{font-family:var(--font-body);font-size:2.8rem;font-weight:700;color:rgba(200,255,0,.35);font-style:normal;line-height:1;margin-bottom:1rem;letter-spacing:-.04em;transition:color .3s}
-.process-step:hover .step-num{color:rgba(200,255,0,.7)}
+.step-num{font-family:var(--font-body);font-size:2.8rem;font-weight:700;color:rgba(200,255,0,.3);line-height:1;margin-bottom:1rem;letter-spacing:-.04em;transition:color .3s}
+.process-step:hover .step-num{color:rgba(200,255,0,.65)}
 .step-title{font-family:var(--font-display);font-size:.9rem;font-weight:700;margin-bottom:.45rem}
 .step-desc{color:#999;font-size:.88rem;line-height:1.65;font-weight:300}
 
-/* CASES */
-#cases{background:var(--gray)}
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
-.case-card{background:var(--gray-mid);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s;cursor:default;display:flex;flex-direction:column;justify-content:space-between;height:100%}
-.case-card:hover{border-color:rgba(200,255,0,.3);transform:translateY(-4px)}
-.case-content{flex:1}
-.case-niche{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1rem}
-.case-title{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:.7rem;letter-spacing:-.01em}
-.case-desc{color:#999;font-size:.9rem;line-height:1.7;font-weight:300;margin-bottom:0}
-.case-results{display:flex;flex-direction:column;gap:.6rem;border-top:1px solid rgba(255,255,255,.08);padding-top:1.2rem;margin-top:1.5rem}
-.case-result{display:grid;grid-template-columns:72px 1fr;align-items:center;gap:.5rem}
-.case-result-num{font-family:var(--font-body);font-size:1.2rem;font-weight:700;color:var(--accent);line-height:1.2;font-style:normal}
-.case-result-text{color:var(--gray-light);font-size:.8rem;font-weight:300;line-height:1.3}
-
-/* NICHES */
-#niches{background:var(--black)}
-.niches-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:3rem}
-.niche-card{border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.6rem 1.8rem;display:flex;align-items:flex-start;gap:1.1rem;transition:border-color .3s,background .3s;cursor:default}
-.niche-card:hover{border-color:rgba(200,255,0,.25);background:rgba(200,255,0,.02)}
-.niche-emoji{font-size:1.6rem;flex-shrink:0;margin-top:.1rem}
-.niche-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:.3rem;letter-spacing:-.01em}
-.niche-desc{color:#999;font-size:.88rem;line-height:1.65;font-weight:300}
-
 /* CONTACT */
-#contact{background:var(--gray)}
+#contact{background:var(--black)}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .contact-info{margin-top:1.8rem;display:flex;flex-direction:column;gap:.8rem}
 .contact-item{display:flex;align-items:center;gap:.9rem;font-size:.86rem}
 .contact-item a,.contact-item span{color:var(--white);text-decoration:none;transition:color .2s}
 .contact-item a:hover{color:var(--accent)}
-.contact-item-icon{width:32px;height:32px;background:rgba(255,255,255,.05);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:var(--accent);flex-shrink:0;letter-spacing:.02em}
+.contact-item-icon{width:32px;height:32px;background:rgba(255,255,255,.05);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
 .contact-form{display:flex;flex-direction:column;gap:1rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-label{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-light);font-weight:500}
-.form-input,.form-select,.form-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem .95rem;color:var(--white);font-family:var(--font-body);font-size:.86rem;font-weight:300;outline:none;transition:border-color .2s,background .2s;width:100%}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(200,255,0,.4);background:rgba(200,255,0,.03)}
-.form-select option{background:#111}
-.form-textarea{min-height:100px;resize:vertical}
+.form-input,.form-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem .95rem;color:var(--white);font-family:var(--font-body);font-size:.86rem;font-weight:300;outline:none;transition:border-color .2s,background .2s;width:100%}
+.form-input:focus,.form-textarea:focus{border-color:rgba(200,255,0,.4);background:rgba(200,255,0,.03)}
+.form-textarea{min-height:110px;resize:vertical}
 .form-submit{background:var(--accent);color:var(--black);font-family:var(--font-body);font-size:.92rem;font-weight:700;padding:.95rem;border-radius:100px;border:none;cursor:pointer;transition:background .2s,transform .15s;width:100%;margin-top:.2rem}
 .form-submit:hover{background:#d4ff1a;transform:translateY(-1px)}
 .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
@@ -175,29 +183,31 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .hero{padding:5.5rem 1.2rem 3rem;min-height:auto;grid-template-columns:1fr;gap:0}
   .hero-visual{display:none}
   .hero-scroll{display:none}
-  .hero h1{font-size:clamp(2.2rem,9vw,3.2rem);margin-bottom:1.2rem}
-  .hero-sub{font-size:.95rem;margin-bottom:2rem;max-width:100%}
+  .hero h1{font-size:clamp(2.2rem,9vw,3rem);margin-bottom:1.2rem}
+  .hero-sub{font-size:.95rem;margin-bottom:1.2rem;max-width:100%}
   .hero-actions{flex-direction:column;align-items:stretch}
   .btn-primary,.btn-secondary{text-align:center;justify-content:center;padding:.85rem 1.5rem;font-size:.9rem}
   .stats-bar{grid-template-columns:repeat(2,1fr);padding:1.8rem 1.2rem;gap:1.2rem}
   .stat-num{font-size:2.2rem}
   section{padding:3.5rem 1.2rem}
+  .problem-inner{grid-template-columns:1fr;gap:2.5rem}
+  .pain-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr}
+  .case-results{grid-template-columns:repeat(3,1fr)}
   .services-header{flex-direction:column;margin-bottom:2rem}
   .services-grid{grid-template-columns:1fr}
   .service-card{padding:1.6rem}
   .process-grid{grid-template-columns:1fr 1fr;gap:1.2rem}
   .process-step:not(:last-child)::after{display:none}
   .step-num{font-size:2.2rem}
-  .cases-grid{grid-template-columns:1fr}
-  .niches-grid{grid-template-columns:1fr}
   .contact-inner{grid-template-columns:1fr;gap:2.5rem}
-  .form-row{grid-template-columns:1fr}
   footer{flex-direction:column;align-items:flex-start;padding:1.8rem 1.2rem}
   .footer-links{flex-wrap:wrap;gap:1.2rem}
 }
 @media(max-width:480px){
   .logo{font-size:1.1rem}
   .process-grid{grid-template-columns:1fr}
+  .case-results{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -209,7 +219,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <ul class="nav-links">
     <li><a href="#services" data-i18n="nav.services">Services</a></li>
     <li><a href="#cases" data-i18n="nav.cases">Cases</a></li>
-    <li><a href="#niches" data-i18n="nav.niches">Industries</a></li>
+    <li><a href="#process" data-i18n="nav.process">How it works</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher">
@@ -226,90 +236,31 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
         <div class="lang-option" data-lang="nl" data-label="NL">🇳🇱 &nbsp;Nederlands</div>
       </div>
     </div>
-    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get Started</a>
-    <a href="#contact" class="nav-cta-mob" data-i18n="nav.cta">Get Started</a>
+    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Book a call</a>
+    <a href="#contact" class="nav-cta-mob" data-i18n="nav.cta">Book a call</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-tag" data-i18n="hero.tag">Automation Agency</div>
+    <div class="hero-tag red" data-i18n="hero.tag">Stop losing clients</div>
     <h1>
-      <span data-i18n="hero.h1a">Get more clients.</span><br>
-      <em data-i18n="hero.h1b">Automated in 48 hours.</em>
+      <span data-i18n="hero.h1a">You don't need more clients.</span><br>
+      <em data-i18n="hero.h1b">You lose the ones you already have.</em>
     </h1>
-    <p class="hero-sub" data-i18n="hero.sub">We build the website, booking system &amp; Telegram bot your barbershop, cafe or salon needs — so new clients find and book you 24/7, without lifting a finger.</p>
+    <p class="hero-sub" data-i18n="hero.sub">Every time someone tries to book your restaurant and gets no answer — they book somewhere else. We fix that. Permanently.</p>
     <div class="hero-proof">
       <span class="hero-proof-stars">★★★★★</span>
-      <span data-i18n="hero.proof">50+ businesses automated &middot; avg. 3.2&times; more bookings &middot; 48h launch</span>
+      <span data-i18n="hero.proof">50+ restaurants automated &middot; avg. 3.2&times; more reservations &middot; 48h launch</span>
     </div>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Get my free audit →</a>
+      <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Book a free call →</a>
       <a href="#cases" class="btn-secondary" data-i18n="hero.cta2">See client results</a>
     </div>
   </div>
   <div class="hero-visual" aria-hidden="true">
-    <svg class="hv-svg" viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <filter id="hv-glow" x="-40%" y="-150%" width="180%" height="400%">
-          <feGaussianBlur stdDeviation="5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="hv-ng" x="-150%" y="-150%" width="400%" height="400%">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <radialGradient id="hv-amb" cx="62%" cy="50%" r="55%">
-          <stop offset="0%"   stop-color="#c8ff00" stop-opacity="0.13"/>
-          <stop offset="55%"  stop-color="#c8ff00" stop-opacity="0.04"/>
-          <stop offset="100%" stop-color="#c8ff00" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="hv-wm" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-opacity="0"/>
-          <stop offset="22%"  stop-opacity="1"/>
-          <stop offset="100%" stop-opacity="0.75"/>
-        </linearGradient>
-        <mask id="hv-wmt"><rect width="600" height="720" fill="url(#hv-wm)"/></mask>
-      </defs>
-      <!-- Ambient glow -->
-      <rect width="600" height="720" fill="url(#hv-amb)"/>
-      <!-- Animated wave lines -->
-      <g mask="url(#hv-wmt)">
-        <path class="hv-w1" d="M 0 185 C 80 150 165 220 300 185 S 500 150 640 185" fill="none" stroke="#c8ff00" stroke-width="1"   stroke-opacity="0.32" filter="url(#hv-glow)"/>
-        <path class="hv-w2" d="M 0 305 C 100 262 225 348 365 305 S 545 262 640 298" fill="none" stroke="#c8ff00" stroke-width="1.5" stroke-opacity="0.48" filter="url(#hv-glow)"/>
-        <path class="hv-w3" d="M 0 425 C 80 390 165 460 300 425 S 500 390 640 425" fill="none" stroke="#c8ff00" stroke-width="0.8" stroke-opacity="0.22" filter="url(#hv-glow)"/>
-        <path class="hv-w4" d="M 0 548 C 100 515 225 581 365 548 S 545 515 640 548" fill="none" stroke="#c8ff00" stroke-width="0.6" stroke-opacity="0.14" filter="url(#hv-glow)"/>
-      </g>
-      <!-- Dim background nodes -->
-      <circle cx="336"  cy="48"  r="1"   fill="#c8ff00" fill-opacity="0.22"/>
-      <circle cx="528"  cy="96"  r="1"   fill="#c8ff00" fill-opacity="0.18"/>
-      <circle cx="96"   cy="192" r="1"   fill="#c8ff00" fill-opacity="0.18"/>
-      <circle cx="288"  cy="240" r="1"   fill="#c8ff00" fill-opacity="0.2"/>
-      <circle cx="432"  cy="144" r="1.5" fill="#c8ff00" fill-opacity="0.28"/>
-      <circle cx="576"  cy="240" r="1"   fill="#c8ff00" fill-opacity="0.18"/>
-      <circle cx="96"   cy="384" r="1"   fill="#c8ff00" fill-opacity="0.15"/>
-      <circle cx="480"  cy="336" r="1.5" fill="#c8ff00" fill-opacity="0.25"/>
-      <circle cx="576"  cy="432" r="1"   fill="#c8ff00" fill-opacity="0.15"/>
-      <!-- Bright wave-intersection nodes -->
-      <circle cx="192"  cy="96"  r="1.5" fill="#c8ff00" fill-opacity="0.4"  filter="url(#hv-ng)"/>
-      <circle cx="480"  cy="144" r="2"   fill="#c8ff00" fill-opacity="0.5"  filter="url(#hv-ng)"/>
-      <circle cx="192"  cy="192" r="2.5" fill="#c8ff00" fill-opacity="0.65" filter="url(#hv-ng)"/>
-      <circle cx="300"  cy="185" r="3.5" fill="#c8ff00" fill-opacity="0.88" filter="url(#hv-ng)"/>
-      <circle cx="480"  cy="192" r="2"   fill="#c8ff00" fill-opacity="0.5"  filter="url(#hv-ng)"/>
-      <circle cx="144"  cy="305" r="2"   fill="#c8ff00" fill-opacity="0.42" filter="url(#hv-ng)"/>
-      <circle cx="365"  cy="305" r="4"   fill="#c8ff00" fill-opacity="0.9"  filter="url(#hv-ng)"/>
-      <circle cx="528"  cy="290" r="1.5" fill="#c8ff00" fill-opacity="0.32"/>
-      <circle cx="240"  cy="425" r="2"   fill="#c8ff00" fill-opacity="0.42" filter="url(#hv-ng)"/>
-      <circle cx="432"  cy="432" r="2.5" fill="#c8ff00" fill-opacity="0.52" filter="url(#hv-ng)"/>
-      <!-- Mesh connection lines -->
-      <line x1="192" y1="192" x2="300" y2="185" stroke="#c8ff00" stroke-width="0.6" stroke-opacity="0.25"/>
-      <line x1="300" y1="185" x2="480" y2="192" stroke="#c8ff00" stroke-width="0.6" stroke-opacity="0.2"/>
-      <line x1="192" y1="192" x2="144" y2="305" stroke="#c8ff00" stroke-width="0.5" stroke-opacity="0.18"/>
-      <line x1="365" y1="305" x2="480" y2="192" stroke="#c8ff00" stroke-width="0.5" stroke-opacity="0.18"/>
-      <line x1="144" y1="305" x2="365" y2="305" stroke="#c8ff00" stroke-width="0.5" stroke-opacity="0.2"/>
-      <line x1="365" y1="305" x2="432" y2="432" stroke="#c8ff00" stroke-width="0.4" stroke-opacity="0.15"/>
-    </svg>
+    <canvas id="hero-canvas"></canvas>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span data-i18n="hero.scroll">Scroll</span></div>
 </section>
@@ -317,97 +268,134 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stat"><div class="stat-num">48h</div><div class="stat-label" data-i18n="stats.launch">From call to launch</div></div>
-  <div class="stat"><div class="stat-num">3.2×</div><div class="stat-label" data-i18n="stats.leads">Avg. booking increase in 30 days</div></div>
-  <div class="stat"><div class="stat-num">50+</div><div class="stat-label" data-i18n="stats.projects">Businesses automated</div></div>
-  <div class="stat"><div class="stat-num">24/7</div><div class="stat-label" data-i18n="stats.work">System works for you</div></div>
+  <div class="stat"><div class="stat-num">3.2×</div><div class="stat-label" data-i18n="stats.leads">More reservations on average</div></div>
+  <div class="stat"><div class="stat-num">50+</div><div class="stat-label" data-i18n="stats.projects">Restaurants automated</div></div>
+  <div class="stat"><div class="stat-num zero">0</div><div class="stat-label" data-i18n="stats.work">Missed reservations</div></div>
 </div>
 
-<!-- SERVICES -->
-<section id="services" class="reveal">
-  <div class="services-header">
+<!-- PROBLEM -->
+<section id="problem" class="reveal">
+  <div class="problem-inner">
     <div>
-      <div class="section-tag" data-i18n="services.tag">What we do</div>
-      <h2 class="section-title" data-i18n="services.title">Everything your business needs to grow</h2>
+      <div class="section-tag red" data-i18n="prob.tag">The real problem</div>
+      <h2 class="section-title" data-i18n="prob.title">Every empty table tonight is money you'll never get back.</h2>
+      <p class="section-sub" data-i18n="prob.sub">The restaurant industry runs on availability. When someone can't reach you, they don't wait.</p>
+      <div class="pain-grid">
+        <div class="pain-card reveal">
+          <div class="pain-icon">📵</div>
+          <div class="pain-title" data-i18n="pain1.t">Missed calls during service</div>
+          <p class="pain-desc" data-i18n="pain1.d">Your staff is busy. The phone rings. Nobody picks up. That client books somewhere else — forever.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">💬</div>
+          <div class="pain-title" data-i18n="pain2.t">Instagram DMs left unanswered</div>
+          <p class="pain-desc" data-i18n="pain2.d">Guests message asking about a table. By the time you reply, they've already eaten somewhere else.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">🪑</div>
+          <div class="pain-title" data-i18n="pain3.t">No-shows costing you real money</div>
+          <p class="pain-desc" data-i18n="pain3.d">Tables reserved but never confirmed. No reminder. No deposit. Empty seats on your busiest nights.</p>
+        </div>
+        <div class="pain-card reveal">
+          <div class="pain-icon">⏱</div>
+          <div class="pain-title" data-i18n="pain4.t">Staff wasting time on admin</div>
+          <p class="pain-desc" data-i18n="pain4.d">Your team shouldn't be answering the same questions over and over. They should focus on the guest in front of them.</p>
+        </div>
+      </div>
     </div>
-    <p class="services-desc" data-i18n="services.desc">No agencies with 20 managers. Just a tight team that builds, launches and delivers results.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card"><div class="service-icon">🌐</div><div class="service-title" data-i18n="s1.t">Landing & Website</div><p class="service-desc" data-i18n="s1.d">Fast site that looks sharp and converts visitors into paying clients. Not a template — built for your business.</p></div>
-    <div class="service-card"><div class="service-icon">📋</div><div class="service-title" data-i18n="s2.t">Online Booking Forms</div><p class="service-desc" data-i18n="s2.d">Clients book a table, a haircut or a session online. You get notified instantly — no more missed calls.</p></div>
-    <div class="service-card"><div class="service-icon">🤖</div><div class="service-title" data-i18n="s3.t">Telegram Bot</div><p class="service-desc" data-i18n="s3.d">Every inquiry lands in your Telegram. Name, contact, what they want — all in one message. Respond in 1 tap.</p></div>
-    <div class="service-card"><div class="service-icon">📊</div><div class="service-title" data-i18n="s4.t">Client Database</div><p class="service-desc" data-i18n="s4.d">All inquiries auto-saved to Google Sheets. You always know who wrote, when, and what they needed.</p></div>
-    <div class="service-card"><div class="service-icon">🔗</div><div class="service-title" data-i18n="s5.t">Integrations</div><p class="service-desc" data-i18n="s5.d">Instagram, Google Maps, payment systems — all connected to your automation pipeline seamlessly.</p></div>
-    <div class="service-card"><div class="service-icon">✨</div><div class="service-title" data-i18n="s6.t">Redesign & Upgrade</div><p class="service-desc" data-i18n="s6.d">Got an old site? We give it new life — new design, booking system, mobile version. From scratch or on top.</p></div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process" class="reveal">
-  <div class="section-tag" data-i18n="process.tag">How it works</div>
-  <h2 class="section-title" data-i18n="process.title">You talk — we build. 48 hours to launch.</h2>
-  <div class="process-grid">
-    <div class="process-step reveal"><div class="step-num">1</div><div class="step-title" data-i18n="p1.t">Free call</div><p class="step-desc" data-i18n="p1.d">We talk 20–30 min. You tell us about your business — we tell you exactly what will bring more clients.</p></div>
-    <div class="process-step reveal"><div class="step-num">2</div><div class="step-title" data-i18n="p2.t">We show the plan</div><p class="step-desc" data-i18n="p2.d">No blind development. You see a mockup before we write a single line of code. Changes are free.</p></div>
-    <div class="process-step reveal"><div class="step-num">3</div><div class="step-title" data-i18n="p3.t">We build fast</div><p class="step-desc" data-i18n="p3.d">Site + automation + Telegram bot — done in 48 hours. We keep you updated the whole time.</p></div>
-    <div class="process-step reveal"><div class="step-num">4</div><div class="step-title" data-i18n="p4.t">You get clients</div><p class="step-desc" data-i18n="p4.d">System goes live. First inquiry comes in. We stay on support so nothing breaks — ever.</p></div>
+    <div>
+      <div class="loss-card reveal">
+        <div class="loss-num" data-i18n="loss.num">€12,400</div>
+        <div class="loss-title" data-i18n="loss.title">Average annual revenue lost</div>
+        <div class="loss-desc" data-i18n="loss.desc">Per mid-size restaurant, from missed reservations and no-shows alone. (12 covers/week × €20 avg. ticket × 52 weeks)</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CASES -->
 <section id="cases" class="reveal">
-  <div class="section-tag" data-i18n="cases.tag">Real cases</div>
-  <h2 class="section-title" data-i18n="cases.title">What we built and what it gave</h2>
+  <div class="section-tag accent" data-i18n="cases.tag">Real results</div>
+  <h2 class="section-title" data-i18n="cases.title">Restaurants we've helped grow</h2>
   <div class="cases-grid">
     <div class="case-card reveal">
-      <div class="case-content">
-        <div class="case-niche" data-i18n="c1.niche">BARBERSHOP</div>
-        <div class="case-title" data-i18n="c1.title">Online booking replaced the admin</div>
-        <p class="case-desc" data-i18n="c1.desc">One person spent the whole day answering DMs and calls. We built a booking site and Telegram bot — now the system handles every inquiry automatically, 24/7.</p>
+      <div>
+        <div class="case-niche" data-i18n="c1.niche">ITALIAN RESTAURANT</div>
+        <div class="case-title" data-i18n="c1.title">From fully booked by accident to fully booked by design</div>
+        <p class="case-desc" data-i18n="c1.desc">Roma had great food but a broken booking process. Guests called during service when nobody could answer, then gave up. We built a direct booking page, Instagram integration, and automated confirmations.</p>
       </div>
       <div class="case-results">
-        <div class="case-result"><span class="case-result-num">+70%</span><span class="case-result-text" data-i18n="c1.r1">more bookings per month</span></div>
-        <div class="case-result"><span class="case-result-num">0</span><span class="case-result-text" data-i18n="c1.r2">missed inquiries</span></div>
-        <div class="case-result"><span class="case-result-num">2 days</span><span class="case-result-text" data-i18n="c1.r3">from brief to launch</span></div>
+        <div><div class="case-result-num">+58%</div><div class="case-result-text" data-i18n="c1.r1">reservations in 30 days</div></div>
+        <div><div class="case-result-num">−91%</div><div class="case-result-text" data-i18n="c1.r2">no-shows after system</div></div>
+        <div><div class="case-result-num">48h</div><div class="case-result-text" data-i18n="c1.r3">total setup time</div></div>
       </div>
     </div>
     <div class="case-card reveal">
-      <div class="case-content">
-        <div class="case-niche" data-i18n="c2.niche">BAR & RESTAURANT</div>
-        <div class="case-title" data-i18n="c2.title">Table booking without phone calls</div>
-        <p class="case-desc" data-i18n="c2.desc">The restaurant lost clients because no one answered the phone. We built a reservation system connected to Telegram — now every table gets booked online, no calls needed.</p>
+      <div>
+        <div class="case-niche" data-i18n="c2.niche">COCKTAIL BAR</div>
+        <div class="case-title" data-i18n="c2.title">+73% more weeknight bookings from Instagram alone</div>
+        <p class="case-desc" data-i18n="c2.desc">Noir had 4,200 Instagram followers and almost no reservations from them. We added a booking link to their bio, built automated welcome messages, and connected it all to their calendar.</p>
       </div>
       <div class="case-results">
-        <div class="case-result"><span class="case-result-num">+43%</span><span class="case-result-text" data-i18n="c2.r1">reservations per week</span></div>
-        <div class="case-result"><span class="case-result-num">−80%</span><span class="case-result-text" data-i18n="c2.r2">manual work for staff</span></div>
-        <div class="case-result"><span class="case-result-num">48h</span><span class="case-result-text" data-i18n="c2.r3">total launch time</span></div>
+        <div><div class="case-result-num">+73%</div><div class="case-result-text" data-i18n="c2.r1">weeknight bookings</div></div>
+        <div><div class="case-result-num">4.2k</div><div class="case-result-text" data-i18n="c2.r2">followers activated</div></div>
+        <div><div class="case-result-num">2 days</div><div class="case-result-text" data-i18n="c2.r3">setup to first booking</div></div>
       </div>
     </div>
     <div class="case-card reveal">
-      <div class="case-content">
-        <div class="case-niche" data-i18n="c3.niche">BEAUTY SALON</div>
-        <div class="case-title" data-i18n="c3.title">Instagram followers became real clients</div>
-        <p class="case-desc" data-i18n="c3.desc">8k Instagram followers, almost zero online bookings. We built a booking site linked to their bio — clients started booking directly, no DMs, no phone calls needed.</p>
+      <div>
+        <div class="case-niche" data-i18n="c3.niche">BRUNCH CAFÉ</div>
+        <div class="case-title" data-i18n="c3.title">The no-show problem: solved in 2 weeks</div>
+        <p class="case-desc" data-i18n="c3.desc">Bloom was losing 30% of Saturday covers to no-shows — their biggest revenue day. We implemented automated confirmation emails and a simple deposit system. No-shows dropped 85% in two weeks.</p>
       </div>
       <div class="case-results">
-        <div class="case-result"><span class="case-result-num">+91%</span><span class="case-result-text" data-i18n="c3.r1">online bookings in month 1</span></div>
-        <div class="case-result"><span class="case-result-num">3×</span><span class="case-result-text" data-i18n="c3.r2">conversion from Instagram</span></div>
-        <div class="case-result"><span class="case-result-num">1 day</span><span class="case-result-text" data-i18n="c3.r3">to first paid booking</span></div>
+        <div><div class="case-result-num">−85%</div><div class="case-result-text" data-i18n="c3.r1">no-shows in 2 weeks</div></div>
+        <div><div class="case-result-num">+22%</div><div class="case-result-text" data-i18n="c3.r2">Saturday revenue</div></div>
+        <div><div class="case-result-num">1 week</div><div class="case-result-text" data-i18n="c3.r3">to first results</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NICHES -->
-<section id="niches" class="reveal">
-  <div class="section-tag" data-i18n="niches.tag">Who we work with</div>
-  <h2 class="section-title" data-i18n="niches.title">We know your business — not just tech</h2>
-  <div class="niches-grid">
-    <div class="niche-card"><div class="niche-emoji">💈</div><div><div class="niche-title" data-i18n="n1.t">Barbershops & Hair Salons</div><p class="niche-desc" data-i18n="n1.d">Online booking by master, time slots, reminders before visit. Clients book — you just cut.</p></div></div>
-    <div class="niche-card"><div class="niche-emoji">🍕</div><div><div class="niche-title" data-i18n="n2.t">Cafes, Bars & Restaurants</div><p class="niche-desc" data-i18n="n2.d">Table reservations, digital menu, event booking. Orders go straight to the manager — no calls needed.</p></div></div>
-    <div class="niche-card"><div class="niche-emoji">💅</div><div><div class="niche-title" data-i18n="n3.t">Beauty Salons & Spas</div><p class="niche-desc" data-i18n="n3.d">Booking page, master profiles, price list, reminders. Your clients remember you — and come back.</p></div></div>
-    <div class="niche-card"><div class="niche-emoji">🏋️</div><div><div class="niche-title" data-i18n="n4.t">Fitness & Gyms</div><p class="niche-desc" data-i18n="n4.d">Class schedule, session booking, memberships. Members sign up themselves — no admin needed.</p></div></div>
-    <div class="niche-card"><div class="niche-emoji">🚗</div><div><div class="niche-title" data-i18n="n5.t">Auto Repair Shops</div><p class="niche-desc" data-i18n="n5.d">Online repair requests, estimates, status updates. Clients always know what's happening with their car.</p></div></div>
-    <div class="niche-card"><div class="niche-emoji">🏪</div><div><div class="niche-title" data-i18n="n6.t">Any Local Business</div><p class="niche-desc" data-i18n="n6.d">If you have clients and want more of them online — we'll figure out the exact system that works for you.</p></div></div>
+<!-- CTA2 -->
+<section id="cta2" class="reveal">
+  <div class="cta2-inner">
+    <div class="section-tag accent" data-i18n="cta2.tag">Our approach</div>
+    <h2 class="section-title" data-i18n="cta2.title">We don't sell packages. We build what actually works for you.</h2>
+    <p class="cta2-sub" data-i18n="cta2.sub">Every restaurant is different. Before we propose anything, we spend 20 minutes understanding your exact situation — then tell you honestly what will move the needle.</p>
+    <a href="#contact" class="btn-primary" data-i18n="cta2.btn">Book free 20-min call →</a>
+    <div class="cta2-guarantee" data-i18n="cta2.guarantee">Not happy with the results? We keep working for free until it's perfect.</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="reveal">
+  <div class="services-header">
+    <div>
+      <div class="section-tag accent" data-i18n="services.tag">What we build</div>
+      <h2 class="section-title" data-i18n="services.title">Everything your restaurant needs to fill tables</h2>
+    </div>
+    <p class="services-desc" data-i18n="services.desc">Not a template. Not a package. A custom system built around how your restaurant actually works.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon">🌐</div><div class="service-title" data-i18n="s1.t">Restaurant Website</div><p class="service-desc" data-i18n="s1.d">A fast, conversion-focused site built for restaurants. Menu, booking, about, reviews — everything guests need to say yes.</p></div>
+    <div class="service-card"><div class="service-icon">📅</div><div class="service-title" data-i18n="s2.t">Online Reservations</div><p class="service-desc" data-i18n="s2.d">Direct booking on your site and Instagram. Guests pick a time, enter details, get a confirmation. Zero phone calls needed.</p></div>
+    <div class="service-card"><div class="service-icon">✉️</div><div class="service-title" data-i18n="s3.t">Email Notifications</div><p class="service-desc" data-i18n="s3.d">Automated confirmation and reminder emails sent to every guest. Reduce no-shows by up to 85% without lifting a finger.</p></div>
+    <div class="service-card"><div class="service-icon">📊</div><div class="service-title" data-i18n="s4.t">Guest CRM</div><p class="service-desc" data-i18n="s4.d">Every reservation saved with guest name, contact, and history. Know your regulars. Spot patterns. Grow smarter.</p></div>
+    <div class="service-card"><div class="service-icon">📸</div><div class="service-title" data-i18n="s5.t">Instagram Integration</div><p class="service-desc" data-i18n="s5.d">Turn followers into guests. Booking link in bio, automated responses, reservation tracking — all connected.</p></div>
+    <div class="service-card"><div class="service-icon">✨</div><div class="service-title" data-i18n="s6.t">Website Redesign</div><p class="service-desc" data-i18n="s6.d">Have a site that isn't converting? We redesign it around your guest journey and connect it to your new booking system.</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="reveal">
+  <div class="section-tag accent" data-i18n="process.tag">How it works</div>
+  <h2 class="section-title" data-i18n="process.title">From first call to live system — in 48 hours.</h2>
+  <div class="process-grid">
+    <div class="process-step reveal"><div class="step-num">1</div><div class="step-title" data-i18n="p1.t">Free call</div><p class="step-desc" data-i18n="p1.d">20 minutes. You tell us about your restaurant — we listen, ask the right questions, and tell you honestly what we'd build.</p></div>
+    <div class="process-step reveal"><div class="step-num">2</div><div class="step-title" data-i18n="p2.t">Custom plan</div><p class="step-desc" data-i18n="p2.d">No generic packages. A specific plan for your restaurant: what we build, how long, what it costs. You approve every step.</p></div>
+    <div class="process-step reveal"><div class="step-num">3</div><div class="step-title" data-i18n="p3.t">We build it</div><p class="step-desc" data-i18n="p3.d">Design, development, automation — done in 48 hours. We handle everything. You just review and give feedback.</p></div>
+    <div class="process-step reveal"><div class="step-num">4</div><div class="step-title" data-i18n="p4.t">You go live</div><p class="step-desc" data-i18n="p4.d">We launch, monitor, and stay on support. If anything doesn't perform as promised, we fix it for free.</p></div>
   </div>
 </section>
 
@@ -415,44 +403,38 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 <section id="contact" class="reveal">
   <div class="contact-inner">
     <div>
-      <div class="section-tag" data-i18n="contact.tag">Let's talk</div>
-      <h2 class="section-title" data-i18n="contact.title">Write to us — get a free audit of your business</h2>
-      <p style="color:var(--gray-light);font-weight:300;font-size:.9rem;line-height:1.75;margin-top:1rem;" data-i18n="contact.desc">Tell us what you do and where you're losing clients. We'll show you exactly how to fix it — for free, no strings attached.</p>
+      <div class="section-tag accent" data-i18n="contact.tag">Let's talk</div>
+      <h2 class="section-title" data-i18n="contact.title">Book a free 20-minute call</h2>
+      <p style="color:#999;font-weight:300;font-size:.9rem;line-height:1.75;margin-top:1rem;" data-i18n="contact.desc">Tell us about your restaurant and your biggest booking challenge. We'll tell you exactly what we'd do — no pitch, no pressure.</p>
       <div class="contact-info">
-        <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><a href="mailto:voltexagencyy@gmail.com" id="emailLink">voltexagencyy@gmail.com</a></div>
-        <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div><a href="https://t.me/voltexagency" target="_blank">@voltexagency</a></div>
-        <div class="contact-item"><div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div><a href="https://www.instagram.com/voltex.agency" target="_blank">@voltex.agency</a></div>
-        <div class="contact-item"><div class="contact-item-icon">UA</div><span data-i18n="contact.loc">Ukraine — working worldwide online</span></div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+          <a href="mailto:voltexagencyy@gmail.com" id="emailLink">voltexagencyy@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <a href="https://www.instagram.com/voltex.agency" target="_blank">@voltex.agency</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon" style="font-size:.65rem;font-weight:700;letter-spacing:.02em">UA</div>
+          <span data-i18n="contact.loc">Ukraine — working worldwide online</span>
+        </div>
       </div>
     </div>
     <div>
       <div class="contact-form" id="contactForm">
         <div style="display:none"><input type="text" name="_honey" id="_honey" tabindex="-1" autocomplete="off"></div>
-        <div class="form-row">
-          <div class="form-group"><label class="form-label" data-i18n="f.name">Your name</label><input type="text" class="form-input" id="fname" placeholder="John Smith"></div>
-          <div class="form-group"><label class="form-label" data-i18n="f.contact">Phone or Telegram</label><input type="text" class="form-input" id="fcontact" placeholder="+1 or @username"></div>
-        </div>
-        <div class="form-group"><label class="form-label" data-i18n="f.email">Email</label><input type="email" class="form-input" id="femail" placeholder="your@email.com"></div>
-        <div class="form-group">
-          <label class="form-label" data-i18n="f.biz">Your business type</label>
-          <select class="form-select" id="fbiz">
-            <option value="" data-i18n="f.biz.ph">Select type</option>
-            <option data-i18n="biz.1">Barbershop / Hair Salon</option>
-            <option data-i18n="biz.2">Cafe / Bar / Restaurant</option>
-            <option data-i18n="biz.3">Beauty Salon / Spa</option>
-            <option data-i18n="biz.4">Fitness / Gym</option>
-            <option data-i18n="biz.5">Auto Repair Shop</option>
-            <option data-i18n="biz.6">Other</option>
-          </select>
-        </div>
-        <div class="form-group"><label class="form-label" data-i18n="f.msg">Where are you losing clients?</label><textarea class="form-textarea" id="fmsg" placeholder="e.g. no website, no online booking, Instagram followers don't convert..."></textarea></div>
-        <button class="form-submit" id="submitBtn" data-i18n="f.submit">Get free audit →</button>
-        <p class="form-note" data-i18n="f.note">⚡ We respond within 1 hour. No spam, no pushy sales.</p>
+        <div class="form-group"><label class="form-label" data-i18n="f.name">Your name</label><input type="text" class="form-input" id="fname" placeholder="John Smith"></div>
+        <div class="form-group"><label class="form-label" data-i18n="f.contact">Phone or email</label><input type="text" class="form-input" id="fcontact" placeholder="+1 or your@email.com"></div>
+        <div class="form-group"><label class="form-label" data-i18n="f.restaurant">Restaurant name</label><input type="text" class="form-input" id="frestarant" placeholder="e.g. Bella Roma"></div>
+        <div class="form-group"><label class="form-label" data-i18n="f.challenge">Biggest booking challenge</label><textarea class="form-textarea" id="fchallenge" placeholder="e.g. missed calls, no-shows, no online booking..."></textarea></div>
+        <button class="form-submit" id="submitBtn" data-i18n="f.submit">Book my free call →</button>
+        <p class="form-note" data-i18n="f.note">⚡ We respond within 2 hours. No pitch, just a real conversation.</p>
       </div>
       <div class="success-msg" id="successMsg">
         <div class="success-icon">🚀</div>
-        <div class="success-title" data-i18n="ok.title">Got it! We'll be in touch soon.</div>
-        <div class="success-sub" data-i18n="ok.sub">Check your Telegram or email — we respond within 1 hour during business hours.</div>
+        <div class="success-title" data-i18n="ok.title">Call request received!</div>
+        <div class="success-sub" data-i18n="ok.sub">We'll be in touch within 2 hours to schedule your free call.</div>
       </div>
     </div>
   </div>
@@ -463,269 +445,270 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <ul class="footer-links">
     <li><a href="#services" data-i18n="nav.services">Services</a></li>
     <li><a href="#cases" data-i18n="nav.cases">Cases</a></li>
-    <li><a href="#contact" data-i18n="nav.cta">Get Started</a></li>
+    <li><a href="#contact" data-i18n="nav.cta">Book a call</a></li>
   </ul>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const T = {
   en:{
-    "nav.services":"Services","nav.cases":"Cases","nav.niches":"Industries","nav.cta":"Get Started",
-    "hero.tag":"Automation Agency","hero.h1a":"Get more clients.","hero.h1b":"Automated in 48 hours.",
-    "hero.sub":"We build the website, booking system & Telegram bot your barbershop, cafe or salon needs — so new clients find and book you 24/7, without lifting a finger.",
-    "hero.proof":"50+ businesses automated · avg. 3.2× more bookings · 48h launch",
-    "hero.cta1":"Get my free audit →","hero.cta2":"See client results","hero.scroll":"Scroll",
-    "stats.launch":"From call to launch","stats.leads":"Avg. booking increase in 30 days","stats.projects":"Businesses automated","stats.work":"System works for you",
-    "services.tag":"What we do","services.title":"Everything your business needs to grow",
-    "services.desc":"No agencies with 20 managers. Just a tight team that builds, launches and delivers results.",
-    "s1.t":"Landing & Website","s1.d":"Fast site that looks sharp and converts visitors into paying clients. Not a template — built for your business.",
-    "s2.t":"Online Booking Forms","s2.d":"Clients book a table, a haircut or a session online. You get notified instantly — no more missed calls.",
-    "s3.t":"Telegram Bot","s3.d":"Every inquiry lands in your Telegram. Name, contact, what they want — all in one message. Respond in 1 tap.",
-    "s4.t":"Client Database","s4.d":"All inquiries auto-saved to Google Sheets. You always know who wrote, when, and what they needed.",
-    "s5.t":"Integrations","s5.d":"Instagram, Google Maps, payment systems — all connected to your automation pipeline seamlessly.",
-    "s6.t":"Redesign & Upgrade","s6.d":"Got an old site? We give it new life — new design, booking system, mobile version. From scratch or on top.",
-    "process.tag":"How it works","process.title":"You talk — we build. 48 hours to launch.",
-    "p1.t":"Free call","p1.d":"We talk 20–30 min. You tell us about your business — we tell you exactly what will bring more clients.",
-    "p2.t":"We show the plan","p2.d":"No blind development. You see a mockup before we write a single line of code. Changes are free.",
-    "p3.t":"We build fast","p3.d":"Site + automation + Telegram bot — done in 48 hours. We keep you updated the whole time.",
-    "p4.t":"You get clients","p4.d":"System goes live. First inquiry comes in. We stay on support so nothing breaks — ever.",
-    "cases.tag":"Real cases","cases.title":"What we built and what it gave",
-    "c1.niche":"BARBERSHOP","c1.title":"Online booking replaced the admin","c1.desc":"One person spent the whole day answering DMs and calls. We built a booking site and Telegram bot — now the system handles every inquiry automatically, 24/7.",
-    "c1.r1":"more bookings per month","c1.r2":"missed inquiries","c1.r3":"from brief to launch",
-    "c2.niche":"BAR & RESTAURANT","c2.title":"Table booking without phone calls","c2.desc":"The restaurant lost clients because no one answered the phone. We built a reservation system connected to Telegram — now every table gets booked online, no calls needed.",
-    "c2.r1":"reservations per week","c2.r2":"manual work for staff","c2.r3":"total launch time",
-    "c3.niche":"BEAUTY SALON","c3.title":"Instagram followers became real clients","c3.desc":"8k Instagram followers, almost zero online bookings. We built a booking site linked to their bio — clients started booking directly, no DMs, no phone calls needed.",
-    "c3.r1":"online bookings in month 1","c3.r2":"conversion from Instagram","c3.r3":"to first paid booking",
-    "niches.tag":"Who we work with","niches.title":"We know your business — not just tech",
-    "n1.t":"Barbershops & Hair Salons","n1.d":"Online booking by master, time slots, reminders before visit. Clients book — you just cut.",
-    "n2.t":"Cafes, Bars & Restaurants","n2.d":"Table reservations, digital menu, event booking. Orders go straight to the manager — no calls needed.",
-    "n3.t":"Beauty Salons & Spas","n3.d":"Booking page, master profiles, price list, reminders. Your clients remember you — and come back.",
-    "n4.t":"Fitness & Gyms","n4.d":"Class schedule, session booking, memberships. Members sign up themselves — no admin needed.",
-    "n5.t":"Auto Repair Shops","n5.d":"Online repair requests, estimates, status updates. Clients always know what's happening with their car.",
-    "n6.t":"Any Local Business","n6.d":"If you have clients and want more of them online — we'll figure out the exact system that works for you.",
-    "contact.tag":"Let's talk","contact.title":"Write to us — get a free audit of your business",
-    "contact.desc":"Tell us what you do and where you're losing clients. We'll show you exactly how to fix it — for free, no strings attached.",
+    "nav.services":"Services","nav.cases":"Cases","nav.process":"How it works","nav.cta":"Book a call",
+    "hero.tag":"Stop losing clients",
+    "hero.h1a":"You don't need more clients.","hero.h1b":"You lose the ones you already have.",
+    "hero.sub":"Every time someone tries to book your restaurant and gets no answer — they book somewhere else. We fix that. Permanently.",
+    "hero.proof":"50+ restaurants automated · avg. 3.2× more reservations · 48h launch",
+    "hero.cta1":"Book a free call →","hero.cta2":"See client results","hero.scroll":"Scroll",
+    "stats.launch":"From call to launch","stats.leads":"More reservations on average","stats.projects":"Restaurants automated","stats.work":"Missed reservations",
+    "prob.tag":"The real problem",
+    "prob.title":"Every empty table tonight is money you'll never get back.",
+    "prob.sub":"The restaurant industry runs on availability. When someone can't reach you, they don't wait.",
+    "pain1.t":"Missed calls during service","pain1.d":"Your staff is busy. The phone rings. Nobody picks up. That client books somewhere else — forever.",
+    "pain2.t":"Instagram DMs left unanswered","pain2.d":"Guests message asking about a table. By the time you reply, they've already eaten somewhere else.",
+    "pain3.t":"No-shows costing you real money","pain3.d":"Tables reserved but never confirmed. No reminder. No deposit. Empty seats on your busiest nights.",
+    "pain4.t":"Staff wasting time on admin","pain4.d":"Your team shouldn't be answering the same questions over and over. They should focus on the guest in front of them.",
+    "loss.num":"€12,400","loss.title":"Average annual revenue lost","loss.desc":"Per mid-size restaurant, from missed reservations and no-shows alone. (12 covers/week × €20 avg. ticket × 52 weeks)",
+    "cases.tag":"Real results","cases.title":"Restaurants we've helped grow",
+    "c1.niche":"ITALIAN RESTAURANT","c1.title":"From fully booked by accident to fully booked by design","c1.desc":"Roma had great food but a broken booking process. Guests called during service when nobody could answer, then gave up. We built a direct booking page, Instagram integration, and automated confirmations.",
+    "c1.r1":"reservations in 30 days","c1.r2":"no-shows after system","c1.r3":"total setup time",
+    "c2.niche":"COCKTAIL BAR","c2.title":"+73% more weeknight bookings from Instagram alone","c2.desc":"Noir had 4,200 Instagram followers and almost no reservations from them. We added a booking link to their bio, built automated welcome messages, and connected it all to their calendar.",
+    "c2.r1":"weeknight bookings","c2.r2":"followers activated","c2.r3":"setup to first booking",
+    "c3.niche":"BRUNCH CAFÉ","c3.title":"The no-show problem: solved in 2 weeks","c3.desc":"Bloom was losing 30% of Saturday covers to no-shows — their biggest revenue day. We implemented automated confirmation emails and a simple deposit system. No-shows dropped 85% in two weeks.",
+    "c3.r1":"no-shows in 2 weeks","c3.r2":"Saturday revenue","c3.r3":"to first results",
+    "cta2.tag":"Our approach","cta2.title":"We don't sell packages. We build what actually works for you.","cta2.sub":"Every restaurant is different. Before we propose anything, we spend 20 minutes understanding your exact situation — then tell you honestly what will move the needle.","cta2.btn":"Book free 20-min call →","cta2.guarantee":"Not happy with the results? We keep working for free until it's perfect.",
+    "services.tag":"What we build","services.title":"Everything your restaurant needs to fill tables","services.desc":"Not a template. Not a package. A custom system built around how your restaurant actually works.",
+    "s1.t":"Restaurant Website","s1.d":"A fast, conversion-focused site built for restaurants. Menu, booking, about, reviews — everything guests need to say yes.",
+    "s2.t":"Online Reservations","s2.d":"Direct booking on your site and Instagram. Guests pick a time, enter details, get a confirmation. Zero phone calls needed.",
+    "s3.t":"Email Notifications","s3.d":"Automated confirmation and reminder emails sent to every guest. Reduce no-shows by up to 85% without lifting a finger.",
+    "s4.t":"Guest CRM","s4.d":"Every reservation saved with guest name, contact, and history. Know your regulars. Spot patterns. Grow smarter.",
+    "s5.t":"Instagram Integration","s5.d":"Turn followers into guests. Booking link in bio, automated responses, reservation tracking — all connected.",
+    "s6.t":"Website Redesign","s6.d":"Have a site that isn't converting? We redesign it around your guest journey and connect it to your new booking system.",
+    "process.tag":"How it works","process.title":"From first call to live system — in 48 hours.",
+    "p1.t":"Free call","p1.d":"20 minutes. You tell us about your restaurant — we listen, ask the right questions, and tell you honestly what we'd build.",
+    "p2.t":"Custom plan","p2.d":"No generic packages. A specific plan for your restaurant: what we build, how long, what it costs. You approve every step.",
+    "p3.t":"We build it","p3.d":"Design, development, automation — done in 48 hours. We handle everything. You just review and give feedback.",
+    "p4.t":"You go live","p4.d":"We launch, monitor, and stay on support. If anything doesn't perform as promised, we fix it for free.",
+    "contact.tag":"Let's talk","contact.title":"Book a free 20-minute call","contact.desc":"Tell us about your restaurant and your biggest booking challenge. We'll tell you exactly what we'd do — no pitch, no pressure.",
     "contact.loc":"Ukraine — working worldwide online",
-    "f.name":"Your name","f.contact":"Phone or Telegram","f.email":"Email","f.biz":"Your business type","f.biz.ph":"Select type",
-    "f.msg":"Where are you losing clients?","f.submit":"Get free audit →","f.note":"⚡ We respond within 1 hour. No spam, no pushy sales.",
-    "biz.1":"Barbershop / Hair Salon","biz.2":"Cafe / Bar / Restaurant","biz.3":"Beauty Salon / Spa","biz.4":"Fitness / Gym","biz.5":"Auto Repair Shop","biz.6":"Other",
-    "ok.title":"Got it! We'll be in touch soon.","ok.sub":"Check your Telegram or email — we respond within 1 hour during business hours.",
+    "f.name":"Your name","f.contact":"Phone or email","f.restaurant":"Restaurant name","f.challenge":"Biggest booking challenge",
+    "f.submit":"Book my free call →","f.note":"⚡ We respond within 2 hours. No pitch, just a real conversation.",
+    "ok.title":"Call request received!","ok.sub":"We'll be in touch within 2 hours to schedule your free call.",
     "toast.ok":"✓ Sent! We'll be in touch soon.","err.fill":"Please fill in your name and contact."
   },
   de:{
-    "nav.services":"Leistungen","nav.cases":"Cases","nav.niches":"Branchen","nav.cta":"Starten",
-    "hero.tag":"Automatisierungsagentur","hero.h1a":"Mehr Kunden gewinnen.","hero.h1b":"Automatisiert in 48 Stunden.",
-    "hero.sub":"Wir bauen die Website, das Buchungssystem und den Telegram-Bot für deinen Barbershop, dein Café oder deinen Salon — neue Kunden finden dich und buchen 24/7, ohne dass du etwas tun musst.",
-    "hero.proof":"50+ Unternehmen automatisiert · Ø 3,2× mehr Buchungen · 48h Launch",
-    "hero.cta1":"Mein kostenloses Audit →","hero.cta2":"Kundenergebnisse sehen","hero.scroll":"Scrollen",
-    "stats.launch":"Von Anruf bis Launch","stats.leads":"Ø Buchungssteigerung in 30 Tagen","stats.projects":"Automatisierte Unternehmen","stats.work":"System arbeitet für dich",
-    "services.tag":"Was wir tun","services.title":"Alles was dein Business braucht",
-    "services.desc":"Kein Agentur-Bullshit. Ein schlankes Team das baut, launcht und Ergebnisse liefert.",
-    "s1.t":"Landing & Website","s1.d":"Schnelle Website die konvertiert. Kein Template — für dein Business gebaut.",
-    "s2.t":"Online-Buchungsformulare","s2.d":"Kunden buchen Tisch, Haarschnitt oder Termin online. Du wirst sofort benachrichtigt.",
-    "s3.t":"Telegram-Bot","s3.d":"Jede Anfrage landet in deinem Telegram. Name, Kontakt, Wunsch — alles in einer Nachricht.",
-    "s4.t":"Kundendatenbank","s4.d":"Alle Anfragen automatisch in Google Sheets gespeichert. Du weißt immer wer geschrieben hat.",
-    "s5.t":"Integrationen","s5.d":"Instagram, Google Maps, Zahlungssysteme — alles verbunden.",
-    "s6.t":"Redesign & Upgrade","s6.d":"Alte Website? Wir hauchen ihr neues Leben ein — neues Design, Buchungssystem, Mobile-Version.",
-    "process.tag":"Wie es funktioniert","process.title":"Du redest — wir bauen. 48 Stunden bis zum Launch.",
-    "p1.t":"Kostenloses Gespräch","p1.d":"20–30 Min. Du erzählst von deinem Business — wir sagen dir genau was mehr Kunden bringt.",
-    "p2.t":"Wir zeigen den Plan","p2.d":"Kein blindes Entwickeln. Du siehst ein Mockup bevor wir eine Zeile Code schreiben.",
-    "p3.t":"Wir bauen schnell","p3.d":"Site + Automation + Telegram Bot — fertig in 48 Stunden.",
-    "p4.t":"Du bekommst Kunden","p4.d":"System geht live. Erste Anfrage kommt rein. Wir bleiben im Support.",
-    "cases.tag":"Echte Cases","cases.title":"Was wir gebaut haben und was es brachte",
-    "c1.niche":"BARBERSHOP","c1.title":"Online-Buchung ersetzte den Admin","c1.desc":"Der Barbershop hatte eine Person die ganzen Tag DMs und Anrufe beantwortet. Wir bauten eine Booking-Site + Telegram-Bot. Jetzt läuft alles automatisch.",
-    "c1.r1":"mehr Buchungen pro Monat","c1.r2":"verpasste Anfragen","c1.r3":"von Brief bis Launch",
-    "c2.niche":"BAR & RESTAURANT","c2.title":"Tischbuchung ohne Telefonanrufe","c2.desc":"Das Restaurant verlor Kunden weil niemand ans Telefon ging. Wir bauten ein Reservierungssystem das direkt in Telegram meldet.",
-    "c2.r1":"Reservierungen pro Woche","c2.r2":"weniger manueller Aufwand","c2.r3":"gesamte Launch-Zeit",
-    "c3.niche":"BEAUTY SALON","c3.title":"Instagram-Follower wurden echte Kunden","c3.desc":"Der Salon hatte 8k Follower aber kaum Online-Buchungen. Wir bauten eine Buchungsseite verknüpft mit dem Instagram-Bio.",
-    "c3.r1":"mehr Online-Buchungen in Monat 1","c3.r2":"Conversion von Instagram","c3.r3":"bis zur ersten bezahlten Buchung",
-    "niches.tag":"Mit wem wir arbeiten","niches.title":"Wir kennen dein Business — nicht nur Tech",
-    "n1.t":"Barbershops & Friseursalons","n1.d":"Online-Buchung nach Meister, Zeitfenster, Erinnerungen. Kunden buchen — du schneidest.",
-    "n2.t":"Cafés, Bars & Restaurants","n2.d":"Tischreservierungen, digitale Speisekarte, Event-Buchung. Direkt zum Manager — kein Telefonieren.",
-    "n3.t":"Schönheitssalons & Spas","n3.d":"Buchungsseite, Meisterprofile, Preisliste, Erinnerungen. Kunden erinnern sich an dich.",
-    "n4.t":"Fitness & Fitnessstudios","n4.d":"Kursplan, Sitzungsbuchung, Mitgliedschaften. Mitglieder melden sich selbst an.",
-    "n5.t":"Autowerkstätten","n5.d":"Online-Reparaturanfragen, Kostenvoranschläge, Status-Updates.",
-    "n6.t":"Jedes lokale Business","n6.d":"Wenn du Kunden hast und mehr online willst — wir finden das System das für dich funktioniert.",
-    "contact.tag":"Lass uns reden","contact.title":"Schreib uns — kostenloses Business-Audit",
-    "contact.desc":"Erzähl uns was du machst und wo du Kunden verlierst. Wir zeigen dir genau wie man es behebt — kostenlos.",
+    "nav.services":"Leistungen","nav.cases":"Cases","nav.process":"Ablauf","nav.cta":"Call buchen",
+    "hero.tag":"Keine Kunden mehr verlieren",
+    "hero.h1a":"Du brauchst keine neuen Kunden.","hero.h1b":"Du verlierst die, die du schon hast.",
+    "hero.sub":"Jedes Mal, wenn jemand versucht dein Restaurant zu erreichen und keine Antwort bekommt — bucht er woanders. Wir beheben das. Dauerhaft.",
+    "hero.proof":"50+ Restaurants automatisiert · Ø 3,2× mehr Reservierungen · 48h Launch",
+    "hero.cta1":"Kostenlosen Call buchen →","hero.cta2":"Ergebnisse sehen","hero.scroll":"Scrollen",
+    "stats.launch":"Von Anruf bis Launch","stats.leads":"Mehr Reservierungen im Schnitt","stats.projects":"Restaurants automatisiert","stats.work":"Verpasste Reservierungen",
+    "prob.tag":"Das eigentliche Problem",
+    "prob.title":"Jeder leere Tisch heute Abend ist Geld, das du nie zurückbekommst.",
+    "prob.sub":"Die Gastronomie lebt von Verfügbarkeit. Wenn jemand dich nicht erreicht, wartet er nicht.",
+    "pain1.t":"Verpasste Anrufe im Service","pain1.d":"Dein Team ist beschäftigt. Das Telefon klingelt. Niemand nimmt ab. Der Gast bucht woanders — für immer.",
+    "pain2.t":"Instagram-DMs bleiben stundenlang unbeantwortet","pain2.d":"Gäste fragen per Instagram nach einem Tisch. Bis du antwortest, haben sie schon woanders gegessen.",
+    "pain3.t":"No-Shows kosten echtes Geld","pain3.d":"Tische reserviert, aber nie bestätigt. Keine Erinnerung. Keine Anzahlung. Leere Plätze in deiner Stoßzeit.",
+    "pain4.t":"Personal verschwendet Zeit mit Verwaltung","pain4.d":"Dein Team sollte nicht dieselben Fragen immer wieder beantworten. Es sollte sich auf den Gast vor ihm konzentrieren.",
+    "loss.num":"€12.400","loss.title":"Durchschnittlicher jährlicher Umsatzverlust","loss.desc":"Pro mittelgroßem Restaurant, nur durch verpasste Reservierungen und No-Shows. (12 Cover/Woche × €20 Ø-Ticket × 52 Wochen)",
+    "cases.tag":"Echte Ergebnisse","cases.title":"Restaurants, denen wir geholfen haben zu wachsen",
+    "c1.niche":"ITALIENISCHES RESTAURANT","c1.title":"Von zufällig ausgebucht zu planmäßig ausgebucht","c1.desc":"Roma hatte tolles Essen, aber einen kaputten Buchungsprozess. Gäste riefen während des Services an, niemand hob ab, sie gaben auf. Wir bauten eine Buchungsseite, Instagram-Integration und automatische Bestätigungen.",
+    "c1.r1":"mehr Reservierungen in 30 Tagen","c1.r2":"No-Shows nach Systemstart","c1.r3":"Gesamteinrichtungszeit",
+    "c2.niche":"COCKTAILBAR","c2.title":"+73% mehr Buchungen an Wochentagen nur durch Instagram","c2.desc":"Noir hatte 4.200 Instagram-Follower und fast keine Reservierungen von dort. Wir fügten einen Buchungslink hinzu, bauten automatische Willkommensnachrichten und verknüpften alles mit ihrem Kalender.",
+    "c2.r1":"Wochentags-Buchungen","c2.r2":"Follower aktiviert","c2.r3":"Setup bis erste Buchung",
+    "c3.niche":"BRUNCH-CAFÉ","c3.title":"Das No-Show-Problem: in 2 Wochen gelöst","c3.desc":"Bloom verlor 30% der Samstagsgäste durch No-Shows. Wir implementierten automatische Bestätigungs-E-Mails und ein einfaches Anzahlungssystem. No-Shows sanken in zwei Wochen um 85%.",
+    "c3.r1":"No-Shows in 2 Wochen","c3.r2":"Samstag-Umsatzsteigerung","c3.r3":"bis erste Ergebnisse",
+    "cta2.tag":"Unser Ansatz","cta2.title":"Wir verkaufen keine Pakete. Wir bauen, was wirklich für dich funktioniert.","cta2.sub":"Jedes Restaurant ist anders. Bevor wir etwas vorschlagen, nehmen wir uns 20 Minuten, um deine genaue Situation zu verstehen — dann sagen wir dir ehrlich, was den Unterschied macht.","cta2.btn":"Kostenlosen 20-Min-Call buchen →","cta2.guarantee":"Nicht zufrieden mit den Ergebnissen? Wir arbeiten kostenlos weiter, bis es perfekt ist.",
+    "services.tag":"Was wir bauen","services.title":"Alles was dein Restaurant braucht, um Tische zu füllen","services.desc":"Kein Template. Kein Paket. Ein maßgeschneidertes System für dein Restaurant.",
+    "s1.t":"Restaurant-Website","s1.d":"Eine schnelle, auf Conversion ausgerichtete Website. Menü, Buchung, Info, Bewertungen — alles, was Gäste brauchen, um ja zu sagen.",
+    "s2.t":"Online-Reservierungen","s2.d":"Direkte Buchung auf deiner Website und Instagram. Gäste wählen eine Zeit, geben Details ein, bekommen eine Bestätigung. Null Anrufe.",
+    "s3.t":"E-Mail-Benachrichtigungen","s3.d":"Automatische Bestätigungs- und Erinnerungs-E-Mails an jeden Gast. Reduziere No-Shows um bis zu 85%.",
+    "s4.t":"Gäste-CRM","s4.d":"Jede Reservierung mit Name, Kontakt und Historie gespeichert. Kenne deine Stammgäste. Erkenne Muster. Wachse klüger.",
+    "s5.t":"Instagram-Integration","s5.d":"Verwandle Follower in Gäste. Buchungslink in Bio, automatische Antworten, Reservierungsverfolgung — alles verbunden.",
+    "s6.t":"Website-Redesign","s6.d":"Hast du eine Website, die nicht konvertiert? Wir überarbeiten sie für deine Guest Journey und verbinden sie mit dem Buchungssystem.",
+    "process.tag":"Wie es funktioniert","process.title":"Vom ersten Anruf zum Live-System — in 48 Stunden.",
+    "p1.t":"Kostenloser Call","p1.d":"20 Minuten. Du erzählst von deinem Restaurant — wir hören zu und sagen dir ehrlich, was wir bauen würden.",
+    "p2.t":"Individueller Plan","p2.d":"Keine Pakete. Ein konkreter Plan für dein Restaurant: was wir bauen, wie lange, was es kostet. Du stimmst jedem Schritt zu.",
+    "p3.t":"Wir bauen es","p3.d":"Design, Entwicklung, Automatisierung — fertig in 48 Stunden. Wir kümmern uns um alles. Du gibst nur Feedback.",
+    "p4.t":"Du gehst live","p4.d":"Wir launchen, überwachen und bleiben im Support. Wenn etwas nicht wie versprochen funktioniert, beheben wir es kostenlos.",
+    "contact.tag":"Lass uns reden","contact.title":"Kostenlosen 20-Minuten-Call buchen","contact.desc":"Erzähl uns von deinem Restaurant und deiner größten Buchungsherausforderung. Wir sagen dir genau, was wir tun würden — kein Pitch, kein Druck.",
     "contact.loc":"Ukraine — weltweit online tätig",
-    "f.name":"Dein Name","f.contact":"Telefon oder Telegram","f.email":"E-Mail","f.biz":"Dein Business-Typ","f.biz.ph":"Typ auswählen",
-    "f.msg":"Wo verlierst du Kunden?","f.submit":"Kostenloses Audit →","f.note":"⚡ Wir antworten in 1 Stunde. Kein Spam.",
-    "biz.1":"Barbershop / Friseursalon","biz.2":"Café / Bar / Restaurant","biz.3":"Schönheitssalon / Spa","biz.4":"Fitness / Studio","biz.5":"Autowerkstatt","biz.6":"Sonstiges",
-    "ok.title":"Erhalten! Wir melden uns bald.","ok.sub":"Check Telegram oder E-Mail — wir antworten in 1 Stunde.",
-    "toast.ok":"✓ Gesendet! Wir melden uns.","err.fill":"Bitte Name und Kontakt ausfüllen."
+    "f.name":"Dein Name","f.contact":"Telefon oder E-Mail","f.restaurant":"Restaurantname","f.challenge":"Größte Buchungsherausforderung",
+    "f.submit":"Meinen kostenlosen Call buchen →","f.note":"⚡ Wir antworten in 2 Stunden. Kein Pitch, nur ein echtes Gespräch.",
+    "ok.title":"Call-Anfrage erhalten!","ok.sub":"Wir melden uns in 2 Stunden, um deinen kostenlosen Call zu vereinbaren.",
+    "toast.ok":"✓ Gesendet! Wir melden uns bald.","err.fill":"Bitte Name und Kontakt ausfüllen."
   },
   uk:{
-    "nav.services":"Послуги","nav.cases":"Кейси","nav.niches":"Ніші","nav.cta":"Замовити",
-    "hero.tag":"Агентство автоматизації","hero.h1a":"Отримай більше клієнтів.","hero.h1b":"Автоматизовано за 48 годин.",
-    "hero.sub":"Будуємо сайт, систему бронювання та Telegram-бот для твого барбершопу, кафе або салону — нові клієнти знаходять тебе і бронюють 24/7, без зайвих зусиль.",
-    "hero.proof":"50+ автоматизованих бізнесів · в середньому +3,2× більше бронювань · запуск за 48 год",
-    "hero.cta1":"Мій безкоштовний аудит →","hero.cta2":"Результати клієнтів","hero.scroll":"Гортати",
-    "stats.launch":"Від дзвінка до запуску","stats.leads":"Середнє зростання бронювань за 30 днів","stats.projects":"Автоматизованих бізнесів","stats.work":"Система працює за тебе",
-    "services.tag":"Що ми робимо","services.title":"Все що потрібно твоєму бізнесу для росту",
-    "services.desc":"Без зайвих менеджерів. Команда яка будує, запускає і дає результат.",
-    "s1.t":"Лендінг та сайт","s1.d":"Швидкий сайт що конвертує. Не шаблон — під твій бізнес.",
-    "s2.t":"Онлайн-запис","s2.d":"Клієнти бронюють стіл, стрижку або процедуру онлайн. Ти отримуєш сповіщення миттєво.",
-    "s3.t":"Telegram-бот","s3.d":"Кожна заявка в твоєму Telegram. Ім'я, контакт, що хочуть — все в одному повідомленні.",
-    "s4.t":"База клієнтів","s4.d":"Всі заявки автоматично в Google Sheets. Завжди знаєш хто написав і що хотів.",
-    "s5.t":"Інтеграції","s5.d":"Instagram, Google Maps, платіжні системи — все підключено до твоєї системи.",
-    "s6.t":"Редизайн і покращення","s6.d":"Є старий сайт? Даємо нове життя — дизайн, бронювання, мобільна версія.",
-    "process.tag":"Як це працює","process.title":"Ти говориш — ми будуємо. 48 годин до запуску.",
-    "p1.t":"Безкоштовний дзвінок","p1.d":"20–30 хвилин. Ти розповідаєш про бізнес — ми кажемо що принесе більше клієнтів.",
-    "p2.t":"Показуємо план","p2.d":"Ніякої сліпої розробки. Ти бачиш макет до того як ми пишемо код. Правки безкоштовно.",
-    "p3.t":"Будуємо швидко","p3.d":"Сайт + автоматизація + Telegram-бот — за 48 годин.",
-    "p4.t":"Ти отримуєш клієнтів","p4.d":"Система запускається. Приходить перша заявка. Залишаємось на підтримці.",
-    "cases.tag":"Реальні кейси","cases.title":"Що ми зробили і що це дало",
-    "c1.niche":"БАРБЕРШОП","c1.title":"Онлайн-запис замінив адміністратора","c1.desc":"У барбершопі одна людина цілий день відповідала на DM і дзвінки. Ми зробили сайт з записом + Telegram-бот. Тепер система все робить сама.",
-    "c1.r1":"більше бронювань на місяць","c1.r2":"пропущених заявок","c1.r3":"від брифу до запуску",
-    "c2.niche":"БАР І РЕСТОРАН","c2.title":"Бронювання столика без дзвінків","c2.desc":"Ресторан втрачав клієнтів бо ніхто не брав трубку. Ми зробили систему бронювання підключену до Telegram власника.",
-    "c2.r1":"бронювань на тиждень","c2.r2":"менше ручної роботи","c2.r3":"загальний час запуску",
-    "c3.niche":"САЛОН КРАСИ","c3.title":"Підписники Instagram стали реальними клієнтами","c3.desc":"Салон мав 8к підписників але майже не було онлайн-записів. Ми зробили сайт з формою запису підключеною до Instagram.",
-    "c3.r1":"онлайн-записів у перший місяць","c3.r2":"конверсія з Instagram","c3.r3":"до першого платного запису",
-    "niches.tag":"З ким ми працюємо","niches.title":"Знаємо твій бізнес — не лише технології",
-    "n1.t":"Барбершопи та перукарні","n1.d":"Онлайн-запис до майстра, слоти, нагадування. Клієнти записуються — ти стрижеш.",
-    "n2.t":"Кафе, бари та ресторани","n2.d":"Бронювання столів, цифрове меню, бронювання заходів. Замовлення прямо менеджеру.",
-    "n3.t":"Салони краси та спа","n3.d":"Сторінка запису, профілі майстрів, прайс, нагадування. Клієнти повертаються.",
-    "n4.t":"Фітнес та спортзали","n4.d":"Розклад, запис, абонементи. Члени клубу реєструються самі.",
-    "n5.t":"Автосервіси","n5.d":"Онлайн-заявки, оцінка вартості, статус ремонту. Клієнти завжди в курсі.",
-    "n6.t":"Будь-який локальний бізнес","n6.d":"Є клієнти і хочеш більше онлайн — знайдемо систему що працює саме для тебе.",
-    "contact.tag":"Поговоримо","contact.title":"Напиши нам — отримай безкоштовний аудит бізнесу",
-    "contact.desc":"Розкажи що робиш і де втрачаєш клієнтів. Покажемо як це виправити — безкоштовно, без зобов'язань.",
+    "nav.services":"Послуги","nav.cases":"Кейси","nav.process":"Як це працює","nav.cta":"Забронювати дзвінок",
+    "hero.tag":"Перестань втрачати клієнтів",
+    "hero.h1a":"Тобі не потрібно більше клієнтів.","hero.h1b":"Ти втрачаєш тих, що вже є.",
+    "hero.sub":"Кожного разу, коли хтось намагається забронювати твій ресторан і не отримує відповіді — він бронює в іншому місці. Ми це виправляємо. Назавжди.",
+    "hero.proof":"50+ ресторанів автоматизовано · в середньому +3,2× більше бронювань · запуск за 48 год",
+    "hero.cta1":"Забронювати безкоштовний дзвінок →","hero.cta2":"Дивитись результати","hero.scroll":"Гортати",
+    "stats.launch":"Від дзвінка до запуску","stats.leads":"Більше бронювань в середньому","stats.projects":"Ресторанів автоматизовано","stats.work":"Пропущених бронювань",
+    "prob.tag":"Справжня проблема",
+    "prob.title":"Кожен порожній стіл сьогодні ввечері — це гроші, які ти ніколи не повернеш.",
+    "prob.sub":"Ресторанний бізнес живе доступністю. Якщо хтось не може до тебе додзвонитися — він не чекає.",
+    "pain1.t":"Пропущені дзвінки під час роботи","pain1.d":"Персонал зайнятий. Телефон дзвонить. Ніхто не бере. Клієнт бронює в іншому місці — назавжди.",
+    "pain2.t":"Instagram-повідомлення без відповіді","pain2.d":"Гості пишуть в Instagram щодо столика. До моменту відповіді вони вже поїли в іншому місці.",
+    "pain3.t":"Нез'явлення коштують реальних грошей","pain3.d":"Столики заброньовані, але не підтверджені. Без нагадувань. Без завдатку. Порожні місця у твій найзавантаженіший вечір.",
+    "pain4.t":"Персонал витрачає час на адміністрування","pain4.d":"Твоя команда не повинна відповідати на одні й ті ж питання знову і знову. Вона має зосереджуватись на гостях.",
+    "loss.num":"€12 400","loss.title":"Середні щорічні втрати доходу","loss.desc":"На середній ресторан, лише від пропущених бронювань та нез'явлень. (12 місць/тиж × €20 середній чек × 52 тижні)",
+    "cases.tag":"Реальні результати","cases.title":"Ресторани, яким ми допомогли зрости",
+    "c1.niche":"ІТАЛІЙСЬКИЙ РЕСТОРАН","c1.title":"Від випадково заповненого до систематично заповненого","c1.desc":"Roma мала чудову їжу, але зламаний процес бронювання. Гості телефонували під час обслуговування, коли ніхто не міг відповісти, і здавалися. Ми побудували сторінку бронювання, інтеграцію Instagram та автоматичні підтвердження.",
+    "c1.r1":"більше бронювань за 30 днів","c1.r2":"нез'явлень після системи","c1.r3":"загальний час налаштування",
+    "c2.niche":"КОКТЕЙЛЬНИЙ БАР","c2.title":"+73% бронювань у будні лише з Instagram","c2.desc":"Noir мав 4 200 підписників в Instagram і майже не отримував бронювань від них. Ми додали посилання на бронювання, побудували автоматичні привітальні повідомлення і підключили все до їхнього календаря.",
+    "c2.r1":"бронювань у будні","c2.r2":"підписників активовано","c2.r3":"від налаштування до першого бронювання",
+    "c3.niche":"БРАНЧ-КАФЕ","c3.title":"Проблема нез'явлень: вирішена за 2 тижні","c3.desc":"Bloom втрачав 30% суботніх гостей через нез'явлення. Ми впровадили автоматичні email-підтвердження та просту систему завдатків. Нез'явлення зменшились на 85% за два тижні.",
+    "c3.r1":"нез'явлень за 2 тижні","c3.r2":"зростання доходу в суботу","c3.r3":"до перших результатів",
+    "cta2.tag":"Наш підхід","cta2.title":"Ми не продаємо пакети. Ми будуємо те, що реально працює для тебе.","cta2.sub":"Кожен ресторан унікальний. Перш ніж щось пропонувати, ми витрачаємо 20 хвилин на розуміння твоєї ситуації — і чесно кажемо, що реально допоможе.","cta2.btn":"Забронювати безкоштовний 20-хв дзвінок →","cta2.guarantee":"Не задоволений результатами? Ми продовжуємо працювати безкоштовно, доки не буде ідеально.",
+    "services.tag":"Що ми будуємо","services.title":"Все, що потрібно твоєму ресторану для заповнення столиків","services.desc":"Не шаблон. Не пакет. Індивідуальна система для твого ресторану.",
+    "s1.t":"Сайт ресторану","s1.d":"Швидкий сайт, орієнтований на конверсію. Меню, бронювання, про нас, відгуки — все, що гостям потрібно для 'так'.",
+    "s2.t":"Онлайн-бронювання","s2.d":"Пряме бронювання на сайті та в Instagram. Гості вибирають час, вводять дані, отримують підтвердження. Без жодних дзвінків.",
+    "s3.t":"Email-сповіщення","s3.d":"Автоматичні підтверджувальні та нагадувальні листи кожному гостю. Зменшіть нез'явлення до 85%.",
+    "s4.t":"CRM для гостей","s4.d":"Кожне бронювання зберігається з ім'ям гостя, контактом та історією. Знай своїх постійних. Помічай закономірності.",
+    "s5.t":"Інтеграція з Instagram","s5.d":"Перетворюй підписників на гостей. Посилання на бронювання в біо, автоматичні відповіді, відстеження — все підключено.",
+    "s6.t":"Редизайн сайту","s6.d":"Є сайт, який не конвертує? Ми переробляємо його під шлях гостя і підключаємо до нової системи бронювання.",
+    "process.tag":"Як це працює","process.title":"Від першого дзвінка до живої системи — за 48 годин.",
+    "p1.t":"Безкоштовний дзвінок","p1.d":"20 хвилин. Ти розповідаєш про свій ресторан — ми слухаємо і чесно кажемо, що побудуємо.",
+    "p2.t":"Індивідуальний план","p2.d":"Без стандартних пакетів. Конкретний план для твого ресторану: що будуємо, скільки часу, скільки коштує.",
+    "p3.t":"Ми будуємо","p3.d":"Дизайн, розробка, автоматизація — за 48 годин. Ми займаємося всім. Ти тільки переглядаєш і даєш відгук.",
+    "p4.t":"Ти запускаєшся","p4.d":"Ми запускаємо, моніторимо і залишаємось на підтримці. Якщо щось не працює як обіцяно — виправляємо безкоштовно.",
+    "contact.tag":"Поговоримо","contact.title":"Забронюй безкоштовний 20-хвилинний дзвінок","contact.desc":"Розкажи про свій ресторан і найбільший виклик з бронюванням. Ми скажемо точно, що зробимо — без пітчу, без тиску.",
     "contact.loc":"Україна — працюємо онлайн по всьому світу",
-    "f.name":"Твоє ім'я","f.contact":"Телефон або Telegram","f.email":"Email","f.biz":"Тип бізнесу","f.biz.ph":"Обери тип",
-    "f.msg":"Де ти втрачаєш клієнтів?","f.submit":"Отримати безкоштовний аудит →","f.note":"⚡ Відповідаємо протягом 1 години. Без спаму.",
-    "biz.1":"Барбершоп / Перукарня","biz.2":"Кафе / Бар / Ресторан","biz.3":"Салон краси / Спа","biz.4":"Фітнес / Спортзал","biz.5":"Автосервіс","biz.6":"Інше",
-    "ok.title":"Отримали! Скоро зв'яжемось.","ok.sub":"Перевір Telegram або email — відповідаємо протягом 1 години.",
-    "toast.ok":"✓ Відправлено! Скоро зв'яжемось.","err.fill":"Будь ласка, заповніть ім'я та контакт."
+    "f.name":"Твоє ім'я","f.contact":"Телефон або email","f.restaurant":"Назва ресторану","f.challenge":"Найбільша проблема з бронюванням",
+    "f.submit":"Забронювати мій безкоштовний дзвінок →","f.note":"⚡ Відповідаємо протягом 2 годин. Без пітчу, лише реальна розмова.",
+    "ok.title":"Запит на дзвінок отримано!","ok.sub":"Ми зв'яжемось протягом 2 годин для планування безкоштовного дзвінка.",
+    "toast.ok":"✓ Відправлено! Незабаром зв'яжемось.","err.fill":"Будь ласка, заповніть ім'я та контакт."
   },
   fr:{
-    "nav.services":"Services","nav.cases":"Cases","nav.niches":"Secteurs","nav.cta":"Commencer",
-    "hero.tag":"Agence d'automatisation","hero.h1a":"Plus de clients.","hero.h1b":"Automatisé en 48 heures.",
-    "hero.sub":"Nous créons le site web, le système de réservation et le bot Telegram pour votre salon, café ou bar — vos clients vous trouvent et réservent 24/7, sans effort de votre part.",
-    "hero.proof":"50+ entreprises automatisées · moy. 3,2× plus de réservations · lancement en 48h",
-    "hero.cta1":"Mon audit gratuit →","hero.cta2":"Voir les résultats clients","hero.scroll":"Défiler",
-    "stats.launch":"De l'appel au lancement","stats.leads":"Hausse moy. des réservations en 30 j","stats.projects":"Entreprises automatisées","stats.work":"Système travaille pour vous",
-    "services.tag":"Ce que nous faisons","services.title":"Tout ce dont votre business a besoin",
-    "services.desc":"Pas d'agence avec 20 managers. Une équipe soudée qui construit, lance et livre des résultats.",
-    "s1.t":"Landing & Site Web","s1.d":"Site rapide qui convertit. Pas un template — fait pour votre business.",
-    "s2.t":"Formulaires de réservation","s2.d":"Les clients réservent en ligne. Vous êtes notifié instantanément.",
-    "s3.t":"Bot Telegram","s3.d":"Chaque demande arrive dans votre Telegram. Nom, contact, besoin — tout en un message.",
-    "s4.t":"Base de données clients","s4.d":"Toutes les demandes sauvegardées automatiquement dans Google Sheets.",
-    "s5.t":"Intégrations","s5.d":"Instagram, Google Maps, systèmes de paiement — tout connecté.",
-    "s6.t":"Refonte & Mise à niveau","s6.d":"Vieux site? On lui redonne vie — design, réservation, version mobile.",
-    "process.tag":"Comment ça marche","process.title":"Vous parlez — on construit. 48h pour lancer.",
-    "p1.t":"Appel gratuit","p1.d":"20–30 min. Vous parlez de votre business — on vous dit exactement ce qui amènera plus de clients.",
-    "p2.t":"On montre le plan","p2.d":"Pas de développement aveugle. Vous voyez une maquette avant qu'on écrive une ligne de code.",
-    "p3.t":"On construit vite","p3.d":"Site + automation + bot Telegram — fait en 48 heures.",
-    "p4.t":"Vous obtenez des clients","p4.d":"Le système est lancé. La première demande arrive. On reste en support.",
-    "cases.tag":"Vrais cas","cases.title":"Ce qu'on a construit et ce que ça a donné",
-    "c1.niche":"BARBIER","c1.title":"La réservation en ligne a remplacé l'admin","c1.desc":"Le barbier avait une personne qui répondait aux DMs toute la journée. On a construit un site de réservation + bot Telegram. Maintenant tout est automatique.",
-    "c1.r1":"réservations en plus par mois","c1.r2":"demandes manquées","c1.r3":"du brief au lancement",
-    "c2.niche":"BAR & RESTAURANT","c2.title":"Réservation de table sans appels","c2.desc":"Le restaurant perdait des clients car personne ne décrochait. On a construit un système de réservation connecté au Telegram du propriétaire.",
-    "c2.r1":"réservations par semaine","c2.r2":"moins de travail manuel","c2.r3":"temps de lancement total",
-    "c3.niche":"SALON DE BEAUTÉ","c3.title":"Les abonnés Instagram sont devenus vrais clients","c3.desc":"Le salon avait 8k abonnés mais presque pas de réservations en ligne. On a construit un site avec formulaire lié au bio Instagram.",
-    "c3.r1":"réservations en ligne mois 1","c3.r2":"conversion depuis Instagram","c3.r3":"jusqu'à la première réservation payante",
-    "niches.tag":"Avec qui on travaille","niches.title":"On connaît votre business — pas seulement la tech",
-    "n1.t":"Barbiers & Salons de coiffure","n1.d":"Réservation en ligne, créneaux, rappels. Les clients réservent — vous coupez.",
-    "n2.t":"Cafés, Bars & Restaurants","n2.d":"Réservations, menu numérique, événements. Commandes directement au manager.",
-    "n3.t":"Salons de beauté & Spas","n3.d":"Page de réservation, profils, tarifs, rappels. Vos clients reviennent.",
-    "n4.t":"Fitness & Salles de sport","n4.d":"Planning, réservation, abonnements. Les membres s'inscrivent eux-mêmes.",
-    "n5.t":"Garages auto","n5.d":"Demandes en ligne, devis, mises à jour du statut.",
-    "n6.t":"Tout business local","n6.d":"Si vous avez des clients et voulez en avoir plus en ligne — on trouvera le système qui marche.",
-    "contact.tag":"Parlons-en","contact.title":"Écrivez-nous — audit gratuit de votre business",
-    "contact.desc":"Dites-nous ce que vous faites et où vous perdez des clients. On vous montre comment corriger ça — gratuitement.",
+    "nav.services":"Services","nav.cases":"Cases","nav.process":"Comment ça marche","nav.cta":"Réserver un appel",
+    "hero.tag":"Arrêtez de perdre des clients",
+    "hero.h1a":"Vous n'avez pas besoin de plus de clients.","hero.h1b":"Vous perdez ceux que vous avez déjà.",
+    "hero.sub":"Chaque fois que quelqu'un essaie de réserver dans votre restaurant sans réponse — il réserve ailleurs. Nous réglons ça. Définitivement.",
+    "hero.proof":"50+ restaurants automatisés · moy. 3,2× plus de réservations · lancement en 48h",
+    "hero.cta1":"Réserver un appel gratuit →","hero.cta2":"Voir les résultats","hero.scroll":"Défiler",
+    "stats.launch":"De l'appel au lancement","stats.leads":"Plus de réservations en moyenne","stats.projects":"Restaurants automatisés","stats.work":"Réservations manquées",
+    "prob.tag":"Le vrai problème",
+    "prob.title":"Chaque table vide ce soir est de l'argent que vous ne récupérerez jamais.",
+    "prob.sub":"La restauration repose sur la disponibilité. Quand on ne vous joigne pas, on n'attend pas.",
+    "pain1.t":"Appels manqués pendant le service","pain1.d":"Votre équipe est occupée. Le téléphone sonne. Personne ne répond. Ce client réserve ailleurs — pour toujours.",
+    "pain2.t":"DMs Instagram sans réponse pendant des heures","pain2.d":"Des clients vous demandent une table par Instagram. Le temps que vous répondiez, ils ont déjà mangé ailleurs.",
+    "pain3.t":"Les no-shows vous coûtent de l'argent réel","pain3.d":"Tables réservées mais jamais confirmées. Pas de rappel. Pas d'acompte. Des sièges vides vos soirs les plus chargés.",
+    "pain4.t":"Le personnel perd du temps en administratif","pain4.d":"Votre équipe ne devrait pas répondre aux mêmes questions encore et encore. Elle devrait se concentrer sur le client devant elle.",
+    "loss.num":"12 400 €","loss.title":"Perte de chiffre d'affaires annuel moyen","loss.desc":"Par restaurant de taille moyenne, rien que pour les réservations manquées et les no-shows. (12 couverts/semaine × 20 € ticket moyen × 52 semaines)",
+    "cases.tag":"Résultats réels","cases.title":"Restaurants que nous avons aidés à croître",
+    "c1.niche":"RESTAURANT ITALIEN","c1.title":"De complet par hasard à complet par conception","c1.desc":"Roma avait une excellente cuisine mais un processus de réservation défaillant. Les clients appelaient pendant le service quand personne ne pouvait répondre. Nous avons construit une page de réservation directe, une intégration Instagram et des confirmations automatisées.",
+    "c1.r1":"réservations en plus en 30 jours","c1.r2":"no-shows après le système","c1.r3":"temps de configuration total",
+    "c2.niche":"BAR À COCKTAILS","c2.title":"+73% de réservations en semaine grâce à Instagram","c2.desc":"Noir avait 4 200 abonnés Instagram et presque aucune réservation venant de là. Nous avons ajouté un lien de réservation, créé des messages de bienvenue automatiques et tout connecté à leur calendrier.",
+    "c2.r1":"réservations en semaine","c2.r2":"abonnés activés","c2.r3":"configuration à première réservation",
+    "c3.niche":"CAFÉ BRUNCH","c3.title":"Le problème des no-shows : résolu en 2 semaines","c3.desc":"Bloom perdait 30% de ses couverts du samedi à cause des no-shows. Nous avons mis en place des emails de confirmation automatiques et un système d'acompte simple. Les no-shows ont chuté de 85% en deux semaines.",
+    "c3.r1":"no-shows en 2 semaines","c3.r2":"hausse du CA du samedi","c3.r3":"pour voir les premiers résultats",
+    "cta2.tag":"Notre approche","cta2.title":"Nous ne vendons pas de packages. Nous construisons ce qui fonctionne vraiment pour vous.","cta2.sub":"Chaque restaurant est différent. Avant de proposer quoi que ce soit, nous passons 20 minutes à comprendre votre situation — puis nous vous disons honnêtement ce qui fera la différence.","cta2.btn":"Réserver un appel gratuit de 20 min →","cta2.guarantee":"Pas satisfait des résultats ? Nous continuons à travailler gratuitement jusqu'à ce que ce soit parfait.",
+    "services.tag":"Ce que nous construisons","services.title":"Tout ce dont votre restaurant a besoin pour remplir les tables","services.desc":"Pas un template. Pas un package. Un système sur mesure construit pour votre restaurant.",
+    "s1.t":"Site de restaurant","s1.d":"Un site rapide, axé sur la conversion. Menu, réservation, à propos, avis — tout ce dont les clients ont besoin pour dire oui.",
+    "s2.t":"Réservations en ligne","s2.d":"Réservation directe sur votre site et Instagram. Les clients choisissent un horaire, entrent leurs coordonnées, reçoivent une confirmation. Zéro appel.",
+    "s3.t":"Notifications par email","s3.d":"Emails de confirmation et de rappel automatiques à chaque client. Réduisez les no-shows jusqu'à 85%.",
+    "s4.t":"CRM clients","s4.d":"Chaque réservation enregistrée avec nom, contact et historique. Connaissez vos habitués. Repérez les tendances. Grandissez intelligemment.",
+    "s5.t":"Intégration Instagram","s5.d":"Transformez vos abonnés en clients. Lien de réservation en bio, réponses automatiques, suivi des réservations — tout connecté.",
+    "s6.t":"Refonte de site","s6.d":"Un site qui ne convertit pas ? Nous le repensons autour du parcours client et le connectons à votre nouveau système de réservation.",
+    "process.tag":"Comment ça marche","process.title":"Du premier appel au système en ligne — en 48 heures.",
+    "p1.t":"Appel gratuit","p1.d":"20 minutes. Vous parlez de votre restaurant — nous écoutons et vous disons honnêtement ce que nous construirions.",
+    "p2.t":"Plan personnalisé","p2.d":"Pas de packages génériques. Un plan concret pour votre restaurant : ce qu'on construit, combien de temps, quel coût. Vous approuvez chaque étape.",
+    "p3.t":"Nous construisons","p3.d":"Design, développement, automatisation — terminé en 48 heures. Nous gérons tout. Vous donnez juste votre avis.",
+    "p4.t":"Vous passez en ligne","p4.d":"Nous lançons, surveillons et restons en support. Si quelque chose ne performe pas comme promis, nous le corrigeons gratuitement.",
+    "contact.tag":"Parlons-en","contact.title":"Réservez un appel gratuit de 20 minutes","contact.desc":"Parlez-nous de votre restaurant et de votre plus grand défi de réservation. Nous vous dirons exactement ce que nous ferions — sans pitch, sans pression.",
     "contact.loc":"Ukraine — travaillant en ligne dans le monde entier",
-    "f.name":"Votre nom","f.contact":"Téléphone ou Telegram","f.email":"Email","f.biz":"Type de business","f.biz.ph":"Choisir le type",
-    "f.msg":"Où perdez-vous des clients?","f.submit":"Audit gratuit →","f.note":"⚡ On répond en 1h. Pas de spam.",
-    "biz.1":"Barbier / Salon","biz.2":"Café / Bar / Restaurant","biz.3":"Salon de beauté / Spa","biz.4":"Fitness / Salle de sport","biz.5":"Garage auto","biz.6":"Autre",
-    "ok.title":"Reçu! On vous contacte bientôt.","ok.sub":"Vérifiez Telegram ou email — on répond en 1h.",
-    "toast.ok":"✓ Envoyé! On vous contacte.","err.fill":"Veuillez remplir votre nom et contact."
+    "f.name":"Votre nom","f.contact":"Téléphone ou email","f.restaurant":"Nom du restaurant","f.challenge":"Plus grand défi de réservation",
+    "f.submit":"Réserver mon appel gratuit →","f.note":"⚡ Nous répondons dans les 2 heures. Pas de pitch, juste une vraie conversation.",
+    "ok.title":"Demande d'appel reçue !","ok.sub":"Nous vous contacterons dans les 2 heures pour planifier votre appel gratuit.",
+    "toast.ok":"✓ Envoyé ! Nous vous contacterons bientôt.","err.fill":"Veuillez remplir votre nom et contact."
   },
   es:{
-    "nav.services":"Servicios","nav.cases":"Casos","nav.niches":"Sectores","nav.cta":"Empezar",
-    "hero.tag":"Agencia de automatización","hero.h1a":"Más clientes.","hero.h1b":"Automatizado en 48 horas.",
-    "hero.sub":"Creamos el sitio web, el sistema de reservas y el bot de Telegram para tu barbería, café o salón — nuevos clientes te encuentran y reservan 24/7, sin que hagas nada.",
-    "hero.proof":"50+ negocios automatizados · prom. 3,2× más reservas · lanzamiento en 48h",
-    "hero.cta1":"Mi auditoría gratuita →","hero.cta2":"Ver resultados reales","hero.scroll":"Desplazarse",
-    "stats.launch":"De llamada a lanzamiento","stats.leads":"Aumento prom. de reservas en 30 días","stats.projects":"Negocios automatizados","stats.work":"Sistema trabaja para ti",
-    "services.tag":"Qué hacemos","services.title":"Todo lo que tu negocio necesita para crecer",
-    "services.desc":"Sin agencias con 20 managers. Un equipo ajustado que construye, lanza y entrega resultados.",
-    "s1.t":"Landing & Sitio Web","s1.d":"Sitio rápido que convierte. No una plantilla — hecho para tu negocio.",
-    "s2.t":"Formularios de reserva","s2.d":"Los clientes reservan mesa, corte o sesión online. Te notifican al instante.",
-    "s3.t":"Bot de Telegram","s3.d":"Cada consulta llega a tu Telegram. Nombre, contacto, qué quieren — todo en un mensaje.",
-    "s4.t":"Base de datos de clientes","s4.d":"Todas las consultas guardadas automáticamente en Google Sheets.",
-    "s5.t":"Integraciones","s5.d":"Instagram, Google Maps, sistemas de pago — todo conectado.",
-    "s6.t":"Rediseño & Mejora","s6.d":"¿Sitio antiguo? Le damos nueva vida — diseño, reservas, versión móvil.",
-    "process.tag":"Cómo funciona","process.title":"Tú hablas — nosotros construimos. 48h para lanzar.",
-    "p1.t":"Llamada gratuita","p1.d":"20–30 min. Nos cuentas tu negocio — te decimos qué traerá más clientes.",
-    "p2.t":"Mostramos el plan","p2.d":"Sin desarrollo ciego. Ves una maqueta antes de que escribamos una línea de código.",
-    "p3.t":"Construimos rápido","p3.d":"Sitio + automatización + bot Telegram — listo en 48 horas.",
-    "p4.t":"Obtienes clientes","p4.d":"Sistema en vivo. Primera consulta llega. Nos quedamos en soporte.",
-    "cases.tag":"Casos reales","cases.title":"Lo que construimos y lo que dio",
-    "c1.niche":"BARBERÍA","c1.title":"La reserva online reemplazó al admin","c1.desc":"La barbería tenía una persona respondiendo DMs todo el día. Construimos un sitio de reservas + bot Telegram. Ahora el sistema lo maneja todo.",
-    "c1.r1":"más reservas por mes","c1.r2":"consultas perdidas","c1.r3":"de brief a lanzamiento",
-    "c2.niche":"BAR & RESTAURANTE","c2.title":"Reserva de mesa sin llamadas","c2.desc":"El restaurante perdía clientes porque nadie contestaba el teléfono. Construimos un sistema de reservas conectado al Telegram del dueño.",
-    "c2.r1":"reservas por semana","c2.r2":"menos trabajo manual","c2.r3":"tiempo total de lanzamiento",
-    "c3.niche":"SALÓN DE BELLEZA","c3.title":"Los seguidores de Instagram se convirtieron en clientes","c3.desc":"El salón tenía 8k seguidores pero casi sin reservas online. Construimos un sitio con formulario vinculado al bio de Instagram.",
-    "c3.r1":"reservas online en mes 1","c3.r2":"conversión desde Instagram","c3.r3":"hasta la primera reserva pagada",
-    "niches.tag":"Con quién trabajamos","niches.title":"Conocemos tu negocio — no solo la tecnología",
-    "n1.t":"Barberías & Peluquerías","n1.d":"Reserva online, horarios, recordatorios. Los clientes reservan — tú cortas.",
-    "n2.t":"Cafés, Bares & Restaurantes","n2.d":"Reservas, menú digital, eventos. Pedidos directo al manager.",
-    "n3.t":"Salones de belleza & Spas","n3.d":"Página de reserva, perfiles, tarifas, recordatorios. Tus clientes vuelven.",
-    "n4.t":"Fitness & Gimnasios","n4.d":"Horario, reserva, membresías. Los miembros se registran solos.",
-    "n5.t":"Talleres de automóviles","n5.d":"Solicitudes online, presupuestos, actualizaciones de estado.",
-    "n6.t":"Cualquier negocio local","n6.d":"Si tienes clientes y quieres más online — encontramos el sistema que funciona para ti.",
-    "contact.tag":"Hablemos","contact.title":"Escríbenos — auditoría gratuita de tu negocio",
-    "contact.desc":"Cuéntanos qué haces y dónde pierdes clientes. Te mostramos cómo arreglarlo — gratis, sin compromisos.",
+    "nav.services":"Servicios","nav.cases":"Casos","nav.process":"Cómo funciona","nav.cta":"Reservar llamada",
+    "hero.tag":"Deja de perder clientes",
+    "hero.h1a":"No necesitas más clientes.","hero.h1b":"Pierdes los que ya tienes.",
+    "hero.sub":"Cada vez que alguien intenta reservar en tu restaurante y no recibe respuesta — reserva en otro lugar. Lo solucionamos. Permanentemente.",
+    "hero.proof":"50+ restaurantes automatizados · prom. 3,2× más reservas · lanzamiento en 48h",
+    "hero.cta1":"Reservar llamada gratuita →","hero.cta2":"Ver resultados reales","hero.scroll":"Desplazarse",
+    "stats.launch":"De llamada a lanzamiento","stats.leads":"Más reservas en promedio","stats.projects":"Restaurantes automatizados","stats.work":"Reservas perdidas",
+    "prob.tag":"El problema real",
+    "prob.title":"Cada mesa vacía esta noche es dinero que nunca recuperarás.",
+    "prob.sub":"La industria restaurantera funciona con disponibilidad. Cuando alguien no puede contactarte, no espera.",
+    "pain1.t":"Llamadas perdidas durante el servicio","pain1.d":"Tu equipo está ocupado. El teléfono suena. Nadie responde. Ese cliente reserva en otro lugar — para siempre.",
+    "pain2.t":"DMs de Instagram sin respuesta durante horas","pain2.d":"Los clientes preguntan por una mesa en Instagram. Para cuando respondes, ya han comido en otro lugar.",
+    "pain3.t":"Las ausencias te cuestan dinero real","pain3.d":"Mesas reservadas pero nunca confirmadas. Sin recordatorio. Sin depósito. Asientos vacíos en tus noches más ocupadas.",
+    "pain4.t":"El personal pierde tiempo en administración","pain4.d":"Tu equipo no debería responder las mismas preguntas una y otra vez. Debería centrarse en el cliente que tiene delante.",
+    "loss.num":"12.400 €","loss.title":"Pérdida media anual de ingresos","loss.desc":"Por restaurante de tamaño medio, solo de reservas perdidas y ausencias. (12 comensales/semana × 20 € ticket medio × 52 semanas)",
+    "cases.tag":"Resultados reales","cases.title":"Restaurantes a los que hemos ayudado a crecer",
+    "c1.niche":"RESTAURANTE ITALIANO","c1.title":"De lleno por casualidad a lleno por diseño","c1.desc":"Roma tenía excelente comida pero un proceso de reservas roto. Los clientes llamaban durante el servicio cuando nadie podía responder y se rendían. Construimos una página de reservas directa, integración con Instagram y confirmaciones automatizadas.",
+    "c1.r1":"más reservas en 30 días","c1.r2":"ausencias tras el sistema","c1.r3":"tiempo total de configuración",
+    "c2.niche":"BAR DE CÓCTELES","c2.title":"+73% de reservas entre semana solo desde Instagram","c2.desc":"Noir tenía 4.200 seguidores en Instagram y casi ninguna reserva de ellos. Agregamos un enlace de reserva, creamos mensajes de bienvenida automáticos y conectamos todo a su calendario.",
+    "c2.r1":"reservas entre semana","c2.r2":"seguidores activados","c2.r3":"configuración a primera reserva",
+    "c3.niche":"CAFÉ BRUNCH","c3.title":"El problema de las ausencias: resuelto en 2 semanas","c3.desc":"Bloom perdía el 30% de sus comensales del sábado por ausencias. Implementamos emails de confirmación automáticos y un sistema de depósito simple. Las ausencias cayeron un 85% en dos semanas.",
+    "c3.r1":"ausencias en 2 semanas","c3.r2":"aumento de ingresos del sábado","c3.r3":"para ver primeros resultados",
+    "cta2.tag":"Nuestro enfoque","cta2.title":"No vendemos paquetes. Construimos lo que realmente funciona para ti.","cta2.sub":"Cada restaurante es diferente. Antes de proponer nada, pasamos 20 minutos entendiendo tu situación exacta — y te decimos honestamente qué marcará la diferencia.","cta2.btn":"Reservar llamada gratuita de 20 min →","cta2.guarantee":"¿No estás satisfecho con los resultados? Seguimos trabajando gratis hasta que sea perfecto.",
+    "services.tag":"Lo que construimos","services.title":"Todo lo que tu restaurante necesita para llenar las mesas","services.desc":"No una plantilla. No un paquete. Un sistema personalizado construido para tu restaurante.",
+    "s1.t":"Sitio web de restaurante","s1.d":"Un sitio rápido enfocado en conversión. Menú, reservas, sobre nosotros, reseñas — todo lo que los clientes necesitan para decir sí.",
+    "s2.t":"Reservas en línea","s2.d":"Reserva directa en tu web e Instagram. Los clientes eligen hora, ingresan datos, reciben confirmación. Cero llamadas.",
+    "s3.t":"Notificaciones por email","s3.d":"Emails automáticos de confirmación y recordatorio a cada cliente. Reduce las ausencias hasta un 85%.",
+    "s4.t":"CRM de clientes","s4.d":"Cada reserva guardada con nombre, contacto e historial. Conoce a tus habituales. Detecta patrones. Crece de forma más inteligente.",
+    "s5.t":"Integración con Instagram","s5.d":"Convierte seguidores en clientes. Enlace de reserva en bio, respuestas automáticas, seguimiento de reservas — todo conectado.",
+    "s6.t":"Rediseño web","s6.d":"¿Tienes un sitio que no convierte? Lo rediseñamos en torno al recorrido del cliente y lo conectamos a tu nuevo sistema de reservas.",
+    "process.tag":"Cómo funciona","process.title":"De la primera llamada al sistema en vivo — en 48 horas.",
+    "p1.t":"Llamada gratuita","p1.d":"20 minutos. Nos cuentas tu restaurante — escuchamos y te decimos honestamente qué construiríamos.",
+    "p2.t":"Plan personalizado","p2.d":"Sin paquetes genéricos. Un plan concreto para tu restaurante: qué construimos, cuánto tiempo, qué cuesta. Apruebas cada paso.",
+    "p3.t":"Lo construimos","p3.d":"Diseño, desarrollo, automatización — listo en 48 horas. Nos encargamos de todo. Solo revisa y da feedback.",
+    "p4.t":"Entras en vivo","p4.d":"Lanzamos, monitoreamos y nos quedamos en soporte. Si algo no funciona como se prometió, lo arreglamos gratis.",
+    "contact.tag":"Hablemos","contact.title":"Reserva una llamada gratuita de 20 minutos","contact.desc":"Cuéntanos sobre tu restaurante y tu mayor desafío de reservas. Te diremos exactamente qué haríamos — sin pitch, sin presión.",
     "contact.loc":"Ucrania — trabajando en línea en todo el mundo",
-    "f.name":"Tu nombre","f.contact":"Teléfono o Telegram","f.email":"Email","f.biz":"Tipo de negocio","f.biz.ph":"Selecciona tipo",
-    "f.msg":"¿Dónde pierdes clientes?","f.submit":"Auditoría gratuita →","f.note":"⚡ Respondemos en 1h. Sin spam.",
-    "biz.1":"Barbería / Peluquería","biz.2":"Café / Bar / Restaurante","biz.3":"Salón de belleza / Spa","biz.4":"Fitness / Gimnasio","biz.5":"Taller de automóviles","biz.6":"Otro",
-    "ok.title":"¡Recibido! Nos ponemos en contacto.","ok.sub":"Revisa Telegram o email — respondemos en 1h.",
-    "toast.ok":"✓ ¡Enviado! Nos ponemos en contacto.","err.fill":"Por favor rellena tu nombre y contacto."
+    "f.name":"Tu nombre","f.contact":"Teléfono o email","f.restaurant":"Nombre del restaurante","f.challenge":"Mayor desafío de reservas",
+    "f.submit":"Reservar mi llamada gratuita →","f.note":"⚡ Respondemos en 2 horas. Sin pitch, solo una conversación real.",
+    "ok.title":"¡Solicitud de llamada recibida!","ok.sub":"Nos pondremos en contacto en 2 horas para programar tu llamada gratuita.",
+    "toast.ok":"✓ ¡Enviado! Nos pondremos en contacto pronto.","err.fill":"Por favor rellena tu nombre y contacto."
   },
   nl:{
-    "nav.services":"Diensten","nav.cases":"Cases","nav.niches":"Sectoren","nav.cta":"Starten",
-    "hero.tag":"Automatiseringsbureau","hero.h1a":"Meer klanten.","hero.h1b":"Geautomatiseerd in 48 uur.",
-    "hero.sub":"Wij bouwen de website, het boekingssysteem en de Telegram-bot voor jouw kapper, café of salon — nieuwe klanten vinden jou en boeken 24/7, zonder dat jij iets hoeft te doen.",
-    "hero.proof":"50+ geautomatiseerde bedrijven · gem. 3,2× meer boekingen · lancering in 48u",
-    "hero.cta1":"Mijn gratis audit →","hero.cta2":"Bekijk klantresultaten","hero.scroll":"Scrollen",
-    "stats.launch":"Van gesprek tot lancering","stats.leads":"Gem. boekingsstijging in 30 dagen","stats.projects":"Geautomatiseerde bedrijven","stats.work":"Systeem werkt voor jou",
-    "services.tag":"Wat we doen","services.title":"Alles wat jouw bedrijf nodig heeft om te groeien",
-    "services.desc":"Geen bureau met 20 managers. Gewoon een strak team dat bouwt, lanceert en resultaten levert.",
-    "s1.t":"Landing & Website","s1.d":"Snelle site die converteert. Geen template — gebouwd voor jouw bedrijf.",
-    "s2.t":"Online boekingsformulieren","s2.d":"Klanten boeken online een tafel, knipbeurt of sessie. Je wordt direct gewaarschuwd.",
-    "s3.t":"Telegram Bot","s3.d":"Elke aanvraag komt in jouw Telegram. Naam, contact, wat ze willen — alles in één bericht.",
-    "s4.t":"Klantendatabase","s4.d":"Alle aanvragen automatisch opgeslagen in Google Sheets. Je weet altijd wie schreef en wat ze nodig hadden.",
-    "s5.t":"Integraties","s5.d":"Instagram, Google Maps, betaalsystemen — alles verbonden met jouw automatiseringspijplijn.",
-    "s6.t":"Redesign & Upgrade","s6.d":"Oude website? Wij geven hem nieuw leven — nieuw design, boekingssysteem, mobiele versie.",
-    "process.tag":"Hoe het werkt","process.title":"Jij praat — wij bouwen. 48 uur tot lancering.",
-    "p1.t":"Gratis gesprek","p1.d":"20–30 min. Jij vertelt over je bedrijf — wij zeggen je precies wat meer klanten brengt.",
-    "p2.t":"Wij tonen het plan","p2.d":"Geen blinde ontwikkeling. Je ziet een mockup voordat we één regel code schrijven. Wijzigingen zijn gratis.",
-    "p3.t":"Wij bouwen snel","p3.d":"Site + automatisering + Telegram bot — klaar in 48 uur. We houden je de hele tijd op de hoogte.",
-    "p4.t":"Jij krijgt klanten","p4.d":"Systeem gaat live. Eerste aanvraag komt binnen. We blijven in support zodat niets kapot gaat — nooit.",
-    "cases.tag":"Echte cases","cases.title":"Wat we bouwden en wat het opleverde",
-    "c1.niche":"KAPPERSZAAK","c1.title":"Online boeking verving de admin","c1.desc":"Eén persoon bracht de hele dag door met DMs en telefoontjes beantwoorden. We bouwden een boekingssite en Telegram bot — nu verwerkt het systeem elke aanvraag automatisch, 24/7.",
-    "c1.r1":"meer boekingen per maand","c1.r2":"gemiste aanvragen","c1.r3":"van briefing tot lancering",
-    "c2.niche":"BAR & RESTAURANT","c2.title":"Tafelboeking zonder telefoontjes","c2.desc":"Het restaurant verloor klanten omdat niemand de telefoon opnam. We bouwden een reserveringssysteem verbonden met Telegram — nu wordt elke tafel online geboekt.",
-    "c2.r1":"reserveringen per week","c2.r2":"minder handmatig werk","c2.r3":"totale lanceertijd",
-    "c3.niche":"SCHOONHEIDSSALON","c3.title":"Instagram volgers werden echte klanten","c3.desc":"8k Instagram volgers, bijna nul online boekingen. We bouwden een boekingssite gekoppeld aan hun bio — klanten begonnen direct te boeken.",
-    "c3.r1":"online boekingen in maand 1","c3.r2":"conversie vanuit Instagram","c3.r3":"tot eerste betaalde boeking",
-    "niches.tag":"Met wie we werken","niches.title":"We kennen jouw bedrijf — niet alleen tech",
-    "n1.t":"Kappers & Haarsalons","n1.d":"Online boeking per kapper, tijdslots, herinneringen. Klanten boeken — jij knipt.",
-    "n2.t":"Cafés, Bars & Restaurants","n2.d":"Tafelreserveringen, digitaal menu, evenementboeking. Bestellingen gaan direct naar de manager.",
-    "n3.t":"Schoonheidssalons & Spa's","n3.d":"Boekingspagina, kappersprofielen, prijslijst, herinneringen. Jouw klanten komen terug.",
-    "n4.t":"Fitness & Sportscholen","n4.d":"Lesrooster, sessieboeking, lidmaatschappen. Leden schrijven zich zelf in.",
-    "n5.t":"Autogarages","n5.d":"Online reparatieverzoeken, offertes, statusupdates. Klanten weten altijd wat er met hun auto gebeurt.",
-    "n6.t":"Elk lokaal bedrijf","n6.d":"Als je klanten hebt en er meer online wilt — vinden we het systeem dat voor jou werkt.",
-    "contact.tag":"Laten we praten","contact.title":"Schrijf ons — gratis audit van je bedrijf",
-    "contact.desc":"Vertel ons wat je doet en waar je klanten verliest. We laten je precies zien hoe je het kunt oplossen — gratis, zonder verplichtingen.",
+    "nav.services":"Diensten","nav.cases":"Cases","nav.process":"Hoe het werkt","nav.cta":"Afspraak maken",
+    "hero.tag":"Stop met klanten verliezen",
+    "hero.h1a":"Je hebt geen nieuwe klanten nodig.","hero.h1b":"Je verliest degenen die je al hebt.",
+    "hero.sub":"Elke keer dat iemand probeert jouw restaurant te boeken en geen antwoord krijgt — boekt hij ergens anders. Wij lossen dat op. Permanent.",
+    "hero.proof":"50+ restaurants geautomatiseerd · gem. 3,2× meer reserveringen · lancering in 48u",
+    "hero.cta1":"Gratis gesprek inplannen →","hero.cta2":"Bekijk resultaten","hero.scroll":"Scrollen",
+    "stats.launch":"Van gesprek tot lancering","stats.leads":"Meer reserveringen gemiddeld","stats.projects":"Restaurants geautomatiseerd","stats.work":"Gemiste reserveringen",
+    "prob.tag":"Het echte probleem",
+    "prob.title":"Elke lege tafel vanavond is geld dat je nooit terugkrijgt.",
+    "prob.sub":"De horecabranche draait op beschikbaarheid. Als iemand je niet kan bereiken, wacht hij niet.",
+    "pain1.t":"Gemiste oproepen tijdens service","pain1.d":"Je team is druk. De telefoon gaat. Niemand neemt op. Die gast boekt ergens anders — voor altijd.",
+    "pain2.t":"Instagram DMs uren onbeantwoord","pain2.d":"Gasten vragen via Instagram naar een tafel. Tegen de tijd dat je antwoordt, hebben ze al ergens anders gegeten.",
+    "pain3.t":"No-shows kosten je echt geld","pain3.d":"Tafels gereserveerd maar nooit bevestigd. Geen herinnering. Geen aanbetaling. Lege stoelen op je drukste avonden.",
+    "pain4.t":"Personeel verspilt tijd aan administratie","pain4.d":"Jouw team moet niet steeds dezelfde vragen beantwoorden. Ze moeten zich focussen op de gast die voor hen staat.",
+    "loss.num":"€12.400","loss.title":"Gemiddeld jaarlijks omzetverlies","loss.desc":"Per middelgroot restaurant, alleen al door gemiste reserveringen en no-shows. (12 couverts/week × €20 gem. bon × 52 weken)",
+    "cases.tag":"Echte resultaten","cases.title":"Restaurants die wij hebben geholpen groeien",
+    "c1.niche":"ITALIAANS RESTAURANT","c1.title":"Van toevallig volgeboekt naar bewust volgeboekt","c1.desc":"Roma had geweldig eten maar een kapot boekingsproces. Gasten belden tijdens service wanneer niemand kon opnemen, en gaven het op. We bouwden een directe boekingspagina, Instagram-integratie en automatische bevestigingen.",
+    "c1.r1":"meer reserveringen in 30 dagen","c1.r2":"no-shows na systeemstart","c1.r3":"totale installatietijd",
+    "c2.niche":"COCKTAILBAR","c2.title":"+73% doordeweekse boekingen via Instagram","c2.desc":"Noir had 4.200 Instagram-volgers en bijna geen reserveringen van hen. We voegden een boekingslink toe, bouwden automatische welkomstberichten en koppelden alles aan hun kalender.",
+    "c2.r1":"doordeweekse boekingen","c2.r2":"volgers geactiveerd","c2.r3":"setup tot eerste boeking",
+    "c3.niche":"BRUNCH CAFÉ","c3.title":"Het no-show probleem: opgelost in 2 weken","c3.desc":"Bloom verloor 30% van de zaterdaggasten door no-shows. We implementeerden automatische bevestigingsemails en een eenvoudig aanbetalingssysteem. No-shows daalden met 85% binnen twee weken.",
+    "c3.r1":"no-shows in 2 weken","c3.r2":"stijging zaterdag omzet","c3.r3":"om eerste resultaten te zien",
+    "cta2.tag":"Onze aanpak","cta2.title":"Wij verkopen geen pakketten. Wij bouwen wat echt werkt voor jou.","cta2.sub":"Elk restaurant is anders. Voordat we iets voorstellen, besteden we 20 minuten aan het begrijpen van jouw situatie — en vertellen je eerlijk wat het verschil maakt.","cta2.btn":"Gratis 20-min gesprek inplannen →","cta2.guarantee":"Niet tevreden met de resultaten? We blijven gratis werken totdat het perfect is.",
+    "services.tag":"Wat we bouwen","services.title":"Alles wat jouw restaurant nodig heeft om tafels te vullen","services.desc":"Geen template. Geen pakket. Een systeem op maat voor jouw restaurant.",
+    "s1.t":"Restaurant website","s1.d":"Een snelle, conversiegerichte site voor restaurants. Menu, boeking, over ons, reviews — alles wat gasten nodig hebben om ja te zeggen.",
+    "s2.t":"Online reserveringen","s2.d":"Directe boeking op je site en Instagram. Gasten kiezen een tijd, voeren gegevens in, krijgen een bevestiging. Nul telefoontjes.",
+    "s3.t":"Email-notificaties","s3.d":"Automatische bevestiging en herinneringsemails naar elke gast. Verminder no-shows met 85%.",
+    "s4.t":"Gasten CRM","s4.d":"Elke reservering opgeslagen met naam, contact en geschiedenis. Ken je vaste gasten. Zie patronen. Groei slimmer.",
+    "s5.t":"Instagram-integratie","s5.d":"Zet volgers om in gasten. Boekingslink in bio, automatische antwoorden, reserveringstracking — alles verbonden.",
+    "s6.t":"Website redesign","s6.d":"Een site die niet converteert? We herontwerpen hem rond de gastreis en verbinden hem aan je nieuwe boekingssysteem.",
+    "process.tag":"Hoe het werkt","process.title":"Van eerste gesprek tot live systeem — in 48 uur.",
+    "p1.t":"Gratis gesprek","p1.d":"20 minuten. Jij vertelt over je restaurant — wij luisteren en zeggen eerlijk wat we zouden bouwen.",
+    "p2.t":"Persoonlijk plan","p2.d":"Geen generieke pakketten. Een concreet plan voor jouw restaurant: wat we bouwen, hoe lang, wat het kost. Jij keurt elke stap goed.",
+    "p3.t":"Wij bouwen het","p3.d":"Design, development, automatisering — klaar in 48 uur. Wij regelen alles. Jij geeft alleen feedback.",
+    "p4.t":"Jij gaat live","p4.d":"We lanceren, monitoren en blijven in support. Als iets niet presteert zoals beloofd, repareren we het gratis.",
+    "contact.tag":"Laten we praten","contact.title":"Plan een gratis gesprek van 20 minuten","contact.desc":"Vertel ons over je restaurant en je grootste boekingsuitdaging. We vertellen je precies wat we zouden doen — geen pitch, geen druk.",
     "contact.loc":"Oekraïne — wereldwijd online actief",
-    "f.name":"Jouw naam","f.contact":"Telefoon of Telegram","f.email":"E-mail","f.biz":"Type bedrijf","f.biz.ph":"Selecteer type",
-    "f.msg":"Waar verlies je klanten?","f.submit":"Gratis audit →","f.note":"⚡ We reageren binnen 1 uur. Geen spam.",
-    "biz.1":"Kapperszaak / Haarsalon","biz.2":"Café / Bar / Restaurant","biz.3":"Schoonheidssalon / Spa","biz.4":"Fitness / Sportschool","biz.5":"Autogarage","biz.6":"Anders",
-    "ok.title":"Ontvangen! We nemen snel contact op.","ok.sub":"Check Telegram of e-mail — we reageren binnen 1 uur.",
-    "toast.ok":"✓ Verzonden! We nemen contact op.","err.fill":"Vul alstublieft uw naam en contact in."
+    "f.name":"Jouw naam","f.contact":"Telefoon of email","f.restaurant":"Restaurantnaam","f.challenge":"Grootste boekingsuitdaging",
+    "f.submit":"Mijn gratis gesprek inplannen →","f.note":"⚡ We reageren binnen 2 uur. Geen pitch, alleen een echt gesprek.",
+    "ok.title":"Gespreksverzoek ontvangen!","ok.sub":"We nemen binnen 2 uur contact op om je gratis gesprek te plannen.",
+    "toast.ok":"✓ Verzonden! We nemen binnenkort contact op.","err.fill":"Vul alstublieft naam en contact in."
   }
 };
 
@@ -737,17 +720,16 @@ function applyLang(l) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
     if (!t[k]) return;
-    if (el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder = t[k];
-    else if (el.tagName==='OPTION') el.textContent = t[k];
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = t[k];
     else el.innerHTML = t[k];
-    });
+  });
   const opt = document.querySelector(`.lang-option[data-lang="${l}"]`);
   if (opt) document.getElementById('currentLangLabel').textContent = opt.dataset.label || l.toUpperCase();
-  document.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang===l));
+  document.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang === l));
   document.documentElement.lang = l;
 }
 
-// LANG SWITCHER
+// Lang switcher
 const langBtn = document.getElementById('langBtn');
 const langDropdown = document.getElementById('langDropdown');
 langBtn.addEventListener('click', e => { e.stopPropagation(); langDropdown.classList.toggle('open'); });
@@ -756,96 +738,149 @@ document.querySelectorAll('.lang-option').forEach(o => {
   o.addEventListener('click', () => { applyLang(o.dataset.lang); langDropdown.classList.remove('open'); });
 });
 
-// CREDENTIALS — token hidden on server via Netlify Function
+// Config
 const CFG = {
   formspree: 'https://formspree.io/f/mdayjqey',
-  endpoint:  '/.netlify/functions/submit'
+  endpoint: '/.netlify/functions/submit'
 };
 
 function showToast(msg) {
   const el = document.getElementById('toast');
-  el.innerHTML = msg; el.classList.add('show');
+  el.innerHTML = msg;
+  el.classList.add('show');
   setTimeout(() => el.classList.remove('show'), 3800);
 }
 
-async function sendTelegram(d) {
-  // Token is on server — handled by Netlify Function
-}
-
-async function sendEmail(d) {
-  try {
-    await fetch(CFG.formspree, {
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({name:d.name, contact:d.contact, email:d.email, business:d.biz, message:d.msg, lang})
-    });
-  } catch(e) { console.warn('Email:', e); }
-}
-
-document.getElementById('submitBtn').addEventListener('click', async function() {
+// Form submit
+document.getElementById('submitBtn').addEventListener('click', async function () {
   const t = T[lang];
   const d = {
-    name:    document.getElementById('fname').value.trim(),
-    contact: document.getElementById('fcontact').value.trim(),
-    email:   document.getElementById('femail').value.trim(),
-    biz:     document.getElementById('fbiz').value,
-    msg:     document.getElementById('fmsg').value.trim()
+    name:       document.getElementById('fname').value.trim(),
+    contact:    document.getElementById('fcontact').value.trim(),
+    restaurant: document.getElementById('frestarant').value.trim(),
+    challenge:  document.getElementById('fchallenge').value.trim()
   };
   if (!d.name || !d.contact) { showToast('⚠️ ' + t['err.fill']); return; }
   if (document.getElementById('_honey').value) return;
-  this.textContent = '⏳'; this.disabled = true;
+  this.textContent = '⏳';
+  this.disabled = true;
 
-  // Send to Netlify Function (handles Telegram securely on server)
   try {
     await fetch(CFG.endpoint, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({...d, lang})
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...d, lang })
     });
-  } catch(e) { console.warn('Function error:', e); }
+  } catch (e) { console.warn('Function error:', e); }
 
-  await sendEmail(d);
+  try {
+    await fetch(CFG.formspree, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: d.name, contact: d.contact, restaurant: d.restaurant, challenge: d.challenge, lang })
+    });
+  } catch (e) { console.warn('Formspree error:', e); }
+
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('successMsg').classList.add('show');
   showToast(t['toast.ok']);
 });
 
-// EMAIL CLICK — copy to clipboard on desktop if mailto fails
-document.getElementById('emailLink').addEventListener('click', function(e) {
+// Email click — copy to clipboard on desktop
+document.getElementById('emailLink').addEventListener('click', function (e) {
   const email = 'voltexagencyy@gmail.com';
-  // Try to detect if mailto will work (mobile or has mail client)
   if (navigator.clipboard && window.innerWidth > 768) {
-    // On desktop — also copy to clipboard as fallback
-    navigator.clipboard.writeText(email).catch(()=>{});
+    navigator.clipboard.writeText(email).catch(() => {});
     showToast('📋 Email copied to clipboard!');
   }
 });
 
-// SMOOTH NAV SCROLL
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({behavior:'smooth', block:'start'});
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-// SCROLL REVEAL
-const revealObserver = new IntersectionObserver((entries) => {
+// Scroll reveal
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const isStep = entry.target.classList.contains('process-step');
       if (isStep) {
         const steps = Array.from(document.querySelectorAll('.process-step.reveal'));
-        const idx = steps.indexOf(entry.target);
-        setTimeout(() => entry.target.classList.add('visible'), idx * 150);
+        setTimeout(() => entry.target.classList.add('visible'), steps.indexOf(entry.target) * 120);
       } else {
         entry.target.classList.add('visible');
       }
     }
   });
-}, {threshold: 0.08});
+}, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// THREE.JS HERO MESH
+(function () {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const parent = canvas.parentElement;
+  let W = parent.clientWidth || 600;
+  let H = parent.clientHeight || 520;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setSize(W, H);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+  camera.position.set(0, 4.5, 9);
+  camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+  const geo = new THREE.PlaneGeometry(18, 14, 60, 44);
+  const mat = new THREE.MeshBasicMaterial({ color: 0xc8ff00, wireframe: true, transparent: true, opacity: 0.18 });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.rotation.x = -Math.PI * 0.4;
+  mesh.position.y = -1;
+  scene.add(mesh);
+
+  const base = new Float32Array(geo.attributes.position.array);
+  const pos = geo.attributes.position;
+
+  let rafId;
+  function animate(ts) {
+    rafId = requestAnimationFrame(animate);
+    const t = ts * 0.001;
+    for (let i = 0; i < pos.count; i++) {
+      const x = base[i * 3];
+      const y = base[i * 3 + 1];
+      pos.setZ(i,
+        Math.sin(x * 0.55 + t * 0.42) * 0.55 +
+        Math.sin(x * 0.27 + y * 0.43 + t * 0.28) * 0.72 +
+        Math.cos(y * 0.38 + t * 0.36) * 0.38
+      );
+    }
+    pos.needsUpdate = true;
+    renderer.render(scene, camera);
+  }
+  animate(0);
+
+  window.addEventListener('resize', () => {
+    W = parent.clientWidth || 600;
+    H = parent.clientHeight || 520;
+    if (!W || !H) return;
+    renderer.setSize(W, H);
+    camera.aspect = W / H;
+    camera.updateProjectionMatrix();
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(rafId);
+    else animate(performance.now());
+  });
+})();
 </script>
 </body>
 </html>
