@@ -34,7 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr;align-items:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.02) 1px,transparent 1px);background-size:64px 64px}
-.hero-content{display:flex;flex-direction:column;max-width:580px;position:relative;z-index:1}
+.hero-content{display:flex;flex-direction:column;max-width:580px;position:relative;z-index:1;overflow:hidden}
 .hero-content::before{content:'';position:absolute;inset:-4rem -5rem -4rem -6rem;background:radial-gradient(ellipse 110% 120% at 5% 50%,rgba(10,10,10,.88) 28%,rgba(10,10,10,.55) 58%,transparent 100%);z-index:-1;pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;border-radius:50%}
@@ -170,7 +170,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
 .footer-links a:hover{color:var(--white)}
 
 /* TOAST */
-.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#1c1c1c;border:1px solid rgba(200,255,0,.25);border-radius:12px;padding:.9rem 1.3rem;font-size:.84rem;color:var(--white);z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:280px;pointer-events:none}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#1c1c1c;border:1px solid rgba(200,255,0,.25);border-radius:12px;padding:.9rem 1.3rem;font-size:.84rem;color:var(--white);z-index:999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:min(280px,calc(100vw - 2rem));pointer-events:none}
 .toast.show{transform:translateY(0);opacity:1}
 
 /* REVEAL */
