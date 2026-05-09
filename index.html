@@ -143,8 +143,11 @@ section{padding:5.5rem 4rem}
 .contact-form{display:flex;flex-direction:column;gap:1rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-label{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gray-light);font-weight:500}
-.form-input,.form-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem .95rem;color:var(--white);font-family:var(--font-body);font-size:.86rem;font-weight:300;outline:none;transition:border-color .2s,background .2s;width:100%}
-.form-input:focus,.form-textarea:focus{border-color:rgba(200,255,0,.4);background:rgba(200,255,0,.03)}
+.form-input,.form-select,.form-textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.75rem .95rem;color:var(--white);font-family:var(--font-body);font-size:.86rem;font-weight:300;outline:none;transition:border-color .2s,background .2s;width:100%;max-width:100%}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(200,255,0,.4);background:rgba(200,255,0,.03)}
+.form-select option{background:#111}
+.contact-form,.contact-form *{min-width:0}
+.form-label{overflow-wrap:break-word;word-break:normal}
 .form-textarea{min-height:110px;resize:vertical}
 .form-submit{background:var(--accent);color:var(--black);font-family:var(--font-body);font-size:.92rem;font-weight:700;padding:.95rem;border-radius:100px;border:none;cursor:pointer;transition:background .2s,transform .15s;width:100%;margin-top:.2rem}
 .form-submit:hover{background:#d4ff1a;transform:translateY(-1px)}
@@ -415,6 +418,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
           <a href="mailto:voltexagencyy@gmail.com" id="emailLink">voltexagencyy@gmail.com</a>
         </div>
         <div class="contact-item">
+          <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
+          <a href="https://t.me/voltexagency" target="_blank">@voltexagency</a>
+        </div>
+        <div class="contact-item">
           <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
           <a href="https://www.instagram.com/voltex.agency" target="_blank">@voltex.agency</a>
         </div>
@@ -429,6 +436,20 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
         <div style="display:none"><input type="text" name="_honey" id="_honey" tabindex="-1" autocomplete="off"></div>
         <div class="form-group"><label class="form-label" data-i18n="f.name">Your name</label><input type="text" class="form-input" id="fname" placeholder="John Smith"></div>
         <div class="form-group"><label class="form-label" data-i18n="f.contact">Phone or email</label><input type="text" class="form-input" id="fcontact" placeholder="+1 or your@email.com"></div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="f.biztype">What do you need help with?</label>
+          <select class="form-select" id="fservice">
+            <option value="">—</option>
+            <option value="Restaurant Automation">Restaurant Automation</option>
+            <option value="Lead Generation">Lead Generation</option>
+            <option value="AI Calling">AI Calling</option>
+            <option value="Booking Recovery">Booking Recovery</option>
+            <option value="CRM Setup">CRM Setup</option>
+            <option value="Customer Retention">Customer Retention</option>
+            <option value="Marketing System">Marketing System</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
         <div class="form-group"><label class="form-label" data-i18n="f.restaurant">Restaurant name</label><input type="text" class="form-input" id="frestarant" placeholder="e.g. Bella Roma"></div>
         <div class="form-group"><label class="form-label" data-i18n="f.challenge">Biggest booking challenge</label><textarea class="form-textarea" id="fchallenge" placeholder="e.g. missed calls, no-shows, no online booking..."></textarea></div>
         <button class="form-submit" id="submitBtn" data-i18n="f.submit">Book my free call →</button>
@@ -493,6 +514,7 @@ const T = {
     "p4.t":"You go live","p4.d":"We launch, monitor, and stay on support. If anything doesn't perform as promised, we fix it for free.",
     "contact.tag":"Let's talk","contact.title":"Book a free 20-minute call","contact.desc":"Tell us about your restaurant and your biggest booking challenge. We'll tell you exactly what we'd do — no pitch, no pressure.",
     "contact.loc":"Ukraine — working worldwide online",
+    "f.biztype":"What do you need help with?",
     "f.name":"Your name","f.contact":"Phone or email","f.restaurant":"Restaurant name","f.challenge":"Biggest booking challenge",
     "f.submit":"Book my free call →","f.note":"⚡ We respond within 2 hours. No pitch, just a real conversation.",
     "ok.title":"Call request received!","ok.sub":"We'll be in touch within 2 hours to schedule your free call.",
@@ -536,6 +558,7 @@ const T = {
     "p4.t":"Du gehst live","p4.d":"Wir launchen, überwachen und bleiben im Support. Wenn etwas nicht wie versprochen funktioniert, beheben wir es kostenlos.",
     "contact.tag":"Lass uns reden","contact.title":"Kostenlosen 20-Minuten-Call buchen","contact.desc":"Erzähl uns von deinem Restaurant und deiner größten Buchungsherausforderung. Wir sagen dir genau, was wir tun würden — kein Pitch, kein Druck.",
     "contact.loc":"Ukraine — weltweit online tätig",
+    "f.biztype":"Womit können wir helfen?",
     "f.name":"Dein Name","f.contact":"Telefon oder E-Mail","f.restaurant":"Restaurantname","f.challenge":"Größte Buchungsherausforderung",
     "f.submit":"Meinen kostenlosen Call buchen →","f.note":"⚡ Wir antworten in 2 Stunden. Kein Pitch, nur ein echtes Gespräch.",
     "ok.title":"Call-Anfrage erhalten!","ok.sub":"Wir melden uns in 2 Stunden, um deinen kostenlosen Call zu vereinbaren.",
@@ -579,6 +602,7 @@ const T = {
     "p4.t":"Ти запускаєшся","p4.d":"Ми запускаємо, моніторимо і залишаємось на підтримці. Якщо щось не працює як обіцяно — виправляємо безкоштовно.",
     "contact.tag":"Поговоримо","contact.title":"Забронюй безкоштовний 20-хвилинний дзвінок","contact.desc":"Розкажи про свій ресторан і найбільший виклик з бронюванням. Ми скажемо точно, що зробимо — без пітчу, без тиску.",
     "contact.loc":"Україна — працюємо онлайн по всьому світу",
+    "f.biztype":"З чим вам потрібна допомога?",
     "f.name":"Твоє ім'я","f.contact":"Телефон або email","f.restaurant":"Назва ресторану","f.challenge":"Найбільша проблема з бронюванням",
     "f.submit":"Забронювати мій безкоштовний дзвінок →","f.note":"⚡ Відповідаємо протягом 2 годин. Без пітчу, лише реальна розмова.",
     "ok.title":"Запит на дзвінок отримано!","ok.sub":"Ми зв'яжемось протягом 2 годин для планування безкоштовного дзвінка.",
@@ -622,6 +646,7 @@ const T = {
     "p4.t":"Vous passez en ligne","p4.d":"Nous lançons, surveillons et restons en support. Si quelque chose ne performe pas comme promis, nous le corrigeons gratuitement.",
     "contact.tag":"Parlons-en","contact.title":"Réservez un appel gratuit de 20 minutes","contact.desc":"Parlez-nous de votre restaurant et de votre plus grand défi de réservation. Nous vous dirons exactement ce que nous ferions — sans pitch, sans pression.",
     "contact.loc":"Ukraine — travaillant en ligne dans le monde entier",
+    "f.biztype":"Comment pouvons-nous vous aider ?",
     "f.name":"Votre nom","f.contact":"Téléphone ou email","f.restaurant":"Nom du restaurant","f.challenge":"Plus grand défi de réservation",
     "f.submit":"Réserver mon appel gratuit →","f.note":"⚡ Nous répondons dans les 2 heures. Pas de pitch, juste une vraie conversation.",
     "ok.title":"Demande d'appel reçue !","ok.sub":"Nous vous contacterons dans les 2 heures pour planifier votre appel gratuit.",
@@ -665,6 +690,7 @@ const T = {
     "p4.t":"Entras en vivo","p4.d":"Lanzamos, monitoreamos y nos quedamos en soporte. Si algo no funciona como se prometió, lo arreglamos gratis.",
     "contact.tag":"Hablemos","contact.title":"Reserva una llamada gratuita de 20 minutos","contact.desc":"Cuéntanos sobre tu restaurante y tu mayor desafío de reservas. Te diremos exactamente qué haríamos — sin pitch, sin presión.",
     "contact.loc":"Ucrania — trabajando en línea en todo el mundo",
+    "f.biztype":"¿En qué necesitas ayuda?",
     "f.name":"Tu nombre","f.contact":"Teléfono o email","f.restaurant":"Nombre del restaurante","f.challenge":"Mayor desafío de reservas",
     "f.submit":"Reservar mi llamada gratuita →","f.note":"⚡ Respondemos en 2 horas. Sin pitch, solo una conversación real.",
     "ok.title":"¡Solicitud de llamada recibida!","ok.sub":"Nos pondremos en contacto en 2 horas para programar tu llamada gratuita.",
@@ -708,6 +734,7 @@ const T = {
     "p4.t":"Jij gaat live","p4.d":"We lanceren, monitoren en blijven in support. Als iets niet presteert zoals beloofd, repareren we het gratis.",
     "contact.tag":"Laten we praten","contact.title":"Plan een gratis gesprek van 20 minuten","contact.desc":"Vertel ons over je restaurant en je grootste boekingsuitdaging. We vertellen je precies wat we zouden doen — geen pitch, geen druk.",
     "contact.loc":"Oekraïne — wereldwijd online actief",
+    "f.biztype":"Waar kunnen we mee helpen?",
     "f.name":"Jouw naam","f.contact":"Telefoon of email","f.restaurant":"Restaurantnaam","f.challenge":"Grootste boekingsuitdaging",
     "f.submit":"Mijn gratis gesprek inplannen →","f.note":"⚡ We reageren binnen 2 uur. Geen pitch, alleen een echt gesprek.",
     "ok.title":"Gespreksverzoek ontvangen!","ok.sub":"We nemen binnen 2 uur contact op om je gratis gesprek te plannen.",
@@ -760,6 +787,7 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
   const d = {
     name:       document.getElementById('fname').value.trim(),
     contact:    document.getElementById('fcontact').value.trim(),
+    service:    document.getElementById('fservice').value,
     restaurant: document.getElementById('frestarant').value.trim(),
     challenge:  document.getElementById('fchallenge').value.trim()
   };
