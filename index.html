@@ -9,6 +9,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;overflow-wrap:break-word;min-width:0}
 :root{--black:#0a0a0a;--white:#f5f2ed;--accent:#c8ff00;--red:#ff4444;--gray:#141414;--gray-mid:#222;--gray-light:#777;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}
 html{scroll-behavior:smooth}
+html{overflow-x:hidden}
 body{background:var(--black);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
@@ -34,6 +35,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr;align-items:center;padding:8rem 4rem 5rem;position:relative;overflow:hidden;background-image:linear-gradient(rgba(200,255,0,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,255,0,.02) 1px,transparent 1px);background-size:64px 64px}
 .hero-content{display:flex;flex-direction:column;max-width:580px;position:relative;z-index:1}
+.hero-content::before{content:'';position:absolute;inset:-4rem -5rem -4rem -6rem;background:radial-gradient(ellipse 110% 120% at 5% 50%,rgba(10,10,10,.88) 28%,rgba(10,10,10,.55) 58%,transparent 100%);z-index:-1;pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;width:fit-content}
 .hero-tag::before{content:'';width:5px;height:5px;border-radius:50%}
 .hero-tag.accent{background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.25);color:var(--accent)}
@@ -43,8 +45,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 .hero h1{font-family:var(--font-display);font-size:clamp(2.6rem,5.5vw,5rem);font-weight:800;line-height:.96;letter-spacing:-.04em;margin-bottom:1.6rem;max-width:780px}
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:1.05rem;color:#a0a0a0;max-width:500px;font-weight:300;margin-bottom:1.5rem;line-height:1.8}
-.hero-proof{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:rgba(245,242,237,.42);margin-bottom:2rem;flex-wrap:wrap}
+.hero-sub{font-size:1.05rem;color:#c8c8c8;max-width:500px;font-weight:300;margin-bottom:1.5rem;line-height:1.8}
+.hero-proof{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:rgba(245,242,237,.72);margin-bottom:2rem;flex-wrap:wrap}
 .hero-proof-stars{color:var(--accent);letter-spacing:.06em;font-size:.82rem}
 .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 .btn-primary{background:var(--accent);color:var(--black);font-family:var(--font-body);font-size:.92rem;font-weight:700;padding:.85rem 2rem;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
@@ -56,7 +58,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO VISUAL (Three.js) */
 .hero-visual{position:absolute;inset:0;height:auto;min-height:0;overflow:hidden;z-index:0;pointer-events:none}
-.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 75% 65% at 60% 50%,rgba(200,255,0,.07) 0%,transparent 70%);pointer-events:none;z-index:0}
+.hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 65% 50%,rgba(200,255,0,.04) 0%,transparent 70%);pointer-events:none;z-index:0}
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;display:block}
 
 /* STATS */
@@ -139,6 +141,8 @@ section{padding:5.5rem 4rem}
 .contact-item{display:flex;align-items:center;gap:.9rem;font-size:.86rem}
 .contact-item a,.contact-item span{color:var(--white);text-decoration:none;transition:color .2s}
 .contact-item a:hover{color:var(--accent)}
+.contact-item.tg-primary{padding:.65rem .9rem;background:rgba(200,255,0,.06);border:1px solid rgba(200,255,0,.14);border-radius:10px}
+.contact-item.tg-primary a{color:var(--accent);font-weight:500}
 .contact-item-icon{width:32px;height:32px;background:rgba(255,255,255,.05);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
 .contact-form{display:flex;flex-direction:column;gap:1rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
@@ -183,8 +187,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .nav-right{gap:.6rem}
   .lang-btn{padding:.3rem .65rem;font-size:.72rem}
   .lang-dropdown{min-width:140px}
-  .hero{padding:5.5rem 1.2rem 3rem;min-height:auto;grid-template-columns:1fr;gap:0}
-  .hero-visual{display:none}
+  .hero{padding:5.5rem 1.2rem 3rem;min-height:60vh;grid-template-columns:1fr;gap:0}
+  .hero-visual{display:block;opacity:.55}
   .hero-scroll{display:none}
   .hero h1{font-size:clamp(2.2rem,9vw,3rem);margin-bottom:1.2rem}
   .hero-sub{font-size:.95rem;margin-bottom:1.2rem;max-width:100%}
@@ -194,7 +198,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .stat-num{font-size:2.2rem;white-space:normal}
   .stat-label{max-width:none}
   .loss-num{font-size:2.6rem}
-  .hero-visual{display:none}
   section{padding:3.5rem 1.2rem}
   .problem-inner{grid-template-columns:1fr;gap:2.5rem}
   .pain-grid{grid-template-columns:1fr}
@@ -268,7 +271,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <div class="hero-visual" aria-hidden="true">
     <canvas id="hero-canvas"></canvas>
   </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span data-i18n="hero.scroll">Scroll</span></div>
 </section>
 
 <!-- STATS -->
@@ -417,10 +419,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
           <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
           <a href="mailto:voltexagencyy@gmail.com" id="emailLink">voltexagencyy@gmail.com</a>
         </div>
-        <div class="contact-item">
+        <div class="contact-item tg-primary">
           <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
-          <a href="https://t.me/voltexagency" target="_blank">@voltexagency</a>
+          <a href="https://t.me/voltexagency" target="_blank">@voltexagency — fastest reply</a>
         </div>
+
         <div class="contact-item">
           <div class="contact-item-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
           <a href="https://www.instagram.com/voltex.agency" target="_blank">@voltex.agency</a>
@@ -450,7 +453,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
             <option value="Other">Other</option>
           </select>
         </div>
-        <div class="form-group"><label class="form-label" data-i18n="f.restaurant">Restaurant name</label><input type="text" class="form-input" id="frestarant" placeholder="e.g. Bella Roma"></div>
         <div class="form-group"><label class="form-label" data-i18n="f.challenge">Biggest booking challenge</label><textarea class="form-textarea" id="fchallenge" placeholder="e.g. missed calls, no-shows, no online booking..."></textarea></div>
         <button class="form-submit" id="submitBtn" data-i18n="f.submit">Book my free call →</button>
         <p class="form-note" data-i18n="f.note">⚡ We respond within 2 hours. No pitch, just a real conversation.</p>
@@ -787,9 +789,8 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
   const d = {
     name:       document.getElementById('fname').value.trim(),
     contact:    document.getElementById('fcontact').value.trim(),
-    service:    document.getElementById('fservice').value,
-    restaurant: document.getElementById('frestarant').value.trim(),
-    challenge:  document.getElementById('fchallenge').value.trim()
+    service:   document.getElementById('fservice').value,
+    challenge: document.getElementById('fchallenge').value.trim()
   };
   if (!d.name || !d.contact) { showToast('⚠️ ' + t['err.fill']); return; }
   if (document.getElementById('_honey').value) return;
@@ -808,7 +809,7 @@ document.getElementById('submitBtn').addEventListener('click', async function ()
     await fetch(CFG.formspree, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name: d.name, contact: d.contact, restaurant: d.restaurant, challenge: d.challenge, lang })
+      body: JSON.stringify({ name: d.name, contact: d.contact, service: d.service, challenge: d.challenge, lang })
     });
   } catch (e) { console.warn('Formspree error:', e); }
 
@@ -861,17 +862,18 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   let W = parent.clientWidth || 600;
   let H = parent.clientHeight || 520;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  const isMob = W < 768;
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMob });
   renderer.setSize(W, H);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(isMob ? 1 : Math.min(window.devicePixelRatio, 2));
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
   camera.position.set(0, 4.5, 9);
   camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-  const geo = new THREE.PlaneGeometry(18, 14, 60, 44);
-  const mat = new THREE.MeshBasicMaterial({ color: 0xc8ff00, wireframe: true, transparent: true, opacity: 0.18 });
+  const geo = new THREE.PlaneGeometry(18, 14, isMob ? 26 : 60, isMob ? 18 : 44);
+  const mat = new THREE.MeshBasicMaterial({ color: 0xc8ff00, wireframe: true, transparent: true, opacity: isMob ? 0.09 : 0.11 });
   const mesh = new THREE.Mesh(geo, mat);
   mesh.rotation.x = -Math.PI * 0.4;
   mesh.position.y = -1;
