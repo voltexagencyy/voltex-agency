@@ -13,7 +13,7 @@ html{overflow-x:hidden}
 body{background:var(--black);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;padding:1.1rem 4rem;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 4rem;background:rgba(10,10,10,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
 .logo{font-family:var(--font-display);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:var(--white);text-decoration:none;flex-shrink:0}
 .logo span{color:var(--accent)}
 .nav-links{flex:1;display:flex;justify-content:center;gap:2rem;list-style:none}
@@ -22,7 +22,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-right{display:flex;align-items:center;gap:1.2rem;flex-shrink:0}
 .lang-switcher{position:relative}
 .lang-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.35rem .8rem;border-radius:100px;font-family:var(--font-body);font-size:.78rem;cursor:pointer;display:flex;align-items:center;gap:.35rem;transition:background .2s;white-space:nowrap}
-.lang-icon{display:none}
 .lang-btn:hover{background:rgba(255,255,255,.1)}
 .lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;min-width:155px;display:none;flex-direction:column;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.6)}
 .lang-dropdown.open{display:flex}
@@ -186,8 +185,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .nav-cta-mob{display:flex;background:var(--accent);color:var(--black);padding:.35rem .75rem;border-radius:100px;font-weight:700;font-size:.73rem;text-decoration:none;white-space:nowrap;max-width:44vw;overflow:hidden;text-overflow:ellipsis}
   .nav-right{gap:.5rem;flex-shrink:0}
   .logo{max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .lang-icon{display:inline-block}
-  #currentLangLabel,.lang-arrow{display:none}
   .lang-btn{padding:.3rem .45rem;font-size:.72rem;gap:.2rem}
   .lang-dropdown{min-width:140px}
   .hero{padding:5.5rem 1.2rem 3rem;min-height:60vh;grid-template-columns:1fr;gap:0}
@@ -246,7 +243,6 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <div class="nav-right">
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
-        <span id="currentLangFlag">🇬🇧</span>
         <span id="currentLangLabel">EN</span>
         <span class="lang-arrow" style="font-size:.6rem;opacity:.4">▼</span>
       </button>
@@ -781,7 +777,6 @@ const T = {
 };
 
 let lang = 'en';
-const LANG_FLAGS={en:'🇬🇧',de:'🇩🇪',uk:'🇺🇦',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱'};
 function setLangCookie(l){document.cookie='lang='+l+';path=/;max-age=31536000;SameSite=Lax'}
 function getLangCookie(){const m=document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);return m?m[1]:null}
 
@@ -796,8 +791,6 @@ function applyLang(l) {
   });
   const opt = document.querySelector(`.lang-option[data-lang="${l}"]`);
   if (opt) document.getElementById('currentLangLabel').textContent = opt.dataset.label || l.toUpperCase();
-  const flagEl = document.getElementById('currentLangFlag');
-  if (flagEl) flagEl.textContent = LANG_FLAGS[l] || '🌐';
   document.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang === l));
   document.documentElement.lang = l;
 }
