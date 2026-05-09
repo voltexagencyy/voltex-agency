@@ -221,9 +221,12 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .process-grid{grid-template-columns:1fr}
   .case-results{grid-template-columns:1fr}
 }
+@media(max-width:640px){
+  .logo{font-size:14px}
+}
 @media(max-width:420px){
   nav{padding:.6rem .75rem}
-  .logo{font-size:.95rem;max-width:40vw}
+  .logo{max-width:40vw}
   .nav-cta-mob{font-size:.68rem;padding:.28rem .55rem;max-width:40vw}
 }
 </style>
@@ -241,8 +244,7 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <div class="nav-right">
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
-        <span class="lang-icon" aria-hidden="true">🌐</span>
-        <span id="currentLangLabel">EN</span>
+<span id="currentLangLabel">EN</span>
         <span class="lang-arrow" style="font-size:.6rem;opacity:.4">▼</span>
       </button>
       <div class="lang-dropdown" id="langDropdown">
