@@ -5,4 +5,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-mFhXJX6Rl1Y++7Z8ct/4Gq4fsj+CDc5LWbTZEpJeciI=' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.telegram.org;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-k5vTwyrOZKF3g6wMR+FPwilh4fHif4Pj014FV90tlxU=' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.telegram.org;

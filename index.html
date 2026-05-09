@@ -246,7 +246,8 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <div class="nav-right">
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
-<span id="currentLangLabel">EN</span>
+        <span id="currentLangFlag">🇬🇧</span>
+        <span id="currentLangLabel">EN</span>
         <span class="lang-arrow" style="font-size:.6rem;opacity:.4">▼</span>
       </button>
       <div class="lang-dropdown" id="langDropdown">
@@ -780,6 +781,7 @@ const T = {
 };
 
 let lang = 'en';
+const LANG_FLAGS={en:'🇬🇧',de:'🇩🇪',uk:'🇺🇦',fr:'🇫🇷',es:'🇪🇸',nl:'🇳🇱'};
 function setLangCookie(l){document.cookie='lang='+l+';path=/;max-age=31536000;SameSite=Lax'}
 function getLangCookie(){const m=document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);return m?m[1]:null}
 
@@ -794,6 +796,8 @@ function applyLang(l) {
   });
   const opt = document.querySelector(`.lang-option[data-lang="${l}"]`);
   if (opt) document.getElementById('currentLangLabel').textContent = opt.dataset.label || l.toUpperCase();
+  const flagEl = document.getElementById('currentLangFlag');
+  if (flagEl) flagEl.textContent = LANG_FLAGS[l] || '🌐';
   document.querySelectorAll('.lang-option').forEach(o => o.classList.toggle('active', o.dataset.lang === l));
   document.documentElement.lang = l;
 }
