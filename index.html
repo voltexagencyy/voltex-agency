@@ -22,6 +22,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-right{display:flex;align-items:center;gap:1.2rem;flex-shrink:0}
 .lang-switcher{position:relative}
 .lang-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.35rem .8rem;border-radius:100px;font-family:var(--font-body);font-size:.78rem;cursor:pointer;display:flex;align-items:center;gap:.35rem;transition:background .2s;white-space:nowrap}
+.lang-icon{display:none}
 .lang-btn:hover{background:rgba(255,255,255,.1)}
 .lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#1a1a1a;border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;min-width:155px;display:none;flex-direction:column;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.6)}
 .lang-dropdown.open{display:flex}
@@ -182,9 +183,12 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   nav{padding:.85rem 1.2rem}
   .nav-links{display:none}
   .nav-cta{display:none}
-  .nav-cta-mob{display:flex;background:var(--accent);color:var(--black);padding:.38rem .85rem;border-radius:100px;font-weight:700;font-size:.75rem;text-decoration:none;white-space:nowrap}
-  .nav-right{gap:.6rem}
-  .lang-btn{padding:.3rem .65rem;font-size:.72rem}
+  .nav-cta-mob{display:flex;background:var(--accent);color:var(--black);padding:.35rem .75rem;border-radius:100px;font-weight:700;font-size:.73rem;text-decoration:none;white-space:nowrap;max-width:44vw;overflow:hidden;text-overflow:ellipsis}
+  .nav-right{gap:.5rem;flex-shrink:0}
+  .logo{max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lang-icon{display:inline-block}
+  #currentLangLabel,.lang-arrow{display:none}
+  .lang-btn{padding:.3rem .45rem;font-size:.72rem;gap:.2rem}
   .lang-dropdown{min-width:140px}
   .hero{padding:5.5rem 1.2rem 3rem;min-height:60vh;grid-template-columns:1fr;gap:0}
   .hero-visual{display:block;opacity:.55}
@@ -217,6 +221,11 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   .process-grid{grid-template-columns:1fr}
   .case-results{grid-template-columns:1fr}
 }
+@media(max-width:420px){
+  nav{padding:.6rem .75rem}
+  .logo{font-size:.95rem;max-width:40vw}
+  .nav-cta-mob{font-size:.68rem;padding:.28rem .55rem;max-width:40vw}
+}
 </style>
 </head>
 <body>
@@ -232,8 +241,9 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:2rem 4rem;display:flex
   <div class="nav-right">
     <div class="lang-switcher">
       <button class="lang-btn" id="langBtn">
+        <span class="lang-icon" aria-hidden="true">🌐</span>
         <span id="currentLangLabel">EN</span>
-        <span style="font-size:.6rem;opacity:.4">▼</span>
+        <span class="lang-arrow" style="font-size:.6rem;opacity:.4">▼</span>
       </button>
       <div class="lang-dropdown" id="langDropdown">
         <div class="lang-option active" data-lang="en" data-label="EN">🇬🇧 &nbsp;English</div>
