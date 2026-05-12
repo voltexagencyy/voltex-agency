@@ -13,6 +13,10 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Deploy to Cloudflare Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          n=0; until [ $n -ge 3 ]; do
+            npx wrangler deploy && break
+            n=$((n+1)); echo "Retry $n/3..."; sleep 15
+          done
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
